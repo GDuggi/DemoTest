@@ -19,4 +19,5 @@
       <echo message="Project ${ant.project.name}"/>
    </target>
 Remote New branch Test
+new branch added
 </project>
