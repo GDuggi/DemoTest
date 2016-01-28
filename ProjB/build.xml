@@ -19,4 +19,5 @@
       <echo message="Project ${ant.project.name}"/>
    </target>
 <!-- adding new -->
+<!-- adding new2 -->
 </project>
