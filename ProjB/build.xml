@@ -24,6 +24,9 @@
       <echo message="Project ${ant.project.name}"/>
 	  <target name="all">
       <echo message="Project ${ant.project.name}"/>
+	  <!-- added by mallesh -->
+	  <target name="all">
+      <echo message="Project ${ant.project.name}"/>
 
 
 
