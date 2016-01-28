@@ -18,5 +18,5 @@
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
    </target>
-mallesh
+REMOTE REbase New
 </project>
