@@ -18,6 +18,21 @@
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
    </target>
+   <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+	  <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+	  <target name="all">
+      <echo message="Project ${ant.project.name}"/>
+
+
+
+HEllo humanshu
+
+
+hi
+   </target>
+   
    
    
    <target name="Malli">
@@ -26,16 +41,6 @@
    
    <target name="Nagamallesh">
       <echo message="Project ${ant.project.name}"/>
-   </target>
-   <target name="all">
-      <echo message="Project ${ant.project.name}"/>
-   </target>
-   <target name="all">
-      <echo message="Project ${ant.project.name}"/>
-
-
-
-HEllo humanshu
    </target>
 
 </project>
