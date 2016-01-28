@@ -34,5 +34,9 @@ hi
    <target name="Malli">
       <echo message="Project ${ant.project.name}"/>
    </target>
+   
+   <target name="Nagamallesh">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
 
 </project>
