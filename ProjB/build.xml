@@ -25,5 +25,11 @@
 
 HEllo humanshu
    </target>
+   
+   
+   
+   <target name="Malli">
+      <echo message="Project ${ant.project.name}"/>
+   </target>
 
 </project>
