@@ -19,4 +19,6 @@
       <echo message="Project ${ant.project.name}"/>
    </target>
 
+   
+   <!-- added a line by mallesh -->
 </project>
