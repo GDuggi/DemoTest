@@ -18,9 +18,6 @@
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
    </target>
-
-   
-   <!-- added a line by mallesh -->
-   <!-- added a line by himanshu -->
+rebase commit
    <!-- added a line by himanshu2 -->
 </project>
