@@ -69,4 +69,5 @@
     <Content Include="test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  added a line
 </Project>
