@@ -17,7 +17,9 @@
    </target>
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
+   </target><target name="all">
+      <echo message="pull Test"/>
    </target>
-Remote New branch Test
-new branch added
+<!-- Remote New branch Test
+new branch added -->
 </project>
