@@ -20,6 +20,4 @@
    </target><target name="all">
       <echo message="pull Test"/>
    </target>
-<!-- Remote New branch Test
-new branch added -->
 </project>
