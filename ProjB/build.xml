@@ -18,6 +18,7 @@
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
    </target>
-Remote New branch Test
-new branch added
+
+New pull test changes on dev
+
 </project>
