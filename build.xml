@@ -13,8 +13,6 @@
       </subant>
 	  <subant target="">
          <fileset dir="." includes="*/build.xml"/>
-      </subant><subant target="">
-         <fileset dir="." includes="*/build.xml"/>
       </subant>
    </target>
 </project>
