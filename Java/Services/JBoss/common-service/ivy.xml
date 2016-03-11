@@ -1,0 +1,23 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="cnf" module="cnf-CommonServiceLib"/>
+
+    <configurations>
+        <include file="${project.basedir}/ivy-configurations.xml"/>
+    </configurations>
+
+    <publications>
+        <artifact type="jar" conf="master"/>
+    </publications>
+
+    <dependencies defaultconf="default">
+        <dependency org="com.jboss" name="jboss-jms-api" rev="1.1"/>
+        <dependency org="com.jboss" name="jboss-as-system-jmx" rev="7.3.4"/>
+
+        <dependency name="cnf-UtilCommon" rev="latest.integration" changing="true"/>
+        <dependency org="com.jboss" name="jboss-as-client-all" rev="7.1.2"/>
+    </dependencies>
+
+</ivy-module>

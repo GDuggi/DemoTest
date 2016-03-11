@@ -1,0 +1,15 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="cnf" module="cnf-DBQueue"/>
+
+    <configurations>
+         <include file="${project.basedir}/ivy-configurations.xml"/>
+     </configurations>
+
+    <publications>
+        <artifact type="jar" conf="master"/>
+    </publications>
+
+</ivy-module>

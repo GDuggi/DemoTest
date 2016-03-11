@@ -1,0 +1,20 @@
+DB Change log for ADCM-235
+
+Description:
+  please create script to add a unique constraint on trade_group.trade_id
+  Please run this on CNF01, CNF02, HYD
+
+
+============================================================================
+DB Changes:
+
+    Added a script which will check and add a unique constraint for
+        ConfirmMgr.TRADE_GROUP.TRADE_ID
+        
+    if not exists (select 1
+                   from sys.indexes
+                   where name = 'TRADE_GROUP_UQ1' and
+                         is_unique_constraint = 1)
+       alter table ConfirmMgr.TRADE_GROUP 
+           add constraint TRADE_GROUP_UQ1 UNIQUE (TRADE_ID)
+           

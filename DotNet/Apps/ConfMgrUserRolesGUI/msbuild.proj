@@ -1,0 +1,27 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <UsingTask AssemblyFile="lib\MSBuild.ExtensionPack.dll"
+             TaskName="MSBuild.ExtensionPack.Framework.AssemblyInfo" />
+
+  <Target Name="UpdateVersion">
+    <ItemGroup>
+      <AssemblyInfoFiles Include="**\AssemblyInfo.cs" />
+    </ItemGroup>
+
+    <MSBuild.ExtensionPack.Framework.AssemblyInfo
+      AssemblyInfoFiles="@(AssemblyInfoFiles)"
+      AssemblyMajorVersion="$(MajorVersion)"
+      AssemblyMinorVersion="$(MinorVersion)"
+      AssemblyBuildNumber="0"
+      AssemblyRevision="$(Revision)"		  
+      AssemblyFileMajorVersion="$(MajorVersion)"
+      AssemblyFileMinorVersion="$(MinorVersion)"
+      AssemblyFileBuildNumber="0"	    
+      AssemblyFileRevision="$(Revision)"		        
+    />
+  </Target>
+  <!--<Target Name="Build" DependsOnTargets="UpdateVersion"> -->
+  <Target Name="Build" >    
+    <MSBuild Projects="ConfMgr_UserRolesGUI.sln" Targets="Rebuild" />    
+  </Target>
+</Project>

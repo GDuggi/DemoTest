@@ -1,0 +1,11 @@
+ISSUE #: ADCM-167
+REQUEST BY: DEVENDER MARAGANI
+DESCRIPTION: When we fax/email an associated doc, a row should be inserted into the vaulted_docs table.
+             This is not happening at Mercuria.
+             What is strange is that the build currently on CNF01 is doing this properly
+
+SOLUTION: RECOMPILE THE STORED PROCEDURE AFFECTED WITH THE CORRECT CODE. 
+
+OBJECTS AFFECTED:
+PROCEDURE: P_INSERT_VAULT_REQUEST.
+

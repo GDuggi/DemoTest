@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4653968B-755F-4B9C-B12F-D413956060C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApacheNMS_Test</RootNamespace>
+    <AssemblyName>ApacheNMS_Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="aff-sif-Apache.NMS.Stomp, Version=1.5.5.11, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\net-4.0\aff-sif-Apache.NMS.Stomp.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS, Version=1.5.1.2739, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\net-4.0\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmTestHornetQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestHornetQ.Designer.cs">
+      <DependentUpon>frmTestHornetQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestMenu.Designer.cs">
+      <DependentUpon>frmTestMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestOpsMgrAPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestOpsMgrAPI.Designer.cs">
+      <DependentUpon>frmTestOpsMgrAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestSimple.Designer.cs">
+      <DependentUpon>frmTestSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueuePublisher.cs" />
+    <Compile Include="TopicPublisher.cs" />
+    <Compile Include="QueueSubscriber.cs" />
+    <Compile Include="TopicSubscriber.cs" />
+    <EmbeddedResource Include="frmTestHornetQ.resx">
+      <DependentUpon>frmTestHornetQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestMenu.resx">
+      <DependentUpon>frmTestMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestOpsMgrAPI.resx">
+      <DependentUpon>frmTestOpsMgrAPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestSimple.resx">
+      <DependentUpon>frmTestSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataSetManager\DatasetManager.csproj">
+      <Project>{0ea3bca5-68fe-4160-bc61-843dc05718c9}</Project>
+      <Name>DatasetManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpsTrackingModel\OpsTrackingModel.csproj">
+      <Project>{706059ae-1e8a-441c-88ce-8b88de87c5a4}</Project>
+      <Name>OpsTrackingModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StompNotifier\OpsManagerNotifier.csproj">
+      <Project>{cd5ca40f-bfb3-455f-b220-6fd7db147bb1}</Project>
+      <Name>OpsManagerNotifier</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

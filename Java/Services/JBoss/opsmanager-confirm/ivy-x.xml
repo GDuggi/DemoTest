@@ -1,0 +1,36 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="cnf.confirm" module="OpsManagerConfirmLib"/>
+
+    <configurations>
+        <include file="${project.basedir}/ivy-configurations.xml"/>
+    </configurations>
+
+    <publications>
+        <artifact name="OpsManagerConfirmLib" type="jar"/>
+    </publications>
+
+    <dependencies>
+        <dependency org="com.jboss" name="jbossws-api" rev="1.0.0">
+            <artifact name="jbossws-api" type="jar"/>
+        </dependency>
+        <dependency org="javax.xml.rpc" name="com.springsource.javax.xml.rpc" rev="1.1.0">
+            <artifact name="com.springsource.javax.xml.rpc" type="jar"/>
+        </dependency>
+        <dependency org="javax.servlet" name="com.springsource.javax.servlet" rev="2.5.0">
+            <artifact name="com.springsource.javax.servlet" type="jar"/>
+        </dependency>
+        <dependency org="javax.jms" name="jms" rev="1.1">
+            <artifact name="jms" type="jar"/>
+        </dependency>
+        <dependency org="cnf.confirm" name="OpsManagerConfirmData" rev="latest.integration" conf="*->default" transitive="true">
+            <artifact name="OpsManagerConfirmData" type="jar"/>
+        </dependency>
+        <dependency org="cnf.confirm" name="VaultLib" rev="latest.integration" conf="*->default" transitive="false">
+            <artifact name="VaultLib" type="jar"/>
+        </dependency>
+    </dependencies>
+
+</ivy-module>

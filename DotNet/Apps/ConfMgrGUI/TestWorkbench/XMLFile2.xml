@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="true"?>
+-<TradeConfirmation SchemaRelease="1" SchemaVersion="3">
+  <DocumentID>CNF_20150807_A001569759@12X-0000001909-L</DocumentID>
+  <DocumentUsage>Test</DocumentUsage>
+  <SenderID>12X-0000001909-L</SenderID>
+  <ReceiverID>12XMETSA-------C</ReceiverID>
+  <ReceiverRole>Trader</ReceiverRole>
+  <DocumentVersion>1</DocumentVersion>
+  <Market>GB</Market>
+  <Commodity>Power</Commodity>
+  <TransactionType>FOR</TransactionType>
+  <DeliveryPointArea>10YGB----------A</DeliveryPointArea>
+  <BuyerParty>12X-0000001909-L</BuyerParty>
+  <SellerParty>12XMETSA-------C</SellerParty>
+  <LoadType>Custom</LoadType>
+  <Agreement>EFET</Agreement>
+  <Currency>GBP</Currency>
+  <TotalVolume>120</TotalVolume>
+  <TotalVolumeUnit>MWh</TotalVolumeUnit>
+  <TradeDate>2015-06-29</TradeDate>
+  <CapacityUnit>MWh</CapacityUnit>
+  -<PriceUnit>
+    <Currency>GBP</Currency>
+    <CapacityUnit>MWh</CapacityUnit>
+  </PriceUnit>
+  -<TimeIntervalQuantities>
+    -<TimeIntervalQuantity>
+      <DeliveryStartDateAndTime>2015-07-01T11:00:00</DeliveryStartDateAndTime>
+      <DeliveryEndDateAndTime>2015-07-02T11:00:00</DeliveryEndDateAndTime>
+      <ContractCapacity>5</ContractCapacity>
+      <Price>34.57</Price>
+    </TimeIntervalQuantity>
+  </TimeIntervalQuantities>
+  <TotalContractValue>4148.4</TotalContractValue>
+  -<AccountAndChargeInformation>
+    <SellerEnergyAccountIdentification>Consumption</SellerEnergyAccountIdentification>
+    <BuyerEnergyAccountIdentification>Consumption</BuyerEnergyAccountIdentification>
+    <NotificationAgent>12XMETSA-------C</NotificationAgent>
+    <TransmissionChargeIdentification>Schedule 5 off</TransmissionChargeIdentification>
+  </AccountAndChargeInformation>
+  -<Agents>
+    -<Agent>
+      <AgentType>ECVNA</AgentType>
+      -<ECVNA>
+        <BSCPartyID>METSA</BSCPartyID>
+        <BuyerEnergyAccount>Consumption</BuyerEnergyAccount>
+        <SellerEnergyAccount>Consumption</SellerEnergyAccount>
+        <SellerID>METSA</SellerID>
+        <BuyerID>BTGPAC</BuyerID>
+      </ECVNA>
+    </Agent>
+  </Agents><TraderName>CHRIS MURRAY</TraderName>
+</TradeConfirmation>
+

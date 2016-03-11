@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project name="JBoss"
+         default="build">
+
+    <target name="xslt">
+        <xslt basedir="."
+              includes="services-symphonyprocessor/old/jboss-service.xml"
+              destdir="."
+              style="jboss-service.xslt"
+              extension=".properties"
+              force="true">
+        </xslt>
+    </target>
+
+    <target name="copy">
+        <mkdir dir="props"/>
+        <copy todir="props" flatten="true">
+            <fileset dir="." includes="**/old/*.properties"/>
+        </copy>
+    </target>
+</project>

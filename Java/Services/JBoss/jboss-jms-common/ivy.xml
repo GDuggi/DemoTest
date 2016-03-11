@@ -1,0 +1,25 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="cnf" module="cnf-JMSCommon"/>
+
+    <configurations>
+         <include file="${project.basedir}/ivy-configurations.xml"/>
+     </configurations>
+
+    <publications>
+        <artifact type="jar" conf="master"/>
+    </publications>
+
+    <dependencies defaultconf="default">
+        <dependency org="org.dom4j" name="dom4j" rev="1.6.1">
+            <artifact name="dom4j" type="jar"/>
+        </dependency>
+
+        <dependency org="com.jboss" name="jboss-as-client-all" rev="7.1.2"/>
+
+        <dependency name="cnf-DAOCommon" rev="latest.integration" changing="true"/>
+    </dependencies>
+
+</ivy-module>

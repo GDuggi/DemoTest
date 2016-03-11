@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<project name="ConfirmationsManager" basedir="." default="wsimport">
+    <target name="_init"
+            depends="_configureProperties,_get_timestamps,_echoProperties"/>
+
+    <target name="_get_timestamps">
+        <tstamp>
+            <format property="build_year" pattern="yyyy" locale="en"/>
+        </tstamp>
+        <tstamp>
+            <format property="build_datetime" pattern="yyyy-MMM-d h:mm:ss a" locale="en"/>
+        </tstamp>
+    </target>
+
+    <target name="_configureProperties">
+        <property name="src_dir" value="."/>
+        <property name="dest_dir" value="."/>
+    </target>
+
+    <target name="_echoProperties">
+        <echo message="----------------- Properties ----------------"/>
+        <echo message="v3_dir=${v3_dir}"/>
+        <echo message="src_dir=${src_dir}"/>
+        <echo message="dest_dir=${dest_dir}"/>
+        <echo message="build_year=${build_year}"/>
+        <echo message="build_datetime=${build_datetime}"/>
+        <echo message="---------------------------------------------"/>
+    </target>
+
+    <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+        <classpath>
+            <fileset dir="jaxws-2.1.7" includes="*.jar"
+                     excludes="ant.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="_wsimport">
+        <wsimport
+                wsdl="ConfirmationsManager.wsdl"
+                keep="true"
+                verbose="true"
+                destdir="${dest_dir}"
+                sourcedestdir="${src_dir}"
+                
+                binding="jaxws-bindings.xml">
+				<!--wsdlLocation="https://exciseua.avalara.net/determination/taxdetermination.asmx?WSDL"-->
+        </wsimport>
+    </target>
+	<!--<target name="_wsimport_auth">
+	        <wsimport
+	                wsdl="authentication.wsdl"
+	                keep="true"
+	                verbose="true"
+	                destdir="${dest_dir}"
+	                sourcedestdir="${src_dir}"
+	                wsdlLocation="https://exciseua.avalara.net/authenticationservice.asmx?WSDL"
+	                binding="auth_jaxws-bindings.xml">
+	        </wsimport>
+	    </target>-->
+
+    <target name="wsimport" depends="_init,_wsimport"/>
+	<!--<target name="wsimport_auth" depends="_init,_wsimport_auth"/>-->
+
+</project>

@@ -1,0 +1,305 @@
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\aabiola')
+	BEGIN
+		CREATE USER [MERCURIA\aabiola] FOR LOGIN [MERCURIA\aabiola] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\aabiola USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\aabiola]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\aabiola]
+		PRINT'MERCURIA\aabiola USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\aabiola] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\aabiola] FOR LOGIN [MERCURIA\aabiola] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\aabiola USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\aabiola]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\aabiola]
+		PRINT'MERCURIA\aabiola USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\across')
+	BEGIN
+		CREATE USER [MERCURIA\across] FOR LOGIN [MERCURIA\across] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\across USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\across]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\across]
+		PRINT'MERCURIA\across USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\across] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\across] FOR LOGIN [MERCURIA\across] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\across USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\across]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\across]
+		PRINT'MERCURIA\across USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\carmstrong')
+	BEGIN
+		CREATE USER [MERCURIA\carmstrong] FOR LOGIN [MERCURIA\carmstrong] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\carmstrong USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\carmstrong]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\carmstrong]
+		PRINT'MERCURIA\carmstrong USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\carmstrong] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\carmstrong] FOR LOGIN [MERCURIA\carmstrong] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\carmstrong USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\carmstrong]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\carmstrong]
+		PRINT'MERCURIA\carmstrong USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\cguarneri')
+	BEGIN
+		CREATE USER [MERCURIA\cguarneri] FOR LOGIN [MERCURIA\cguarneri] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\cguarneri USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\cguarneri]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\cguarneri]
+		PRINT'MERCURIA\cguarneri USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\cguarneri] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\cguarneri] FOR LOGIN [MERCURIA\cguarneri] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\cguarneri USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\cguarneri]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\cguarneri]
+		PRINT'MERCURIA\cguarneri USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\durgaprasad')
+	BEGIN
+		CREATE USER [MERCURIA\durgaprasad] FOR LOGIN [MERCURIA\durgaprasad] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\durgaprasad USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\durgaprasad]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\durgaprasad]
+		PRINT'MERCURIA\durgaprasad USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\durgaprasad] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\durgaprasad] FOR LOGIN [MERCURIA\durgaprasad] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\durgaprasad USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\durgaprasad]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\durgaprasad]
+		PRINT'MERCURIA\durgaprasad USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\fcase')
+	BEGIN
+		CREATE USER [MERCURIA\fcase] FOR LOGIN [MERCURIA\fcase] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\fcase USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\fcase]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\fcase]
+		PRINT'MERCURIA\fcase USER CREATED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\fcase] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\fcase] FOR LOGIN [MERCURIA\fcase] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\fcase USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\fcase]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\fcase]
+		PRINT'MERCURIA\fcase USER CREATED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\jlim')
+	BEGIN
+		CREATE USER [MERCURIA\jlim] FOR LOGIN [MERCURIA\jlim] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\jlim USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\jlim]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\jlim]
+		PRINT'MERCURIA\jlim USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\jlim] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\jlim] FOR LOGIN [MERCURIA\jlim] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\jlim USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\jlim]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\jlim]
+		PRINT'MERCURIA\jlim USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\gfoster')
+	BEGIN
+		CREATE USER [MERCURIA\gfoster] FOR LOGIN [MERCURIA\gfoster] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\gfoster USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\gfoster]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\gfoster]
+		PRINT'MERCURIA\gfoster USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\gfoster] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\gfoster] FOR LOGIN [MERCURIA\gfoster] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\gfoster USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\gfoster]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\gfoster]
+		PRINT'MERCURIA\gfoster USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\jspataro')
+	BEGIN
+		CREATE USER [MERCURIA\jspataro] FOR LOGIN [MERCURIA\jspataro] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\jspataro USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\jspataro]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\jspataro]
+		PRINT'MERCURIA\jspataro USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\jspataro] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\jspataro] FOR LOGIN [MERCURIA\jspataro] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\jspataro USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\jspataro]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\jspataro]
+		PRINT'MERCURIA\jspataro USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\kadhikari')
+	BEGIN
+		CREATE USER [MERCURIA\kadhikari] FOR LOGIN [MERCURIA\kadhikari] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\aabiola USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\kadhikari]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\kadhikari]
+		PRINT'MERCURIA\kadhikari USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\kadhikari] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\kadhikari] FOR LOGIN [MERCURIA\kadhikari] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\aabiola USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\kadhikari]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\kadhikari]
+		PRINT'MERCURIA\kadhikari USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\schandrashekhar')
+	BEGIN
+		CREATE USER [MERCURIA\schandrashekhar] FOR LOGIN [MERCURIA\schandrashekhar] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\schandrashekhar USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\schandrashekhar]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\schandrashekhar]
+		PRINT'MERCURIA\schandrashekhar USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\schandrashekhar] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\schandrashekhar] FOR LOGIN [MERCURIA\schandrashekhar] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\schandrashekhar USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\schandrashekhar]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\schandrashekhar]
+		PRINT'MERCURIA\schandrashekhar USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\skursner')
+	BEGIN
+		CREATE USER [MERCURIA\skursner] FOR LOGIN  [MERCURIA\skursner] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\skursner USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\skursner]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\skursner]
+		PRINT'MERCURIA\skursner USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\skursner] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\skursner] FOR LOGIN  [MERCURIA\skursner] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\skursner USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\skursner]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\skursner]
+		PRINT'MERCURIA\skursner USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\smantri')
+	BEGIN
+		CREATE USER [MERCURIA\smantri] FOR LOGIN [MERCURIA\smantri] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\smantri USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\smantri]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\smantri]
+		PRINT'MERCURIA\smantri USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\smantri] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\smantri] FOR LOGIN [MERCURIA\smantri] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\smantri USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\smantri]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\smantri]
+		PRINT'MERCURIA\smantri USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\smougeotte')
+	BEGIN
+		CREATE USER [MERCURIA\smougeotte] FOR LOGIN [MERCURIA\smougeotte] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\smougeotte USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\smougeotte]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\smougeotte]
+		PRINT'MERCURIA\smougeotte USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\smougeotte] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\smougeotte] FOR LOGIN [MERCURIA\smougeotte] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\smougeotte USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\smougeotte]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\smougeotte]
+		PRINT'MERCURIA\smougeotte USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'MERCURIA\tcservices_lab')
+	BEGIN
+		CREATE USER [MERCURIA\tcservices_lab] FOR LOGIN [MERCURIA\tcservices_lab] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\tcservices_lab USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\tcservices_lab]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\tcservices_lab]
+		PRINT'MERCURIA\tcservices_lab USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [MERCURIA\tcservices_lab] FROM WINDOWS WITH DEFAULT_DATABASE = [master]
+		CREATE USER [MERCURIA\tcservices_lab] FOR LOGIN [MERCURIA\tcservices_lab] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'MERCURIA\tcservices_lab USER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [MERCURIA\tcservices_lab]
+		ALTER ROLE stanford_developers ADD MEMBER [MERCURIA\tcservices_lab]
+		PRINT'MERCURIA\tcservices_lab USER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO
+
+IF EXISTS(SELECT 1 FROM sys.server_principals WHERE name = 'tdmservice')
+	BEGIN
+		CREATE USER [tdmservice] FOR LOGIN [tdmservice] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'tdmservice DBUSER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [tdmservice]
+		ALTER ROLE stanford_developers ADD MEMBER [tdmservice]
+		PRINT'tdmservice DBUSER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+ELSE
+	BEGIN
+		CREATE LOGIN [tdmservice] WITH PASSWORD ='tdmservice', CHECK_POLICY = OFF, CHECK_EXPIRATION = OFF, DEFAULT_DATABASE = [master]
+		PRINT'LOGINID tdmservice CREATED SUCCESSFULLY!!!!!'
+		CREATE USER [tdmservice] FOR LOGIN [tdmservice] WITH DEFAULT_SCHEMA=[ConfirmMgr]
+		PRINT'tdmservice DBUSER CREATED SUCCESSFULLY!!!!!'
+		ALTER ROLE [service_broker_cnfmgr] ADD MEMBER [tdmservice]
+		ALTER ROLE stanford_developers ADD MEMBER [tdmservice]
+		PRINT'tdmservice DBUSER ROLES ADDED SUCCESSFULLY!!!!!'
+	END
+GO

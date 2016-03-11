@@ -1,0 +1,7 @@
+
+Starting copy...
+SQLState = 37000, NativeError = 1934
+Error = [Microsoft][SQL Server Native Client 10.0][SQL Server]INSERT failed because the following SET options have incorrect settings: 'QUOTED_IDENTIFIER'. Verify that SET options are correct for use with indexed views and/or indexes on computed columns and/or filtered indexes and/or query notifications and/or XML data type methods and/or spatial index operations.
+
+BCP copy in failed
+Loading Reference Data RQMT Finished!!!

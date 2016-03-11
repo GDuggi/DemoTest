@@ -1,0 +1,282 @@
+<?xml version="1.0" standalone="yes"?>
+<AxDataSet>
+  <AxField>
+    <EditorType>CMBO</EditorType>
+    <FieldName>TRD_SYS_CODE</FieldName>
+    <DisplayName>Trading System</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Trading System Code. A: Affinity; J: JMS</HelpDisplay>
+    <DefaultValue>A,J</DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>TRD_SYS_ID</FieldName>
+    <DisplayName>Trade ID</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Trade ID</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>CMBO</EditorType>
+    <FieldName>SENDER_TYPE_IND</FieldName>
+    <DisplayName>Rqmt Indicator</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Trade Requirement Indicator Type code(CC, B, CS).</HelpDisplay>
+    <DefaultValue>B,CC,CS</DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>CMBO</EditorType>
+    <FieldName>SENDER_SN</FieldName>
+    <DisplayName>Rqmt Code</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Trade Requirement type code.</HelpDisplay>
+    <DefaultValue>XQBBP,XQCCP,XQCSP</DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>SENDER_REF</FieldName>
+    <DisplayName>Employee</DisplayName>
+    <Visible>T</Visible>
+    <Width>150</Width>
+    <HelpDisplay>Person who vaulted the document.</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CPTY_SN</FieldName>
+    <DisplayName>Cpty SN</DisplayName>
+    <Visible>T</Visible>
+    <Width>150</Width>
+    <HelpDisplay>Counterparty Short Name</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>SE_CPTY_SN</FieldName>
+    <DisplayName>Sempra Company</DisplayName>
+    <Visible>T</Visible>
+    <Width>150</Width>
+    <HelpDisplay>Sempra Company Short Name</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>TRD_SYS_VER</FieldName>
+    <DisplayName>Trade Version</DisplayName>
+    <Visible>T</Visible>
+    <Width>50</Width>
+    <HelpDisplay>Trade System Version</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CONTRACT_ID</FieldName>
+    <DisplayName>Contract ID</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Trade Contract ID</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>DATE_SENT</FieldName>
+    <DisplayName>Date Sent</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Date the contract was sent</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>SIGNED_FLAG</FieldName>
+    <DisplayName>Signed Flag</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Was the contract successfully transmitted</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>RQMT_ID</FieldName>
+    <DisplayName>Rqmt ID</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Trade Requirement ID</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>TRADE_RQMT_CONFIRM_ID</FieldName>
+    <DisplayName>Contirm ID</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Trade Requirement Confirm ID</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>TRADE_DT</FieldName>
+    <DisplayName>Trade Date</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Trade Date</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CDTY_CODE</FieldName>
+    <DisplayName>Commodity Code</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Commodity Code</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CDTY_GROUP</FieldName>
+    <DisplayName>Commodity Group Code</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Commodity Group Code</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>STTL_TYPE</FieldName>
+    <DisplayName>Settlement Type Code</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Settlement Type Code</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>INVOICEID</FieldName>
+    <DisplayName>Invoice ID</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Invoice ID</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>VALUEDATE</FieldName>
+    <DisplayName>Value Date</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Value Date</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CCY_CODE</FieldName>
+    <DisplayName>CCY Code</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Currency Code</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>SET_SHORT_CODE</FieldName>
+    <DisplayName>SG Entity (SC)</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>SG Entity Short Code</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CPTY_LEGAL_NAME</FieldName>
+    <DisplayName>CPTY Lgl</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>CPTY Legal Name</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CPTY_SHORT_CODE</FieldName>
+    <DisplayName>CPTY (SC))</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>CPTY Short Code</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CDTY_OVERRIDE</FieldName>
+    <DisplayName>CDTY Override</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>CDTY Override</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>USERID</FieldName>
+    <DisplayName>User ID</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>User ID</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>  
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>VERIFIED</FieldName>
+    <DisplayName>Verified</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Verified</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField> 
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>CDTY</FieldName>
+    <DisplayName>CDTY Code</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>CDTY Code</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>DOCUMENT_TYPE</FieldName>
+    <DisplayName>Document Type</DisplayName>
+    <Visible>T</Visible>
+    <Width>75</Width>
+    <HelpDisplay>Document Type</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>TRADE_DATE</FieldName>
+    <DisplayName>Trade Date</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Trade Date</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>START_DATE</FieldName>
+    <DisplayName>Start Date</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>Start Date</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+  <AxField>
+    <EditorType>TXT</EditorType>
+    <FieldName>END_DATE</FieldName>
+    <DisplayName>End Date</DisplayName>
+    <Visible>T</Visible>
+    <Width>120</Width>
+    <HelpDisplay>End Date</HelpDisplay>
+    <DefaultValue></DefaultValue>
+  </AxField>
+</AxDataSet>

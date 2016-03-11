@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Counterparty", "GetCptyInfo\Counterparty.csproj", "{E32BE42E-C5E6-47BD-9302-1E3FE1BD3A08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDocument", "GetDocument\GetDocument.csproj", "{438C0652-42F1-4EC7-870E-8CC1854E6AB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceTester", "WebServiceTester\WebServiceTester.csproj", "{05B20D6E-A913-4050-8080-F87F609A9D56}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E32BE42E-C5E6-47BD-9302-1E3FE1BD3A08} = {E32BE42E-C5E6-47BD-9302-1E3FE1BD3A08}
+		{438C0652-42F1-4EC7-870E-8CC1854E6AB6} = {438C0652-42F1-4EC7-870E-8CC1854E6AB6}
+		{1A9FC694-967D-4966-A304-97744DFF6C19} = {1A9FC694-967D-4966-A304-97744DFF6C19}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfirmationsManager", "ConfirmationsManager\ConfirmationsManager.csproj", "{1A9FC694-967D-4966-A304-97744DFF6C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServicePrototypeService", "WebServicePrototypeService\WebServicePrototypeService.csproj", "{8C76EB95-1383-46A4-9EFB-F6291B643615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaultService", "VaultService\VaultService.csproj", "{A70D4800-3255-4389-8483-C55B4049073F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E32BE42E-C5E6-47BD-9302-1E3FE1BD3A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32BE42E-C5E6-47BD-9302-1E3FE1BD3A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32BE42E-C5E6-47BD-9302-1E3FE1BD3A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32BE42E-C5E6-47BD-9302-1E3FE1BD3A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{438C0652-42F1-4EC7-870E-8CC1854E6AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438C0652-42F1-4EC7-870E-8CC1854E6AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438C0652-42F1-4EC7-870E-8CC1854E6AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438C0652-42F1-4EC7-870E-8CC1854E6AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B20D6E-A913-4050-8080-F87F609A9D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B20D6E-A913-4050-8080-F87F609A9D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B20D6E-A913-4050-8080-F87F609A9D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B20D6E-A913-4050-8080-F87F609A9D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A9FC694-967D-4966-A304-97744DFF6C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A9FC694-967D-4966-A304-97744DFF6C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A9FC694-967D-4966-A304-97744DFF6C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A9FC694-967D-4966-A304-97744DFF6C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C76EB95-1383-46A4-9EFB-F6291B643615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C76EB95-1383-46A4-9EFB-F6291B643615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C76EB95-1383-46A4-9EFB-F6291B643615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C76EB95-1383-46A4-9EFB-F6291B643615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70D4800-3255-4389-8483-C55B4049073F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70D4800-3255-4389-8483-C55B4049073F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70D4800-3255-4389-8483-C55B4049073F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70D4800-3255-4389-8483-C55B4049073F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

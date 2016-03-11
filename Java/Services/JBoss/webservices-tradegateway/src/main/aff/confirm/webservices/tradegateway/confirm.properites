@@ -1,0 +1,25 @@
+
+aff.confirm.trade.gateway=<gateway> \
+				<trading-system> \
+					<code>AFF</code> \
+					<description>Affinity Trading </description> \
+					<method>DB</method> \
+					<class-name>affinity.confirm.tradegateway.db.AffinityTradeInfo</class-name> \
+				</trading-system> \
+				<trading-system> \
+						<code>SYM</code> \
+						<description>Symphony Trading </description> \
+						<method>WEB</method> \
+						<user-id>ictspass</user-id> \
+						<web-service-url>http://affjb21:8080/WEOServiceUnitWar/AmphoraOpsMgrWS</web-service-url> \
+						<web-header-element>http://amphorainc.com/SSOHeader</web-header-element> \
+						<class-name>affinity.confirm.tradegateway.oil.SymphonyOilClient</class-name> \
+				</trading-system> \
+			</gateway>
+			
+aff.confirm.econfirm.alert_queue=ECONFIRM_TRADE_SUBMIT			
+aff.confirm.econfirm.url=https://staging.econfirm.com/ECFXmlMessaging/ECFXmlMessaging.class
+
+
+			
+					

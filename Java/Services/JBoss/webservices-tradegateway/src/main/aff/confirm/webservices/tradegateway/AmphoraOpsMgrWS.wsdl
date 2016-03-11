@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="OpsMgrWSService" targetNamespace="http://tc/OpsMgrWS" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tc/OpsMgrWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://tc/OpsMgrWS" version="1.0" xmlns:tns="http://tc/OpsMgrWS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="getContractFeedXML" type="tns:getContractFeedXML"/>
+<xs:element name="getContractFeedXMLResponse" type="tns:getContractFeedXMLResponse"/>
+<xs:element name="getTradeAlertMessageXML" type="tns:getTradeAlertMessageXML"/>
+<xs:element name="getTradeAlertMessageXMLResponse" type="tns:getTradeAlertMessageXMLResponse"/>
+<xs:element name="getTradeAlertOpsTrackXML" type="tns:getTradeAlertOpsTrackXML"/>
+<xs:element name="getTradeAlertOpsTrackXMLResponse" type="tns:getTradeAlertOpsTrackXMLResponse"/>
+<xs:complexType name="getTradeAlertOpsTrackXML">
+<xs:sequence>
+<xs:element name="tradeId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTradeAlertOpsTrackXMLResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getContractFeedXML">
+<xs:sequence>
+<xs:element name="tradeId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getContractFeedXMLResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTradeAlertMessageXML">
+<xs:sequence>
+<xs:element name="tradeId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTradeAlertMessageXMLResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getTradeAlertMessageXMLResponse">
+    <wsdl:part element="tns:getTradeAlertMessageXMLResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getContractFeedXML">
+    <wsdl:part element="tns:getContractFeedXML" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTradeAlertOpsTrackXMLResponse">
+    <wsdl:part element="tns:getTradeAlertOpsTrackXMLResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTradeAlertOpsTrackXML">
+    <wsdl:part element="tns:getTradeAlertOpsTrackXML" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTradeAlertMessageXML">
+    <wsdl:part element="tns:getTradeAlertMessageXML" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getContractFeedXMLResponse">
+    <wsdl:part element="tns:getContractFeedXMLResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OpsMgrWS">
+    <wsdl:operation name="getTradeAlertOpsTrackXML">
+      <wsdl:input message="tns:getTradeAlertOpsTrackXML" name="getTradeAlertOpsTrackXML">
+    </wsdl:input>
+      <wsdl:output message="tns:getTradeAlertOpsTrackXMLResponse" name="getTradeAlertOpsTrackXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContractFeedXML">
+      <wsdl:input message="tns:getContractFeedXML" name="getContractFeedXML">
+    </wsdl:input>
+      <wsdl:output message="tns:getContractFeedXMLResponse" name="getContractFeedXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTradeAlertMessageXML">
+      <wsdl:input message="tns:getTradeAlertMessageXML" name="getTradeAlertMessageXML">
+    </wsdl:input>
+      <wsdl:output message="tns:getTradeAlertMessageXMLResponse" name="getTradeAlertMessageXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OpsMgrWSServiceSoapBinding" type="tns:OpsMgrWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTradeAlertOpsTrackXML">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTradeAlertOpsTrackXML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTradeAlertOpsTrackXMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContractFeedXML">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getContractFeedXML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getContractFeedXMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTradeAlertMessageXML">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTradeAlertMessageXML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTradeAlertMessageXMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OpsMgrWSService">
+    <wsdl:port binding="tns:OpsMgrWSServiceSoapBinding" name="OpsMgrWSPort">
+      <soap:address location="http://172.16.170.42:8080/AmphoraWebServices/AmphoraOpsMgrWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

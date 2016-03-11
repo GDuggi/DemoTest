@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cnf/Integration" elementFormDefault="qualified" targetNamespace="http://cnf/Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63001/ConfirmationsManager.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetPermissionKeysResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="permissionKeyCodes" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="superUserFlag" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPermissionKeysResponse" nillable="true" type="tns:GetPermissionKeysResponse" />
+  <xs:complexType name="GetConfirmationTemplatesResponse">
+    <xs:sequence>
+      <xs:element name="confirmationTemplates" nillable="true" type="tns:ArrayOfconfirmationTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetConfirmationTemplatesResponse" nillable="true" type="tns:GetConfirmationTemplatesResponse" />
+  <xs:complexType name="ArrayOfconfirmationTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="confirmationTemplate" nillable="true" type="tns:confirmationTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfconfirmationTemplate" nillable="true" type="tns:ArrayOfconfirmationTemplate" />
+  <xs:complexType name="confirmationTemplate">
+    <xs:sequence>
+      <xs:element name="templateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="attributes" nillable="true" type="tns:ArrayOfattribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="confirmationTemplate" nillable="true" type="tns:confirmationTemplate" />
+  <xs:complexType name="ArrayOfattribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="attribute" nillable="true" type="tns:attribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfattribute" nillable="true" type="tns:ArrayOfattribute" />
+  <xs:complexType name="attribute">
+    <xs:sequence>
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="attribute" nillable="true" type="tns:attribute" />
+  <xs:complexType name="TradeConfirmationStatusChangeResponse">
+    <xs:sequence>
+      <xs:element name="success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradeConfirmationStatusChangeResponse" nillable="true" type="tns:TradeConfirmationStatusChangeResponse" />
+</xs:schema>

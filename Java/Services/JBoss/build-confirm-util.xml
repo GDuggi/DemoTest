@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project name="build-confirm-util"
+         xmlns:ac="antlib:net.sf.antcontrib">
+
+    <import file="build-include.xml"/>
+
+    <target name="deploy" if="JBOSS_HOME">
+        <copy todir="${JBOSS_DEPLOY}" file="${build.dir}/${ant.project.name}.sar" verbose="true"/>
+    </target>
+</project>

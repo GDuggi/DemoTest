@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://dms/Integration" elementFormDefault="qualified" targetNamespace="http://dms/Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11111/VaultService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="UploadDocumentRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectFormatInd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectStream" nillable="true" type="xs:base64Binary" />
+      <xs:element name="TradingSystemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadDocumentRequest" nillable="true" type="tns:UploadDocumentRequest" />
+  <xs:complexType name="UploadDocumentResponse">
+    <xs:sequence>
+      <xs:element name="Status" nillable="true" type="xs:string" />
+      <xs:element name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadDocumentResponse" nillable="true" type="tns:UploadDocumentResponse" />
+  <xs:complexType name="GetVersionInfoForDocumentRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocInfo" nillable="true" type="tns:ContractInfo" />
+      <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradingSystemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetVersionInfoForDocumentRequest" nillable="true" type="tns:GetVersionInfoForDocumentRequest" />
+  <xs:complexType name="ContractInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BookingCompShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CmdtyGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocID" type="xs:int" />
+      <xs:element minOccurs="0" name="DocName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLatestVersion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProfitCenter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeNum" type="xs:int" />
+      <xs:element minOccurs="0" name="TraderInit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionNum" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractInfo" nillable="true" type="tns:ContractInfo" />
+  <xs:complexType name="GetVersionInfoForResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueryResult" nillable="true" type="tns:ArrayOfContractInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetVersionInfoForResponse" nillable="true" type="tns:GetVersionInfoForResponse" />
+  <xs:complexType name="ArrayOfContractInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractInfo" nillable="true" type="tns:ContractInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractInfo" nillable="true" type="tns:ArrayOfContractInfo" />
+  <xs:complexType name="GetDocInfoForQueryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="QueryValues" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+      <xs:element name="TradingSystemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocInfoForQueryRequest" nillable="true" type="tns:GetDocInfoForQueryRequest" />
+  <xs:complexType name="GetDocInfoForQueryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueryResult" nillable="true" type="tns:ArrayOfContractInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocInfoForQueryResponse" nillable="true" type="tns:GetDocInfoForQueryResponse" />
+  <xs:complexType name="GetDocumentForURLRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element name="TradingSystemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocumentForURLRequest" nillable="true" type="tns:GetDocumentForURLRequest" />
+  <xs:complexType name="GetDocumentForURLResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectStream" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocumentForURLResponse" nillable="true" type="tns:GetDocumentForURLResponse" />
+</xs:schema>

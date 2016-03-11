@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://dms/VaultService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VaultService" targetNamespace="http://dms/VaultService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://dms/VaultService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://dms/Integration" />
+      <xs:element name="UploadDocument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q1:UploadDocumentRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UploadDocumentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://dms/Integration" minOccurs="0" name="UploadDocumentResult" nillable="true" type="q2:UploadDocumentResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetVersionInfoForDocument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q3:GetVersionInfoForDocumentRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetVersionInfoForDocumentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://dms/Integration" minOccurs="0" name="GetVersionInfoForDocumentResult" nillable="true" type="q4:GetVersionInfoForResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocInfoForQuery">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q5:GetDocInfoForQueryRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocInfoForQueryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://dms/Integration" minOccurs="0" name="GetDocInfoForQueryResult" nillable="true" type="q6:GetDocInfoForQueryResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocumentForURL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q7:GetDocumentForURLRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocumentForURLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://dms/Integration" minOccurs="0" name="GetDocumentForURLResult" nillable="true" type="q8:GetDocumentForURLResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://dms/Integration" elementFormDefault="qualified" targetNamespace="http://dms/Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="UploadDocumentRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ObjectFormatInd" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ObjectStream" nillable="true" type="xs:base64Binary" />
+          <xs:element name="TradingSystemCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UploadDocumentRequest" nillable="true" type="tns:UploadDocumentRequest" />
+      <xs:complexType name="UploadDocumentResponse">
+        <xs:sequence>
+          <xs:element name="Status" nillable="true" type="xs:string" />
+          <xs:element name="URL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UploadDocumentResponse" nillable="true" type="tns:UploadDocumentResponse" />
+      <xs:complexType name="GetVersionInfoForDocumentRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocInfo" nillable="true" type="tns:ContractInfo" />
+          <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TradingSystemCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetVersionInfoForDocumentRequest" nillable="true" type="tns:GetVersionInfoForDocumentRequest" />
+      <xs:complexType name="ContractInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BookingCompShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CmdtyGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocID" type="xs:int" />
+          <xs:element minOccurs="0" name="DocName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsLatestVersion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ProfitCenter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TradeNum" type="xs:int" />
+          <xs:element minOccurs="0" name="TraderInit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionNum" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ContractInfo" nillable="true" type="tns:ContractInfo" />
+      <xs:complexType name="GetVersionInfoForResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryResult" nillable="true" type="tns:ArrayOfContractInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetVersionInfoForResponse" nillable="true" type="tns:GetVersionInfoForResponse" />
+      <xs:complexType name="ArrayOfContractInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractInfo" nillable="true" type="tns:ContractInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfContractInfo" nillable="true" type="tns:ArrayOfContractInfo" />
+      <xs:complexType name="GetDocInfoForQueryRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="QueryValues" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+          <xs:element name="TradingSystemCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDocInfoForQueryRequest" nillable="true" type="tns:GetDocInfoForQueryRequest" />
+      <xs:complexType name="GetDocInfoForQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QueryResult" nillable="true" type="tns:ArrayOfContractInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDocInfoForQueryResponse" nillable="true" type="tns:GetDocInfoForQueryResponse" />
+      <xs:complexType name="GetDocumentForURLRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FeedType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+          <xs:element name="TradingSystemCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDocumentForURLRequest" nillable="true" type="tns:GetDocumentForURLRequest" />
+      <xs:complexType name="GetDocumentForURLResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ObjectStream" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDocumentForURLResponse" nillable="true" type="tns:GetDocumentForURLResponse" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfKeyValueOfstringstring">
+        <xs:annotation>
+          <xs:appinfo>
+            <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Key" nillable="true" type="xs:string" />
+                <xs:element name="Value" nillable="true" type="xs:string" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="VaultSvc_UploadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocument" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_UploadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetVersionInfoForDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInfoForDocument" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetVersionInfoForDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInfoForDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocInfoForQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocInfoForQuery" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocInfoForQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocInfoForQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocumentForURL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentForURL" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocumentForURL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentForURLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VaultSvc">
+    <wsdl:operation name="UploadDocument">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/UploadDocument" message="tns:VaultSvc_UploadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/UploadDocumentResponse" message="tns:VaultSvc_UploadDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionInfoForDocument">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/GetVersionInfoForDocument" message="tns:VaultSvc_GetVersionInfoForDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/GetVersionInfoForDocumentResponse" message="tns:VaultSvc_GetVersionInfoForDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoForQuery">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/GetDocInfoForQuery" message="tns:VaultSvc_GetDocInfoForQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/GetDocInfoForQueryResponse" message="tns:VaultSvc_GetDocInfoForQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentForURL">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/GetDocumentForURL" message="tns:VaultSvc_GetDocumentForURL_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/GetDocumentForURLResponse" message="tns:VaultSvc_GetDocumentForURL_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_VaultSvc" type="tns:VaultSvc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadDocument">
+      <soap:operation soapAction="http://dms/VaultService/VaultSvc/UploadDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionInfoForDocument">
+      <soap:operation soapAction="http://dms/VaultService/VaultSvc/GetVersionInfoForDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoForQuery">
+      <soap:operation soapAction="http://dms/VaultService/VaultSvc/GetDocInfoForQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentForURL">
+      <soap:operation soapAction="http://dms/VaultService/VaultSvc/GetDocumentForURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VaultService">
+    <wsdl:port name="BasicHttpBinding_VaultSvc" binding="tns:BasicHttpBinding_VaultSvc">
+      <soap:address location="http://localhost:11111/VaultService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

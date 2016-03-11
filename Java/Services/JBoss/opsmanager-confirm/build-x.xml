@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<project name="OpsManagerConfirmLib" default="publish">
+    <property name="ant_include_dir" location="../../../../../../Antbuild/include"/>
+    <import file="${ant_include_dir}/build-include.xml" optional="false"/>
+</project>

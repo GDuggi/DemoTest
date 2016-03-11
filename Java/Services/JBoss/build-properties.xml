@@ -1,0 +1,44 @@
+<project name="build-properties" xmlns:ac="antlib:net.sf.antcontrib">
+
+    <ac:if>
+        <not>
+            <isset property="project.basedir"/>
+        </not>
+        <ac:then>
+            <property name="project.basedir" location="${basedir}/.."/>
+            <property name="module.basedir" location="${basedir}"/>
+
+            <property name="userproperty.file" location="${user.home}/build.properties"/>
+            <property name="moduleproperty.file" location="${module.basedir}/build.properties"/>
+            <property name="projectproperty.file" location="${project.basedir}/build.properties"/>
+
+            <echo message="Loading user properties from ${userproperty.file}"/>
+            <property file="${userproperty.file}"/>
+
+            <echo message="Loading module properties from ${moduleproperty.file}"/>
+            <property file="${moduleproperty.file}"/>
+
+            <echo message="Loading project properties from ${projectproperty.file}"/>
+            <property file="${projectproperty.file}"/>
+
+            <tstamp>
+                <format property="now" pattern="yyyyMMddHHmmss"/>
+            </tstamp>
+
+            <property environment="env."/>
+            <property name="hostname" value="${env.COMPUTERNAME}"/>
+
+            <!-- Some deployment vars -->
+            <ac:if>
+                <isset property="env.JBOSS_HOME"/>
+                <ac:then>
+                    <property name="JBOSS_HOME" value="${env.JBOSS_HOME}"/>
+                    <property name="JBOSS_DEPLOY" value="${env.JBOSS_HOME}/standalone/deployments"/>
+                    <property name="JBOSS_CONFIG" value="${env.JBOSS_HOME}/standalone/configuration"/>
+                    <property name="JBOSS_MODULE" value="${env.JBOSS_HOME}/modules"/>
+                </ac:then>
+            </ac:if>
+        </ac:then>
+    </ac:if>
+
+</project>

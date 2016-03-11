@@ -1,0 +1,5 @@
+Startup Loading Ref Data on RQMT Table
+Msg 1934, Level 16, State 1, Server CNF02INFDBS01\SQLSVR11, Line 21
+INSERT failed because the following SET options have incorrect settings: 'QUOTED_IDENTIFIER'. Verify that SET options are correct for use with indexed views and/or indexes on computed columns and/or filtered indexes and/or query notifications and/or
+ XML data type methods and/or spatial index operations.
+LOAD REF DATA ON RQMT TABLE FINISHED

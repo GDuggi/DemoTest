@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Templates>
+  <Template>
+    <TemplateName>OIL.BONITO.EXCH</TemplateName>
+  </Template>
+  <Template>
+    <TemplateName>OIL.NAPHTHA.OSN.ASIA</TemplateName>
+  </Template>
+  <Template>
+    <TemplateName>OIL.NAPHTHA.OSN.ASIA.CARGILL</TemplateName>
+  </Template>
+  <Template>
+    <TemplateName>OIL.NAPHTHA.OSN.ASIA.SIETCO</TemplateName>
+  </Template>
+  <Template>
+    <TemplateName>OIL.NAPHTHA.PHYSICAL.CFR.ASIA</TemplateName>
+  </Template>
+  <Template>
+    <TemplateName>OIL.OPTION.ISDA.PARTY.A</TemplateName>
+  </Template>
+</Templates>

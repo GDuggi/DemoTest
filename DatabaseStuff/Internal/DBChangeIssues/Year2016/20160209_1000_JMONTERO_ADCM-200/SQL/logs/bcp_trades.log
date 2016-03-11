@@ -1,0 +1,7 @@
+
+Starting copy...
+200 rows sent to SQL Server. Total sent: 200
+
+347 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (4448.72 rows per sec.)

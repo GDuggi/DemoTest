@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ImportDocIntoVault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docFileURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldNames" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValues" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="onBehalfUserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="deleteFileAfterVault" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDocIntoVaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportDocIntoVaultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDocIntoVaultByVaultType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vaultType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docFileURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldNames" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValues" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="onBehalfUserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="deleteFileAfterVault" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDocIntoVaultByVaultTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportDocIntoVaultByVaultTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDocByStream">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldNames" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValues" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="onBehalfUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDocByStreamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportDocByStreamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDocByStreamByVaultType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vaultType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldNames" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValues" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="onBehalfUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDocByStreamByVaultTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportDocByStreamByVaultTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocFromVault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="directory" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocFromVaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocFromVaultResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileLocation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocFromVaultByVaultType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vaultType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="directory" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocFromVaultByVaultTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocFromVaultByVaultTypeResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileLocation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestDocStream">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestDocStreamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLatestDocStreamResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docStream" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestDocString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docResourceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestDocStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLatestDocStringResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docStream" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="docRepository" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldNames" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValues" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="latestVersionOnly" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dslName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Hello">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="callerName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ImportDocIntoVaultSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportDocIntoVault" />
+  </wsdl:message>
+  <wsdl:message name="ImportDocIntoVaultSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportDocIntoVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportDocIntoVaultByVaultTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportDocIntoVaultByVaultType" />
+  </wsdl:message>
+  <wsdl:message name="ImportDocIntoVaultByVaultTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportDocIntoVaultByVaultTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportDocByStreamSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportDocByStream" />
+  </wsdl:message>
+  <wsdl:message name="ImportDocByStreamSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportDocByStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportDocByStreamByVaultTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportDocByStreamByVaultType" />
+  </wsdl:message>
+  <wsdl:message name="ImportDocByStreamByVaultTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportDocByStreamByVaultTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocFromVaultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocFromVault" />
+  </wsdl:message>
+  <wsdl:message name="GetDocFromVaultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocFromVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocFromVaultByVaultTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocFromVaultByVaultType" />
+  </wsdl:message>
+  <wsdl:message name="GetDocFromVaultByVaultTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocFromVaultByVaultTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestDocStreamSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestDocStream" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestDocStreamSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestDocStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestDocStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestDocString" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestDocStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestDocStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentList" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloSoapIn">
+    <wsdl:part name="parameters" element="tns:Hello" />
+  </wsdl:message>
+  <wsdl:message name="HelloSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SempraDocWSSoap">
+    <wsdl:operation name="ImportDocIntoVault">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Imports a document to a vault defined by Web.Config file.</wsdl:documentation>
+      <wsdl:input message="tns:ImportDocIntoVaultSoapIn" />
+      <wsdl:output message="tns:ImportDocIntoVaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocIntoVaultByVaultType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Imports a document to a vault defined by Web.Config file.</wsdl:documentation>
+      <wsdl:input message="tns:ImportDocIntoVaultByVaultTypeSoapIn" />
+      <wsdl:output message="tns:ImportDocIntoVaultByVaultTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocByStream">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Import document by stream</wsdl:documentation>
+      <wsdl:input message="tns:ImportDocByStreamSoapIn" />
+      <wsdl:output message="tns:ImportDocByStreamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocByStreamByVaultType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Import document by stream using specific vault</wsdl:documentation>
+      <wsdl:input message="tns:ImportDocByStreamByVaultTypeSoapIn" />
+      <wsdl:output message="tns:ImportDocByStreamByVaultTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFromVault">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves document from vault defined by Web.Config file. Writes this document to specific directory.</wsdl:documentation>
+      <wsdl:input message="tns:GetDocFromVaultSoapIn" />
+      <wsdl:output message="tns:GetDocFromVaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFromVaultByVaultType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves document from vault by vault type (AX or SP). Writes this document to specific directory.</wsdl:documentation>
+      <wsdl:input message="tns:GetDocFromVaultByVaultTypeSoapIn" />
+      <wsdl:output message="tns:GetDocFromVaultByVaultTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestDocStream">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the latest version document.  Returns document stream back to caller.</wsdl:documentation>
+      <wsdl:input message="tns:GetLatestDocStreamSoapIn" />
+      <wsdl:output message="tns:GetLatestDocStreamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestDocString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the latest version of a document.  Returns document string back to caller.</wsdl:documentation>
+      <wsdl:input message="tns:GetLatestDocStringSoapIn" />
+      <wsdl:output message="tns:GetLatestDocStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of ducument IDs based on indexes and value criteria.  Returns latest version only if latestVersionOnly flag is true</wsdl:documentation>
+      <wsdl:input message="tns:GetDocumentListSoapIn" />
+      <wsdl:output message="tns:GetDocumentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test WS:  Returns Hello to client</wsdl:documentation>
+      <wsdl:input message="tns:HelloSoapIn" />
+      <wsdl:output message="tns:HelloSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SempraDocWSSoap" type="tns:SempraDocWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ImportDocIntoVault">
+      <soap:operation soapAction="http://tempuri.org/ImportDocIntoVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocIntoVaultByVaultType">
+      <soap:operation soapAction="http://tempuri.org/ImportDocIntoVaultByVaultType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocByStream">
+      <soap:operation soapAction="http://tempuri.org/ImportDocByStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocByStreamByVaultType">
+      <soap:operation soapAction="http://tempuri.org/ImportDocByStreamByVaultType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFromVault">
+      <soap:operation soapAction="http://tempuri.org/GetDocFromVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFromVaultByVaultType">
+      <soap:operation soapAction="http://tempuri.org/GetDocFromVaultByVaultType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestDocStream">
+      <soap:operation soapAction="http://tempuri.org/GetLatestDocStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestDocString">
+      <soap:operation soapAction="http://tempuri.org/GetLatestDocString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentList">
+      <soap:operation soapAction="http://tempuri.org/GetDocumentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <soap:operation soapAction="http://tempuri.org/Hello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SempraDocWSSoap12" type="tns:SempraDocWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ImportDocIntoVault">
+      <soap12:operation soapAction="http://tempuri.org/ImportDocIntoVault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocIntoVaultByVaultType">
+      <soap12:operation soapAction="http://tempuri.org/ImportDocIntoVaultByVaultType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocByStream">
+      <soap12:operation soapAction="http://tempuri.org/ImportDocByStream" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDocByStreamByVaultType">
+      <soap12:operation soapAction="http://tempuri.org/ImportDocByStreamByVaultType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFromVault">
+      <soap12:operation soapAction="http://tempuri.org/GetDocFromVault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFromVaultByVaultType">
+      <soap12:operation soapAction="http://tempuri.org/GetDocFromVaultByVaultType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestDocStream">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestDocStream" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestDocString">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestDocString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentList">
+      <soap12:operation soapAction="http://tempuri.org/GetDocumentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hello">
+      <soap12:operation soapAction="http://tempuri.org/Hello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SempraDocWS">
+    <wsdl:port name="SempraDocWSSoap" binding="tns:SempraDocWSSoap">
+      <soap:address location="http://stfaxgateway/SempraDocumentWebService/SempraDocWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SempraDocWSSoap12" binding="tns:SempraDocWSSoap12">
+      <soap12:address location="http://stfaxgateway/SempraDocumentWebService/SempraDocWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

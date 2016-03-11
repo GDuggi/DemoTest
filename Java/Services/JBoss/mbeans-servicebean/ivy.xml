@@ -1,0 +1,19 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="aff.confirm" module="AffServiceBean"/>
+
+    <configurations>
+        <include file="${project.basedir}/ivy-configurations.xml"/>
+    </configurations>
+
+    <publications>
+        <artifact name="AffServiceBean" type="jar"/>
+    </publications>
+
+    <dependencies defaultconf="default">
+        <dependency org="com.jboss" name="jboss-logging" rev="3.1.+"/>
+    </dependencies>
+
+</ivy-module>

@@ -1,0 +1,8 @@
+select id from infinity_mgr.ext_notify_margin
+where prmnt_trade_confirm_id in
+(
+select prmnt_id from infinity_mgr.trade_confirm
+where confirm_status_ind='C'
+and exp_dt='31-dec-2299'
+)
+and margin_response_proc_flag is not null

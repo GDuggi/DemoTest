@@ -1,0 +1,23 @@
+
+aff.confirm.trade.gateway=<gateway> \
+				<trading-system> \
+					<code>AFF</code> \
+					<description>Affinity Trading </description> \
+					<method>DB</method> \
+					<class-name>affinity.confirm.tradegateway.db.AffinityTradeInfo</class-name> \
+				</trading-system> \
+				<trading-system> \
+						<code>SYM</code> \
+						<description>Symphony Trading </description> \
+						<method>WEB</method> \
+						<web-service-url>http://stfaxgateway/Symphony/OpsDataFeed.svc</web-service-url> \
+						<class-name>affinity.confirm.tradegateway.ws.SymphonyTradeInfo</class-name> \
+				</trading-system> \
+			</gateway>
+			
+aff.confirm.econfirm.alert_queue=ECONFIRM_TRADE_SUBMIT			
+aff.confirm.econfirm.url=https://staging.econfirm.com/ECFXmlMessaging/ECFXmlMessaging.class
+
+
+			
+					

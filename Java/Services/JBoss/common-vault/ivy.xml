@@ -1,0 +1,28 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="cnf" module="cnf-VaultLib"/>
+
+    <configurations>
+         <include file="${project.basedir}/ivy-configurations.xml"/>
+     </configurations>
+
+    <publications>
+        <artifact type="jar" conf="master"/>
+    </publications>
+
+    <dependencies defaultconf="default">
+        <dependency org="org.apache.axis" name="axis" rev="1.4">
+            <artifact name="axis" type="jar"/>
+        </dependency>
+        <dependency org="javax.xml" name="jaxrpc-api" rev="1.1">
+            <artifact name="jaxrpc-api" type="jar"/>
+        </dependency>
+
+        <dependency org="com.jboss" name="jboss-logging" rev="3.1.2"/>
+
+        <dependency name="cnf-SempraDocWSLib" rev="latest.integration" changing="true"/>
+    </dependencies>
+
+</ivy-module>

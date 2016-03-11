@@ -1,0 +1,87 @@
+<?xml-stylesheet type="text/xsl" href="http://www.ivyrep.org/ivy-doc.xsl"?>
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="cnf" module="cnf-ConfMgrGUI" />        
+  
+    <configurations>
+      <conf name="default" />
+      <conf name="build" visibility="private" />
+      <conf name="test" visibility="private" extends="default" />
+    </configurations>    
+    <publications>
+      <artifact name="ConfMgr"  type="zip" ext="zip" />    
+    </publications> 
+	
+    <dependencies >
+      <dependency org="apache" name="log4net" rev="1.2.11.0" />
+	  <dependency org="aff.sif" name="Aff.Sif.MessageBusClient" rev="1.0.0.+" changing="true" transitive="true"  />
+	  <dependency org="aff.sif" name="aff-sif-Apache.NMS.Stomp" rev="1.5.5.+" changing="true" transitive="true"  />
+	  <dependency org="sautinsoft" name="PdfMetamorphosis" rev="5.5.9.13"/>
+	  <dependency org="microsoft" name="web" rev="1.0.0.0">
+		<artifact  name="System.Net.Http"  type="dll"/>
+	  </dependency>
+	  
+	  <dependency org="devexpress" name="devexpress" rev="15.1.6.0">
+		<artifact  name="DevExpress.BonusSkins.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.Charts.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.CodeConverter.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.Data.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.Office.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.Pdf.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.Pdf.v15.1.Drawing"  type="dll"/>
+		<artifact  name="DevExpress.PivotGrid.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.Printing.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.RichEdit.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.Sparkline.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.SpellChecker.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.Spreadsheet.v15.1.Core"  type="dll"/>
+		<artifact  name="DevExpress.Utils.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraBars.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraCharts.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraCharts.v15.1.Wizard"  type="dll"/>
+		<artifact  name="DevExpress.XtraEditors.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraGrid.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraLayout.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraNavBar.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraPdfViewer.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraPivotGrid.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraPrinting.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraReports.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraReports.v15.1.Extensions"  type="dll"/>
+		<artifact  name="DevExpress.XtraRichEdit.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraRichEdit.v15.1.Extensions"  type="dll"/>
+		<artifact  name="DevExpress.XtraSpellChecker.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraSpreadsheet.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraTreeList.v15.1"  type="dll"/>
+		<artifact  name="DevExpress.XtraVerticalGrid.v15.1"  type="dll"/>
+	  </dependency>
+	  
+      <dependency org="leadtools" name="win32" rev="17.5.4.0">
+		<artifact  name="Leadtools.Annotations"  type="dll"/>
+		<artifact  name="Leadtools.Codecs.Cmp"  type="dll"/>
+		<artifact  name="Leadtools.Codecs"  type="dll"/>
+		<artifact  name="Leadtools.Codecs.Fax"  type="dll"/>
+		<artifact  name="Leadtools.Codecs.Jbg"  type="dll"/>
+		<artifact  name="Leadtools.Codecs.Tfx"  type="dll"/>
+		<artifact  name="Leadtools.Codecs.Tif"  type="dll"/>
+		<artifact  name="Leadtools.Codecs.Txt"  type="dll"/>
+		<artifact  name="Leadtools.ColorConversion"  type="dll"/>
+		<artifact  name="Leadtools.Dicom.Annotations.Core"  type="dll"/>
+		<artifact  name="Leadtools.Dicom.Annotations"  type="dll"/>
+		<artifact  name="Leadtools.Dicom"  type="dll"/>
+		<artifact  name="Leadtools"  type="dll"/>
+		<artifact  name="Leadtools.Drawing"  type="dll"/>
+		<artifact  name="Leadtools.ImageProcessing.Core"  type="dll"/>
+		<artifact  name="Leadtools.ImageProcessing.Utilities"  type="dll"/>
+		<artifact  name="Leadtools.Kernel.Annotations"  type="dll"/>
+		<artifact  name="Leadtools.Pdf"  type="dll"/>
+		<artifact  name="Leadtools.Windows.Annotations"  type="dll"/>
+		<artifact  name="Leadtools.Windows.Controls"  type="dll"/>
+		<artifact  name="Leadtools.WinForms.CommonDialogs.Color"  type="dll"/>
+		<artifact  name="Leadtools.WinForms.CommonDialogs.File"  type="dll"/>
+		<artifact  name="Leadtools.WinForms"  type="dll"/>
+	  </dependency>
+	  <!--<dependency org="microsoft" name="MSBuild.ExtensionPack" rev="1.6.0" conf="build->default"/>-->
+    </dependencies>
+</ivy-module>

@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InboundFileProcessor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TimerIntervalMinutes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ValidFileExt" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">doc,docx,htm,html,pdf,rtf,tif,txt,xls,xlsx</Value>
+    </Setting>
+    <Setting Name="DebugLogEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LeadtoolsLicenseFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Amphora Inc.-DOCIMG_RASPDFR175.lic</Value>
+    </Setting>
+    <Setting Name="LeadtoolsDeveloperKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">5cxfXs1TnpaXbVXDIdFzk9iRWcBBLjcIoN2W3sVpvDPvoNzYNmOr1zmYg3qhCnFE</Value>
+    </Setting>
+    <Setting Name="SqlConnectionIntegratedSecurityString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Server=CNF01INFDBS01\SQLSVR11;Database=cnf_mgr;integrated security=sspi;</Value>
+    </Setting>
+    <Setting Name="ScanDirectories" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;\\cnf01inf01\CNF01\InboundDocs&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="OutputDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\homeware\cnf-InboundFileProcessorService\InboundFiles\ConvertedTIFs</Value>
+    </Setting>
+    <Setting Name="ProcessedDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\homeware\cnf-InboundFileProcessorService\InboundFiles\processed</Value>
+    </Setting>
+    <Setting Name="FailedDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\cnf01inf01\CNF01\InboundDocs-Failed</Value>
+    </Setting>
+    <Setting Name="EmailHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AFF01INFMAIL</Value>
+    </Setting>
+    <Setting Name="EmailPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="EmailNotifyAddresses" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">jvega@amphorainc.com</Value>
+    </Setting>
+    <Setting Name="EmailEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EmailSenderDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">amphorainc.com</Value>
+    </Setting>
+    <Setting Name="FailedSubDirConvert" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FailedToConvert</Value>
+    </Setting>
+    <Setting Name="FailedSubDirUnsupported" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Unsupported</Value>
+    </Setting>
+    <Setting Name="DeleteTIFEnabled" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

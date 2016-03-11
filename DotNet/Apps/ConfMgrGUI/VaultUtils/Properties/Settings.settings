@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VaultUtils.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="VaultUtils_SempraDocWS_SempraDocWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://stfaxgateway/SempraDocumentWebService/SempraDocWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

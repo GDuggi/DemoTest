@@ -1,0 +1,2 @@
+Main-Class: cnf.docflow.mdbclient.TestMercuriaTradeAlertProcessorMDB
+Class-Path: lib/jboss-as-client-all-7.1.2.jar lib/sqljdbc-4.0.jar

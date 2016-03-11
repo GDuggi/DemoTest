@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="cnf-ConfMgrUserRolesGUI" default="all" basedir=".">
+
+    <tstamp/>    
+
+    <property environment="env"/>
+    <property file="build.properties"/>
+    
+    <property name="base.build.dir" value="${basedir}"/>
+    <property name="dot.net.target" value="net-4.0"/>
+    
+    <property name="csharp-dir" value="${basedir}"/>
+    <property name="setups-dir" value="${basedir}/etc/setup/installs" />
+
+    <property name="ivy.confs" value="default" />
+    <property name="ivy.file" value="${basedir}/ivy.xml"/>
+    <property name="ivy.lib.dir" value="Lib" />
+    <property name="ivy.resolve.conf" value="default,build,test"/>
+    <property name="ivy.resolve.pattern" value="${ivy.lib.dir}/[artifact].[ext]"/>
+    <property name="build.dir" value="${basedir}/build" />
+    <property name="ivy.publish.pattern" value="${build.dir}/[artifact].[ext]"/>
+    <property name="ivy.publish.conf" value="default" />
+    <import file="${base.build.dir}/build-ivy.xml" optional="false"/>
+    <!--<property name="msbuild.path" value="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\msbuild.exe" /> -->
+    <property name="msbuild.path" value="C:\Program Files (x86)\MSBuild\12.0\Bin\msbuild.exe" />
+    <property name="solution.path" value="${basedir}/ConfMgr_UserRolesGUI.sln" />
+    <property name="msbuild.proj.path" value="${basedir}/msbuild.proj" />
+    <property name="build.env" value="Debug" />
+
+  <property name="major.version" value="1" />
+  <property name="minor.version" value="0" />
+  <property name="version.prefix" value="${major.version}.${minor.version}.0" />
+  
+
+  <target name="local">
+      <property name="ivy.mode" value="local" />
+    </target>
+
+    <target name="trunk">
+      <property name="ivy.mode" value="trunk" />
+    </target>
+
+    <target name="release">
+      <property name="ivy.mode" value="release" />
+    </target>
+
+    <target name="all"
+            depends="clean, ivy-retrieve, compile, create-artifacts, publish"/>
+  
+    
+    <target name="after-first-checkout">
+      <antcall target="ivy-retrieve" />
+    </target>
+
+    <target name="clean">
+        <echo message="Cleaning up bin directory"/>
+        <mkdir dir="${build.dir}" />
+        <delete>
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+				<exclude name="**/*.pdb" /> 
+            </fileset>
+        </delete>
+      
+    </target>
+
+    <target name="compile">
+      <exec failonerror="true" 
+            executable="${msbuild.path}">
+        <arg file="${msbuild.proj.path}" />
+        <arg value="/target:Build" />                
+        <arg value="/p:WarningLevel=2" />
+        <arg value="/p:MajorVersion=${major.version}" />
+        <arg value="/p:MinorVersion=${minor.version}" />
+        <arg value="/p:Revision=${env.BUILD_NUMBER}" />
+      </exec>            
+    </target>
+
+
+  <!--<macrodef name="create-artifact-zip">
+    <attribute name="project-name" />
+    <attribute name="prefix-dir" />
+    <sequential>
+      <zip destfile="${build.dir}/WebRouter.zip">
+        <fileset dir="${basedir}/WebServiceRouter/bin/${build.env}">
+          <include name="**/*" />
+          <exclude name="**/*.config" />          
+        </fileset>                        
+      </zip>
+    </sequential>
+  </macrodef>-->
+
+  <target name="create-artifacts" ><!--depends="create-artifact-zip">-->
+    <!-- Windows services artifacts -->   
+	<sequential>
+      <zip destfile="${build.dir}/ConfMgr_UserRolesGUI.zip">
+        <fileset dir="${basedir}/ConfMgr_UserRolesUI/bin/${build.env}">
+          <include name="**/*" />
+          <exclude name="**/*.pdb"/>           
+        </fileset>                        
+      </zip>
+    </sequential>
+  </target>
+    
+	<target name="publish">      
+      <echo message="${version.prefix}" />
+      <property name="version" value="${version.prefix}.${env.BUILD_NUMBER}" />
+      <antcall target="ivy-publish" />		
+	  </target>    
+
+</project>

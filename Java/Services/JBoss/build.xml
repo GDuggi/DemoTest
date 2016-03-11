@@ -1,0 +1,68 @@
+<project name="all" xmlns:ivy="antlib:org.apache.ivy.ant" default="all">
+
+    <macrodef name="call-buildlist">
+        <attribute name="target" default=""/>
+        <sequential>
+            <subant target="@{target}" buildpathref="build-path">
+                <propertyset>
+                    <propertyref prefix="ivy.mode"/>
+                </propertyset>
+            </subant>
+        </sequential>
+    </macrodef>
+
+    <target name="buildlist">
+        <property name="project.basedir" value="${basedir}"/>
+
+        <ivy:buildlist reference="build-path" onMissingDescriptor="skip">
+            <fileset dir="${basedir}" includes="?*/build.xml"/>
+        </ivy:buildlist>
+
+        <echo message="Build list=${toString:build-path}"/>
+    </target>
+
+    <target name="clean" depends="buildlist" description="Clean all projects">
+        <call-buildlist target="clean"/>
+    </target>
+
+    <target name="clean-ant" depends="buildlist" description="Clean all projects of build, generated and libs used by ANT">
+        <call-buildlist target="clean-ant"/>
+    </target>
+
+    <target name="clean-ide" depends="buildlist" description="Clean all projects of libs used by IDE build">
+        <call-buildlist target="clean-ide"/>
+    </target>
+
+    <target name="clean-cache" depends="buildlist" description="Clean Ivy cache">
+        <ivy:cleancache/>
+    </target>
+
+    <target name="trunk" description="sets ivy.mode=trunk">
+        <property name="ivy.mode" value="trunk"/>
+    </target>
+
+    <target name="release" description="sets ivy.mode=release">
+        <property name="ivy.mode" value="release"/>
+    </target>
+
+    <target name="target" depends="buildlist" description="Call any target for each build in the buildlist">
+        <input message="What target?" addproperty="target"/>
+        <call-buildlist target="${target}"/>
+    </target>
+
+    <target name="ide" depends="buildlist" description="Get libraries for IDE">
+        <call-buildlist target="ide"/>
+    </target>
+
+    <target name="quick" depends="buildlist" description="Performs compile,archive,deploy steps">
+        <call-buildlist target="quick"/>
+    </target>
+
+    <target name="build" depends="buildlist" description="Build the project and publish to IVY">
+        <call-buildlist/>
+    </target>
+
+    <target name="all" depends="buildlist" description="Performs all steps">
+        <call-buildlist target="all"/>
+    </target>
+</project>

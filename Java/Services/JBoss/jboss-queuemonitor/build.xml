@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<project name="cnf-QueueMonitorService" default="build">
+    <echo message="In build file: ${ant.file}"/>
+    <import file="../build-confirm-util.xml"/>
+</project>
+

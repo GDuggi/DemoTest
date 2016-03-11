@@ -1,0 +1,8 @@
+<configurations defaultconfmapping="sources->@(); javadocs->@(); %->@(default)">
+    <conf name="default" extends="master"/>
+    <conf name="master"/>
+    <conf name="sources"/>
+    <conf name="javadocs"/>
+    <conf name="test" extends="default" visibility="private" description="Test compilation and execution phases."/>
+    <conf name="ide" extends="test" visibility="private" description="For IDE module, does not included proj"/>
+</configurations>

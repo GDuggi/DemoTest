@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F5A5C92-C2DF-499E-8FB4-3E6849BC074E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConfirmInbound</RootNamespace>
+    <AssemblyName>ConfirmInbound</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Data.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Printing.v15.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.Utils.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.XtraBars.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.XtraEditors.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.XtraGrid.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.XtraLayout.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DevExpress.XtraPrinting.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools">
+      <HintPath>..\Lib\Leadtools.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations">
+      <HintPath>..\Lib\Leadtools.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs">
+      <HintPath>..\Lib\Leadtools.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cmp">
+      <HintPath>..\Lib\Leadtools.Codecs.Cmp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Fax">
+      <HintPath>..\Lib\Leadtools.Codecs.Fax.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jbg">
+      <HintPath>..\Lib\Leadtools.Codecs.Jbg.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tfx">
+      <HintPath>..\Lib\Leadtools.Codecs.Tfx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tif">
+      <HintPath>..\Lib\Leadtools.Codecs.Tif.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Txt">
+      <HintPath>..\Lib\Leadtools.Codecs.Txt.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ColorConversion">
+      <HintPath>..\Lib\Leadtools.ColorConversion.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Dicom">
+      <HintPath>..\Lib\Leadtools.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Dicom.Annotations">
+      <HintPath>..\Lib\Leadtools.Dicom.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Dicom.Annotations.Core">
+      <HintPath>..\Lib\Leadtools.Dicom.Annotations.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing">
+      <HintPath>..\Lib\Leadtools.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Core">
+      <HintPath>..\Lib\Leadtools.ImageProcessing.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Utilities">
+      <HintPath>..\Lib\Leadtools.ImageProcessing.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Kernel.Annotations">
+      <HintPath>..\Lib\Leadtools.Kernel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Pdf">
+      <HintPath>..\Lib\Leadtools.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Annotations">
+      <HintPath>..\Lib\Leadtools.Windows.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Controls">
+      <HintPath>..\Lib\Leadtools.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms">
+      <HintPath>..\Lib\Leadtools.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms.CommonDialogs.Color">
+      <HintPath>..\Lib\Leadtools.WinForms.CommonDialogs.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms.CommonDialogs.File">
+      <HintPath>..\Lib\Leadtools.WinForms.CommonDialogs.File.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LuceneUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\LuceneUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMatchVerifyException.cs" />
+    <Compile Include="CommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentForm.Designer.cs">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultFaxTransmitParams.cs" />
+    <Compile Include="DocumentEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentEditor.Designer.cs">
+      <DependentUpon>DocumentEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentSplitter.cs" />
+    <Compile Include="DocumentTransmitter.cs" />
+    <Compile Include="DtoViewConverter.cs" />
+    <Compile Include="FilterUtil.cs" />
+    <Compile Include="frmAssignFaxNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignFaxNo.Designer.cs">
+      <DependentUpon>frmAssignFaxNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IInbound.cs" />
+    <Compile Include="ImageDtoExtensions.cs" />
+    <Compile Include="ImagesSelectedEventArgs.cs" />
+    <Compile Include="ImagesSavingEventArgs.cs" />
+    <Compile Include="ImagesEventManager.cs" />
+    <Compile Include="InboundPnl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InboundPnl.Designer.cs">
+      <DependentUpon>InboundPnl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InboundQTabPnll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InboundQTabPnll.Designer.cs">
+      <DependentUpon>InboundQTabPnll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InboundQTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InboundSettings.cs" />
+    <Compile Include="InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ITabPanel.cs" />
+    <Compile Include="PageSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageSelection.Designer.cs">
+      <DependentUpon>PageSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RedirectDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedirectDocument.Designer.cs">
+      <DependentUpon>RedirectDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RefEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RefEditForm.Designer.cs">
+      <DependentUpon>RefEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransmitCallbackGenerator.cs" />
+    <Compile Include="TransmitDestination.cs" />
+    <Compile Include="UserFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFilterForm.Designer.cs">
+      <DependentUpon>UserFilterForm.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CommentForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAssignFaxNo.resx">
+      <DependentUpon>frmAssignFaxNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InboundPnl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InboundPnl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InboundQTabPnll.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InboundQTabPnll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageSelection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PageSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedirectDocument.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RedirectDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefEditForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RefEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFilterForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteout.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16_alert.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert_lrg.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\associate.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chklst.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart_office_papers_012.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colselect.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup_coffee-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup_coffee-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup_coffee-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup_coffee-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup_coffee-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dealsheet.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debug01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc24.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fax2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\faxmap3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fcabin02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ffinder.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inbox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\markupdoc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outbox2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outbox21.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRINT.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printr01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchtxt3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\storage.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tarjetadered.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolbar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unassociate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userprefs2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vault1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtils\CommonUtils.csproj">
+      <Project>{08FF1175-07E4-4840-A0CD-54784A26019F}</Project>
+      <Name>CommonUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSetManager\DatasetManager.csproj">
+      <Project>{0ea3bca5-68fe-4160-bc61-843dc05718c9}</Project>
+      <Name>DatasetManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBAccess.SqlServer\DBAccess.SqlServer.csproj">
+      <Project>{7f080283-fc4e-4ec2-8f0b-0aaeaa509de3}</Project>
+      <Name>DBAccess.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBAccess\DBAccess.csproj">
+      <Project>{17ae1e7f-64c3-4cf4-afdc-e0d9d5f50742}</Project>
+      <Name>DBAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IniFile\Sempra.IniFile.csproj">
+      <Project>{53392007-abfb-4b07-b413-5351d958f630}</Project>
+      <Name>Sempra.IniFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpsTrackingModel\OpsTrackingModel.csproj">
+      <Project>{706059AE-1E8A-441C-88CE-8B88DE87C5A4}</Project>
+      <Name>OpsTrackingModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sempra.Confirm.InBound.Comm\Sempra.Confirm.InBound.Comm.csproj">
+      <Project>{2B0AA686-7627-4CC3-AE54-E5AD3DCFD3BB}</Project>
+      <Name>Sempra.Confirm.InBound.Comm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sempra.Confirm.InBound.ImageEdit\Sempra.Confirm.InBound.ImageEdit\Sempra.Confirm.InBound.ImageEdit.csproj">
+      <Project>{D8C894AA-4C0E-4DFB-8475-9199ACB864A8}</Project>
+      <Name>Sempra.Confirm.InBound.ImageEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VaultUtils\VaultUtils.csproj">
+      <Project>{6fea33b2-6c51-4cdd-923d-9ce0bc8cf1b0}</Project>
+      <Name>VaultUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-split-270-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+       -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+    <!-- <Copy DestinationFolder="$(DeployDir)" SourceFiles="$(MSBuildThisFileDirectory)bin\debug\ConfirmInbound.dll" />
+    <Copy DestinationFolder="$(DeployDir)" SourceFiles="$(MSBuildThisFileDirectory)bin\debug\ConfirmInbound.dll.config" /> -->
+  </Target>
+  <Target Name="AutomatedBuild" DependsOnTargets="Clean;GetLibs;Build">
+    <Message Text="This Directory: $(MSBuildThisFileDirectory)" />
+  </Target>
+  <Target Name="GetLibs">
+    <Message Text="Copy all libs for this project now from the repository">
+    </Message>
+  </Target>
+</Project>

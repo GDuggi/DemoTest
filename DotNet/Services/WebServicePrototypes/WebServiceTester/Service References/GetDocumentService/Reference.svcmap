@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="46840a3b-d99d-4db7-94ca-9fbc6965a671" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63003/GetDocument.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GetDocument.xsd" MetadataType="Schema" ID="eb378460-a8f3-493a-9c7d-72f9c5aee68f" SourceId="1" SourceUrl="http://localhost:63003/GetDocument.svc?xsd=xsd0" />
+    <MetadataFile FileName="GetDocument2.xsd" MetadataType="Schema" ID="3d9eeba9-a9dd-4e0a-a236-8f904fb9cfc7" SourceId="1" SourceUrl="http://localhost:63003/GetDocument.svc?xsd=xsd2" />
+    <MetadataFile FileName="GetDocument1.wsdl" MetadataType="Wsdl" ID="8d8ef8dd-a020-433b-9160-fdab0d7706ef" SourceId="1" SourceUrl="http://localhost:63003/GetDocument.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="GetDocument1.xsd" MetadataType="Schema" ID="a170aadd-86be-48ee-8085-3b0638254bac" SourceId="1" SourceUrl="http://localhost:63003/GetDocument.svc?xsd=xsd1" />
+    <MetadataFile FileName="GetDocument.wsdl" MetadataType="Wsdl" ID="0cfdfaf7-c811-44b0-8d4f-3ffad46599d4" SourceId="1" SourceUrl="http://localhost:63003/GetDocument.svc?wsdl" />
+    <MetadataFile FileName="GetDocument.disco" MetadataType="Disco" ID="416fa440-6d5c-40ba-ae06-5f55fe5e3c01" SourceId="1" SourceUrl="http://localhost:63003/GetDocument.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

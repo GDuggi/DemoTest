@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<project name="cnf-DBQueue" default="build">
+    <echo message="In build file: ${ant.file}"/>
+    <import file="../build-confirm-util.xml"/>
+</project>

@@ -1,0 +1,1 @@
+add common framework projects here those builds will saty in Bin of top folder in this.All other projects will referenced from bin folder if required.

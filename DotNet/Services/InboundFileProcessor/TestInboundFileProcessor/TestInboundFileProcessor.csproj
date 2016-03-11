@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB073DCB-68E1-4B71-AD99-8BA855F26463}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestInboundFileProcessor</RootNamespace>
+    <AssemblyName>TestInboundFileProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations.Core, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Annotations.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations.Rendering">
+      <HintPath>..\Lib\Leadtools.Annotations.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.AuthenticateAction.Agent, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.AuthenticateAction.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.DatamatrixRead, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.DatamatrixRead.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.DatamatrixWrite, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.DatamatrixWrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.OneD, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.OneD.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.PdfRead, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.PdfRead.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.PdfWrite, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.PdfWrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.QrRead, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.QrRead.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Barcode.QrWrite, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Barcode.QrWrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Ccow, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Ccow.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Cloud.DataAccessLayer">
+      <HintPath>..\Lib\Leadtools.Cloud.DataAccessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Cloud.Job">
+      <HintPath>..\Lib\Leadtools.Cloud.Job.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Cloud.Worker">
+      <HintPath>..\Lib\Leadtools.Cloud.Worker.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Abc, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Abc.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Abi, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Abi.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Afp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Afp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Ani, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Ani.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Anz, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Anz.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Awd">
+      <HintPath>..\Lib\Leadtools.Codecs.Awd.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Bmp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Bmp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cal, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Cal.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cgm, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Cgm.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cin, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Cin.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Clp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Clp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cmp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Cmp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cmw, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Cmw.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cmx, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Cmx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Crw, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Crw.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cut, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Cut.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dcf, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dcf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dcr, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dcr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dcs, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dcs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dgn, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dgn.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Doc, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dox, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dox.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Drw, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Drw.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dwf, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dwf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dwg, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dwg.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Dxf, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Dxf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.E00, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.E00.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Ecw, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Ecw.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Eps, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Eps.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Fax, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Fax.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Fit, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Fit.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Flc, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Flc.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Fpx, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Fpx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Gbr, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Gbr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Gif, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Gif.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Hdp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Hdp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Htm, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Htm.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Ica, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Ica.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Iff, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Iff.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Img, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Img.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.codecs.ing, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.codecs.ing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Itg, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Itg.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.J2k, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.J2k.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jb2, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Jb2.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jbg, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Jbg.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jls, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Jls.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jpm, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Jpm.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jxr, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Jxr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Kdc, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Kdc.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Lma, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Lma.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Lmb, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Lmb.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Mac, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Mac.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Mif, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Mif.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Mng, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Mng.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Mob, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Mob.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Msp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Msp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.codecs.nap, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.codecs.nap.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Pcd, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Pcd.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.codecs.pcl, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.codecs.pcl.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Pct, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Pct.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Pcx, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Pcx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Png, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Png.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Pnm, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Pnm.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Ppt, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Ppt.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Ppx, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Ppx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Psd, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Psd.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Ptk, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Ptk.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Pub, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Pub.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Ras, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Ras.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Raw, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Raw.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Rtf, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Sct, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Sct.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Sff, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Sff.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Sgi, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Sgi.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Shp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Shp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Smp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Smp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Snp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Snp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Svg">
+      <HintPath>..\Lib\Leadtools.Codecs.Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tdb, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Tdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tfx, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Tfx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tga, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Tga.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tif, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Tif.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Txt, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Txt.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Vff, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Vff.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Wfx, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Wfx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Wmf, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Wmf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Wmp, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Wmp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Wmz, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Wmz.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Wpg, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Wpg.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Xbm, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Xbm.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Xls, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Xls.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Xlx, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Xlx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Xpm, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Xpm.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Xps, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Xps.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Xwd, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Codecs.Xwd.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ColorConversion, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.ColorConversion.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Compatibility">
+      <HintPath>..\Lib\Leadtools.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Auto, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Auto.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.DocumentReaders, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.DocumentReaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.DocumentReaders.Pdf, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.DocumentReaders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.DocumentReaders.Raster, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.DocumentReaders.Raster.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.DocumentReaders.Xps, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.DocumentReaders.Xps.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.DocumentWriters, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.DocumentWriters.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr.Advantage, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Ocr.Advantage.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr.Arabic, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Ocr.Arabic.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr.Plus">
+      <HintPath>..\Lib\Leadtools.Forms.Ocr.Plus.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Ocr.Professional, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Ocr.Professional.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Processing, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Processing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Recognition, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Recognition.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Recognition.Barcode, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Recognition.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Forms.Recognition.Ocr, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Forms.Recognition.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageOptimization, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.ImageOptimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Color, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.ImageProcessing.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Core, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.ImageProcessing.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Effects, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.ImageProcessing.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.SpecialEffects, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.ImageProcessing.SpecialEffects.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ImageProcessing.Utilities, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.ImageProcessing.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Jpeg2000, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Jpeg2000.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Jpip, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Jpip.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Jpip.Client, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Jpip.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Jpip.Client.Decoder, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Jpip.Client.Decoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Jpip.Client.WinForms, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Jpip.Client.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Jpip.Server, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Jpip.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Jpip.Server.Parser, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Jpip.Server.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Kernel.Annotations, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Kernel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Logging, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Logging.Medical, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Logging.Medical.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.MediaWriter, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.MediaWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Mrc, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Mrc.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Pdf, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.PdfCompressor, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.PdfCompressor.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Services.Raster.ServiceImplementations, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Services.Raster.ServiceImplementations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.SharePoint.Client, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.SpecialEffects, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.SpecialEffects.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Twain, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Twain.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.UserAnnotation.Agent, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.UserAnnotation.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.UserMapping.Agent, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.UserMapping.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Vector, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Vector.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Web, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Wia, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Wia.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Annotations, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Windows.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Controls, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Media, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Windows.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Media.Effects, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Windows.Media.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Media.TransitionBase, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Windows.Media.TransitionBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Windows.Media.Transitions, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.Windows.Media.Transitions.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms.CommonDialogs.Color, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.WinForms.CommonDialogs.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms.CommonDialogs.File, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.WinForms.CommonDialogs.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms.Design, Version=19.0.4.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Leadtools.WinForms.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Workflow.Barcode">
+      <HintPath>..\Lib\Leadtools.Workflow.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Workflow.ImageProcessing">
+      <HintPath>..\Lib\Leadtools.Workflow.ImageProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Workflow.Ocr">
+      <HintPath>..\Lib\Leadtools.Workflow.Ocr.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Workflow.Raster">
+      <HintPath>..\Lib\Leadtools.Workflow.Raster.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Workflow.Scan">
+      <HintPath>..\Lib\Leadtools.Workflow.Scan.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TestDirProcMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestDirProcMain.Designer.cs">
+      <DependentUpon>TestDirProcMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestDirProcMain.resx">
+      <DependentUpon>TestDirProcMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InboundFileProcessor\InboundFileProcessor.csproj">
+      <Project>{371c6176-9daa-41e6-a4b8-20df0b7bf478}</Project>
+      <Name>InboundFileProcessor</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

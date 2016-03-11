@@ -1,0 +1,9 @@
+#################
+## Visual Studio
+#################
+
+## Ignore Lib folder and dlls
+# Build results
+
+Lib/
+*.dll

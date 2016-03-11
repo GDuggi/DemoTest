@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<AxDataSet>
+  <AxFolders>
+    <FolderName>INBOUND_BROKER</FolderName>
+    <DisplayName>Inbound Broker Paper</DisplayName>
+    <Fields>TRD_SYS_CODE|TRD_SYS_ID|SENDER_TYPE_IND|SENDER_SN|SENDER_REF|CPTY_SN|SE_CPTY_SN</Fields>
+    <ViewerType>TIF</ViewerType>
+    <DslName>OPERATIONS</DslName>
+    <GroupByIndexField>SENDER_TYPE_IND</GroupByIndexField>
+  </AxFolders>
+  <AxFolders>
+    <FolderName>INBOUND_COUNTERPARTY</FolderName>
+    <DisplayName>Inbound Counterparty Paper</DisplayName>
+    <Fields>TRD_SYS_CODE|TRD_SYS_ID|SENDER_TYPE_IND|SENDER_SN|SENDER_REF|CPTY_SN|SE_CPTY_SN</Fields>
+    <ViewerType>TIF</ViewerType>
+    <DslName>OPERATIONS</DslName>
+    <GroupByIndexField>SENDER_TYPE_IND</GroupByIndexField>
+  </AxFolders>
+  <AxFolders>
+    <FolderName>OPSMANAGER_CONTRACTS</FolderName>
+    <DisplayName>Our Contract</DisplayName>
+    <Fields>TRD_SYS_ID|CONTRACT_ID|CPTY_SN|SE_CPTY_SN|DATE_SENT|SIGNED_FLAG|TRD_SYS_CODE|RQMT_ID|TRADE_RQMT_CONFIRM_ID|TRADE_DT|CDTY_CODE|CDTY_GROUP|STTL_TYPE</Fields>
+    <ViewerType>RTF</ViewerType>
+    <DslName>OPERATIONS</DslName>
+    <GroupByIndexField>TRADE_RQMT_CONFIRM_ID</GroupByIndexField>
+  </AxFolders>
+</AxDataSet>

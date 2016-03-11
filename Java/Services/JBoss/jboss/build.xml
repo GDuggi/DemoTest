@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<project name="cnf-JBoss"
+         xmlns:ac="antlib:net.sf.antcontrib"
+         default="build">
+
+    <echo message="In build file: ${ant.file}"/>
+
+    <!-- Load properties, override in property files or command line with -D option -->
+    <import file="../build-properties.xml" optional="false"/>
+
+    <!-- These are placeholders -->
+    <property name="build.dir" value="${basedir}/../build/${ant.project.name}"/>
+    <property name="lib.dir" value="${build.dir}/lib"/>
+    <property name="src.dir" value="${basedir}/src"/>
+    <property name="etc.dir" value="${src.dir}/etc"/>
+    <property name="gen.src.dir" value="${src.dir}/gen"/>
+
+    <property name="jboss.dist.dir" location="${build.dir}/dist"/>
+    <property name="jboss.deployment.dir" location="${jboss.dist.dir}/standalone/deployments"/>
+    <property name="jboss.etc.dir" value="${etc.dir}/jboss"/>
+    <property name="standalone-temp.dir" value="${build.dir}/standalone-temp"/>
+    <property name="module-temp.dir" value="${build.dir}/module-temp"/>
+    <property name="deploy-temp.dir" value="${build.dir}/deploy-temp"/>
+
+    <!-- Set some IVY properties-->
+    <property name="ivy.resolve.conf" value="*"/>
+    <property name="ivy.retrieve.dir" value="${lib.dir}"/>
+    <property name="ivy.resolve.pattern" value="${lib.dir}/[conf]/[artifact]-[revision].[ext]"/>
+    <property name="ivy.publish.dir" value="${build.dir}"/>
+
+    <!-- Get the IVY commands -->
+    <import file="../build-ivy.xml"/>
+
+    <target name="unzip" unless="skip.unzip">
+        <!-- Get the name of the JBoss distribution that IVY pulled down -->
+        <fileset id="jboss.dist.fs" dir="${lib.dir}/jboss" includes="aff-sif-JBoss-*.zip"/>
+        <property name="jboss.dist.file" location="${lib.dir}/jboss/${toString:jboss.dist.fs}"/>
+
+        <unzip src="${jboss.dist.file}" dest="${jboss.dist.dir}"/>
+
+        <!-- Make a copy because we are going to overwrite these files -->
+        <copy todir="${standalone-temp.dir}" verbose="true" overwrite="true">
+            <fileset dir="${jboss.dist.dir}">
+                <include name="standalone/configuration/standalone-full.xml"/>
+            </fileset>
+            <globmapper from="*-full.xml" to="*.xml"/>
+        </copy>
+    </target>
+
+    <target name="remove">
+        <delete includeemptydirs="true" failonerror="false">
+            <fileset dir="${jboss.dist.dir}/standalone/configuration" includes="standalone-*"/>
+        </delete>
+    </target>
+
+    <target name="add">
+        <copy todir="${jboss.dist.dir}" verbose="true">
+            <fileset dir="${jboss.etc.dir}"/>
+            <filterchain>
+                <expandproperties/>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="standalone" description="update the standalone.xml with our changes">
+        <echo message="jboss.dist.dir=${jboss.dist.dir}"/>
+        <xslt basedir="${standalone-temp.dir}"
+              destdir="${jboss.dist.dir}"
+              style="${etc.dir}/standalone.xslt"
+              extension=".xml"
+              force="true">
+        </xslt>
+    </target>
+
+    <macrodef name="deploy">
+        <attribute name="subdir"/>
+        <attribute name="includes"/>
+
+        <sequential>
+            <copy todir="${jboss.deployment.dir}/@{subdir}" verbose="true">
+                <fileset dir="${lib.dir}/default"
+                         includes="@{includes}"/>
+                <!-- Remove version label -->
+                <regexpmapper from="^(.*)\-([a-z0-9.]+?)\.(.ar)$" to="\1.\3"/>
+            </copy>
+        </sequential>
+    </macrodef>
+
+    <target name="deploy">
+
+        <echo message="Copying from ${lib.dir}/default to ${jboss.deployment.dir}"/>
+
+        <deploy subdir="." includes="aff-sif-*.?ar"/>
+
+        <deploy subdir="."
+                includes="cnf-MercuriaTradeAlertProcessorMDB*.jar"/>
+
+        <deploy subdir="."
+                includes="cnf-InboundDocsDAOLib*.jar, cnf-OpsJMSSubPubManagerService*.jar"/>
+
+        <deploy subdir="."
+                includes="cnf-TransmissionGatewayCallbacks*.?ar"/>
+
+        <deploy subdir="."
+                includes="cnf-TradeAlertLogMDB*.jar"/>
+				
+		<deploy subdir="."
+                includes="cnf-UpdateConfirmStatusMDB*.jar"/>
+				
+    </target>
+
+    <!-- Build a JBoss module -->
+    <macrodef name="module-load">
+        <!-- The name of the module.xml file in the etc dir, this serves as a template for the final module.xml -->
+        <attribute name="moduleName"/>
+        <attribute name="filesetId"/>
+        <attribute name="dirRoot"/>
+
+        <sequential>
+            <echo message="Xslt src=${etc.dir}/module/@{moduleName}.xml, style=${etc.dir}/module-resources.xslt"/>
+
+            <ac:var name="file.id" unset="true"/>
+
+            <!-- Copy the list of files into the module folder -->
+            <copy todir="${jboss.dist.dir}/modules/@{dirRoot}/@{moduleName}/main" verbose="true" overwrite="true">
+                <fileset refid="@{filesetId}"/>
+            </copy>
+
+            <ac:var name="files.resolved" value="${toString:@{filesetId}}"/>
+            <echo message="files.resolved=${files.resolved}"/>
+
+            <!-- Fixup the module.xml to have the actual version numbers pulled from IVY -->
+            <xslt basedir="${etc.dir}/module"
+                  includes="@{moduleName}.xml"
+                  destdir="${module-temp.dir}"
+                  style="${etc.dir}/module-resources-replace.xslt"
+                  extension=".xml"
+                  force="true">
+                <param name="files" expression="${files.resolved}"/>
+            </xslt>
+
+            <!-- Copy the updated module.xml to the module dir -->
+            <copy file="${module-temp.dir}/@{moduleName}.xml"
+                  tofile="${jboss.dist.dir}/modules/@{dirRoot}/@{moduleName}/main/module.xml"
+                  verbose="true"/>
+
+        </sequential>
+    </macrodef>
+
+    <target name="module" depends="module-sqlserver, module-external, module-confirm"/>
+
+    <target name="module-sqlserver" unless="module-sqlserver.skip">
+        <fileset id="sqlserver-filesetId" dir="${lib.dir}/com-microsoft-sqlserver-jdbc"
+                 includes="*"/>
+        <module-load moduleName="com-microsoft-sqlserver-jdbc" filesetId="sqlserver-filesetId" dirRoot="aff"/>
+    </target>
+
+    <target name="module-external">
+        <fileset id="confirm-external-filesetId" dir="${lib.dir}/default"
+                 includes="ElectronicBlotter-*.jar,
+                 avalon-framework-*.jar,axiom-api-*.jar,axiom-impl-*.jar,axis-*.jar,
+                 axis2-adb-*.jar,axis2-kernel-*.jar,axis2-transport-http-*.jar,axis2-transport-local-*.jar,
+                 commons-beanutils-*,commons-codec-*.jar,commons-collections-*jar,commons-discovery-*.jar,commons-httpclient-*.jar,commons-logging-*.jar
+                 hibernate-jpa-*.jar,hibernate-core-*.jar,hibernate-entitymanager-*.jar,
+                 httpcore-*.jar,logkit-*.jar,neethi-*.jar,saaj-*.jar,sqljdbc-*.jar,
+                 wss4j-*.jar,xml-apis-*.jar,XmlSchema-*.jar,xmlsec-*.jar
+                 "/>
+        <module-load moduleName="confirm-external" filesetId="confirm-external-filesetId" dirRoot="cnf"/>
+    </target>
+
+    <target name="module-confirm">
+        <fileset id="confirm-filesetId" dir="${lib.dir}/default"
+                 includes="*CommonServiceLib-*.jar,*DAOCommon-*.jar,*DBInfoService-*.jar,*DBQueue-*.jar,
+                 *EConfirmCommon-*.jar,*EFETCommon-*.jar,*FileMakerLib-*.jar,*JMSCommon-*.jar,
+                 *MailNotifierService-*.jar,*MBeansCommonLib-*.jar,
+                 *OpsManagerCommon-*.jar,*OTTACommon-*.jar,
+                 *SempraDocWSLib-*.jar,*SempraDocWSStub-*.jar,*UtilCommon-*.jar,*VaultLib-*.jar"/>
+        <module-load moduleName="confirm" filesetId="confirm-filesetId" dirRoot="cnf"/>
+    </target>
+
+    <target name="zip" depends="ivy-deliver" unless="skip.zip">
+        <copy file="${build.dir}/ivy.xml" todir="${jboss.dist.dir}" verbose="true" overwrite="true"/>
+
+        <zip file="${build.dir}/${ant.project.name}.zip" update="false">
+            <zipfileset dir="${jboss.dist.dir}"/>
+        </zip>
+    </target>
+
+    <target name="ide" description="placeholder task, called by parent build"/>
+    <target name="clean-ide" description="placeholder task, called by parent build"/>
+
+    <target name="clean" depends="ivy-clean" unless="skip.clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="_quick">
+        <property name="skip.clean" value="true"/>
+        <property name="skip.unzip" value="true"/>
+        <property name="skip.zip" value="true"/>
+        <property name="skip.publish" value="true"/>
+    </target>
+    <target name="quick" depends="_quick,build"/>
+
+    <target name="all" depends="clean,build" description="Clean then Build"/>
+
+    <target name="build" depends="
+        ivy-retrieve,
+        unzip,
+        remove,
+        add,
+        standalone,
+        deploy,
+        module,
+        zip,
+        ivy-publish"
+
+            description="Make a build"/>
+</project>

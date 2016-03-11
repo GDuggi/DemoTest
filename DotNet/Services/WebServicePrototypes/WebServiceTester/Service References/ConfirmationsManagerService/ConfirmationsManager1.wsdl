@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://cnf/ConfirmationsManager" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cnf/ConfirmationsManager" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://cnf/ConfirmationsManager/Imports">
+      <xsd:import schemaLocation="http://localhost:63001/ConfirmationsManager.svc?xsd=xsd0" namespace="http://cnf/ConfirmationsManager" />
+      <xsd:import schemaLocation="http://localhost:63001/ConfirmationsManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:63001/ConfirmationsManager.svc?xsd=xsd2" namespace="http://cnf/Integration" />
+      <xsd:import schemaLocation="http://localhost:63001/ConfirmationsManager.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConfirmationsManager_getPermissionKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPermissionKeys" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_getPermissionKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPermissionKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_getConfirmationTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:getConfirmationTemplates" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_getConfirmationTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getConfirmationTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_tradeConfirmationStatusChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:tradeConfirmationStatusChange" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_tradeConfirmationStatusChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tradeConfirmationStatusChangeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConfirmationsManager">
+    <wsdl:operation name="getPermissionKeys">
+      <wsdl:input wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getPermissionKeys" message="tns:ConfirmationsManager_getPermissionKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getPermissionKeysResponse" message="tns:ConfirmationsManager_getPermissionKeys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getConfirmationTemplates">
+      <wsdl:input wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getConfirmationTemplates" message="tns:ConfirmationsManager_getConfirmationTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getConfirmationTemplatesResponse" message="tns:ConfirmationsManager_getConfirmationTemplates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tradeConfirmationStatusChange">
+      <wsdl:input wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/tradeConfirmationStatusChange" message="tns:ConfirmationsManager_tradeConfirmationStatusChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/tradeConfirmationStatusChangeResponse" message="tns:ConfirmationsManager_tradeConfirmationStatusChange_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8C894AA-4C0E-4DFB-8475-9199ACB864A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sempra.Confirm.InBound.ImageEdit</RootNamespace>
+    <AssemblyName>Sempra.Confirm.InBound.ImageEdit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\DevExpress.Data.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\DevExpress.Printing.v15.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\DevExpress.XtraEditors.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\DevExpress.XtraGrid.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\DevExpress.XtraPrinting.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools">
+      <HintPath>..\..\Lib\Leadtools.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Annotations">
+      <HintPath>..\..\Lib\Leadtools.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs">
+      <HintPath>..\..\Lib\Leadtools.Codecs.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Cmp">
+      <HintPath>..\..\Lib\Leadtools.Codecs.Cmp.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Fax">
+      <HintPath>..\..\Lib\Leadtools.Codecs.Fax.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Jbg">
+      <HintPath>..\..\Lib\Leadtools.Codecs.Jbg.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tfx">
+      <HintPath>..\..\Lib\Leadtools.Codecs.Tfx.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Tif">
+      <HintPath>..\..\Lib\Leadtools.Codecs.Tif.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Codecs.Txt">
+      <HintPath>..\..\Lib\Leadtools.Codecs.Txt.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.ColorConversion">
+      <HintPath>..\..\Lib\Leadtools.ColorConversion.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Dicom">
+      <HintPath>..\..\Lib\Leadtools.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Dicom.Annotations">
+      <HintPath>..\..\Lib\Leadtools.Dicom.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Dicom.Annotations.Core">
+      <HintPath>..\..\Lib\Leadtools.Dicom.Annotations.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Drawing">
+      <HintPath>..\..\Lib\Leadtools.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.Pdf">
+      <HintPath>..\..\Lib\Leadtools.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms">
+      <HintPath>..\..\Lib\Leadtools.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms.CommonDialogs.Color">
+      <HintPath>..\..\Lib\Leadtools.WinForms.CommonDialogs.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Leadtools.WinForms.CommonDialogs.File">
+      <HintPath>..\..\Lib\Leadtools.WinForms.CommonDialogs.File.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotation.cs" />
+    <Compile Include="EditEventHandler.cs" />
+    <Compile Include="IImageHolder.cs" />
+    <Compile Include="ImageEdit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImageEdit.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageLoader.cs" />
+    <Compile Include="ImageSizing.cs" />
+    <Compile Include="ImageToolBar.cs" />
+    <Compile Include="PictureObject.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertyForm.Designer.cs">
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageEditForm.Designer.cs">
+      <DependentUpon>ImageEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusForm.Designer.cs">
+      <DependentUpon>StatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TifEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TifEditor.Designer.cs">
+      <DependentUpon>TifEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TifImage.cs" />
+    <Compile Include="TifUtil.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ImageEdit.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImageEdit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageEditForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImageEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TifEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TifEditor.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\BOT.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\COPY.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DELETE.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NEXT.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PREV.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotateleft.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotateright.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAVE.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOP.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRINT.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomOut1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomIn1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transmit.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomOut1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transmit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomIn1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckmarkOnly.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedCheckmarkOnly.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonUtils\CommonUtils.csproj">
+      <Project>{08FF1175-07E4-4840-A0CD-54784A26019F}</Project>
+      <Name>CommonUtils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AutomatedBuild" DependsOnTargets="clean;Build">
+    <Message Text="This Directory: $(MSBuildThisFileDirectory)" />
+  </Target>
+</Project>

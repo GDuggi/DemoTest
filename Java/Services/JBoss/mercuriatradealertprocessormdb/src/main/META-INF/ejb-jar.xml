@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ejb-jar>
+    <enterprise-beans>
+        <message-driven>
+            <ejb-name>MercuriaTradeAlertProcessorMDB</ejb-name>
+            <ejb-class>cnf.docflow.mdb.MercuriaTradeAlertProcessorMDB</ejb-class>
+            <transaction-type>Container</transaction-type>
+            <message-destination-type>javax.jms.Queue</message-destination-type>
+            <activation-config>
+                <activation-config-property>
+                    <activation-config-property-name>destination</activation-config-property-name>
+                    <!--<activation-config-property-value>jms/queue/sempra.sif.ping</activation-config-property-value>-->
+                    <activation-config-property-value>queue/mercuria.confirmsMgr.tradeNotification</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>useDLQ</activation-config-property-name>
+                    <activation-config-property-value>false</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>dLQJNDIName</activation-config-property-name>
+                    <activation-config-property-value>jms.queue.DLQ</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>dLQMaxResent</activation-config-property-name>
+                    <activation-config-property-value>1</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>MaxDeliveryAttempts</activation-config-property-name>
+                    <activation-config-property-value>1</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>maxSession</activation-config-property-name>
+                    <activation-config-property-value>1</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>reconnectInterval</activation-config-property-name>
+                    <activation-config-property-value>10</activation-config-property-value>
+                </activation-config-property>
+            </activation-config>
+        </message-driven>
+    </enterprise-beans>
+</ejb-jar>

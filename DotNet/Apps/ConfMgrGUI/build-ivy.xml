@@ -1,0 +1,213 @@
+<project name="build-ivy"
+         xmlns:ivy="antlib:org.apache.ivy.ant"
+         xmlns:ac="antlib:net.sf.antcontrib">
+
+    <dirname property="project.basedir" file="${ant.file.build-ivy}"/>
+    <property name="module.basedir" location="${basedir}"/>
+
+    <echo message="project.basedir=${project.basedir}"/>
+    <echo message="module.basedir=${module.basedir}"/>
+
+    <property name="moduleproperty.file" value="build.properties"/>
+    <property name="projectproperty.file" value="${project.basedir}/build.properties"/>
+
+    <echo message="Loading module properties from ${moduleproperty.file}"/>
+    <property file="${moduleproperty.file}"/>
+
+    <echo message="Loading project properties from ${projectproperty.file}"/>
+    <property file="${projectproperty.file}"/>
+
+    <tstamp>
+        <format property="now" pattern="yyyyMMddHHmmss"/>
+    </tstamp>
+
+
+    <!-- == Ivy =============================== -->
+
+    <target name="ivy-init">
+        <property name="ivy.retrieve.dir" value="${basedir}/lib"/>
+        <property name="ivy.publish.dir" value="${basedir}/build"/>
+
+        <property name="ivy.mode" value="local"/>
+        <property name="ivy.file" value="${basedir}/ivy.xml"/>
+        <property name="ivy.resolve.conf" value="*"/>
+        <property name="ivy.resolve.pattern" value="${ivy.retrieve.dir}/[type]s/[artifact]-[revision].[ext]"/>
+        <property name="ivy.publish.pattern" value="${ivy.publish.dir}/[artifact].[ext]"/>
+        <property name="ivy.repo.local" value="c:\repo"/>
+        <property name="ivy.retrieve.type" value="*"/>
+
+        <ac:switch value="${ivy.mode}">
+            <ac:case value="local">
+                <property name="ivy.defaultResolver" value="local.chain"/>
+                <property name="ivy.publishStatus" value="integration"/>
+                <property name="ivy.publishResolver" value="local"/>
+                <property name="version" value="local"/>
+                <property name="build.number" value="0"/>
+            </ac:case>
+            <ac:case value="trunk">
+                <property name="ivy.defaultResolver" value="trunk.chain"/>
+                <property name="ivy.publishStatus" value="integration"/>
+                <property name="ivy.publishResolver" value="trunk"/>
+                <property name="version" value="trunk"/>
+                <property name="build.number" value="0"/>
+            </ac:case>
+            <ac:case value="release">
+                <property name="ivy.defaultResolver" value="release.chain"/>
+                <property name="ivy.publishStatus" value="release"/>
+                <property name="ivy.publishResolver" value="release"/>
+                <!-- defined on the fly as part of the build
+				<property name="version.prefix" value="1.0.0"/> -->
+            </ac:case>
+            <ac:default>
+                <fail message="ivy.mode is[${ivy.mode}] but it must be one of [local|trunk|release]"/>
+            </ac:default>
+        </ac:switch>
+        <echo><![CDATA[Ivy settings
+    ivy.defaultResolver=${ivy.defaultResolver}
+    ivy.publishStatus=${ivy.publishStatus}
+    ivy.publishResolver=${ivy.publishResolver} ]]></echo>
+        <ivy:configure file="${project.basedir}/ivy-settings.xml" override="true"/>
+        <property name="ivy.configurations" value="${ivy.resolve.conf}"/>
+    </target>
+
+    <target name="ivy-resolve" depends="ivy-init">
+        <echo message="ivy.retrieve.type=${ivy.retrieve.type}"/>
+        <echo><![CDATA[Resolving Ivy artifacts
+    Project:     ${ant.project.name}
+    Ivy file:    ${ivy.file}
+    Configs:     ${ivy.resolve.conf}
+    Types:       ${ivy.retrieve.type}]]>
+        </echo>
+        <ivy:resolve
+                conf="${ivy.resolve.conf}"
+                type="${ivy.retrieve.type}"
+                />
+    </target>
+
+    <target name="ivy-retrieve" depends="ivy-resolve" description="--> resolve and retrieve dependencies with ivy">
+
+        <echo><![CDATA[Retrieving Ivy artifacts
+    Project:     ${ant.project.name}
+    Ivy file:    ${ivy.file}
+    Module:      ${ivy.module}
+    Revision:    ${ivy.revision}
+    Destination: ${ivy.resolve.pattern}
+    Configs:     ${ivy.resolve.conf}
+    Types:       ${ivy.retrieve.type}]]>
+        </echo>
+        <ivy:retrieve
+                sync="true"
+                pattern="${ivy.resolve.pattern}"
+                conf="${ivy.resolve.conf}"
+                type="${ivy.retrieve.type}"/>
+
+        <condition property="projectModuleFail" value="true">
+            <not><equals arg1="${ant.project.name}" arg2="${ivy.module}"/></not>
+        </condition>
+        <fail if="projectModuleFail" message="Ant project name '${ant.project.name}' should be the same as the Ivy module name '${ivy.module}'"/>
+
+    </target>
+
+    <target name="ivy-version" depends="ivy-init" unless="skip.version">
+        <ac:if>
+            <!--
+            Version and build number are already set if ivy.mode=local|trunk,
+            see build-local.properties
+            -->
+            <not>
+                <isset property="version"/>
+            </not>
+            <ac:then>
+                <!-- asks ivy an available version number -->
+                <ivy:info file="${ivy.file}"/>
+                <ivy:buildnumber resolver="${ivy.mode}"
+                                 organisation="${ivy.organisation}" module="${ivy.module}"
+                                 revision="${version.prefix}" defaultBuildNumber="1" default="1.0.0"/>
+
+                <property name="version" value="${ivy.new.revision}"/>
+                <property name="build.number" value="${ivy.new.build.number}"/>
+            </ac:then>
+            <ac:else>
+                <property name="build.number" value="0"/>
+            </ac:else>
+        </ac:if>
+        <echo message="version=${version}"/>
+        <echo message="build.number=${build.number}"/>
+    </target>
+
+    <target name="ivy-publish" depends="ivy-init, ivy-version, ivy-deliver, ivy-publish.pre, ivy-publish.do, ivy-publish.post" unless="skip.publish" description="--> publish this project in the ivy repository"/>
+    <target name="ivy-publish.pre"/>
+    <target name="ivy-publish.post"/>
+
+    <target name="ivy-publish.do" depends="ivy-resolve" unless="skip.publish">
+        <echo><![CDATA[Publishing new Ivy artifacts
+    Ivy mode:  ${ivy.mode}
+    Ivy file:  ${ivy.file}
+    Project:   ${ant.project.name}
+    Artifacts: ${ivy.publish.pattern}
+    Resolver:  ${ivy.publishResolver}
+    Status:    ${ivy.publishStatus}
+    Version:   ${version} ]]>
+        </echo>
+        <ivy:publish
+                artifactspattern="${ivy.publish.pattern}"
+                resolver="${ivy.publishResolver}"
+                pubrevision="${version}"
+                pubdate="${now}"
+                status="${ivy.publishStatus}"
+                overwrite="true"
+                update="true"
+                />
+    </target>
+
+    <target name="ivy-deliver" depends="ivy-resolve">
+        <!-- Strip out the private configs -->
+        <ivy:deliver conf="*(public)" deliverpattern="${ivy.publish.dir}/[artifact].[ext]"/>
+    </target>
+
+    <!--<target name="ivy-versions" depends="ivy-deliver">
+        <xslt in="${ivy.publish.dir}/ivy.xml"
+              out="${ivy.publish.dir}/ivy.temp"
+              force="true">
+            <style>
+                <string><![CDATA[
+                    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                        <xsl:output  method="text" encoding="UTF-8"/>
+                        <xsl:strip-space elements="*"/>
+
+                        <xsl:template match="dependency">
+                            <xsl:if test="position()=1">
+                                <xsl:text># Version file&#13;&#10;</xsl:text>
+                            </xsl:if>
+
+                            <xsl:value-of select="@name"/>.rev=<xsl:value-of select="@rev"/><xsl:text>&#13;&#10;</xsl:text>
+                        </xsl:template>
+
+                    </xsl:stylesheet>]]>
+                </string>
+            </style>
+        </xslt>
+        <move file="${ivy.publish.dir}/ivy.temp" tofile="${ivy.publish.dir}/versions-${ivy.mode}.properties" verbose="true">
+            <filterchain>
+                <fixcrlf/>
+                <sortfilter/>
+            </filterchain>
+        </move>
+        <echo message="Loading file ${ivy.publish.dir}/versions-${ivy.mode}.properties"/>
+        <property file="${ivy.publish.dir}/versions-${ivy.mode}.properties"/>
+    </target>-->
+
+    <target name="ivy-report" depends="ivy-resolve">
+        <ivy:report conf="${ivy.resolve.conf}" todir="${ivy.publish.dir}/ivy-report" graph="false" dot="false"/>
+    </target>
+
+    <target name="ivy-clean" depends="ivy-init">
+        <ivy:cleancache/>
+        <delete dir="${ivy.retrieve.dir}"/>
+    </target>
+
+    <target name="properties" description="--> Show the defined properties">
+        <echoproperties/>
+    </target>
+
+</project>

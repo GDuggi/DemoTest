@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://dms/VaultService" elementFormDefault="qualified" targetNamespace="http://dms/VaultService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11111/VaultService?xsd=xsd2" namespace="http://dms/Integration" />
+  <xs:element name="UploadDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q1:UploadDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://dms/Integration" minOccurs="0" name="UploadDocumentResult" nillable="true" type="q2:UploadDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionInfoForDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q3:GetVersionInfoForDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionInfoForDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://dms/Integration" minOccurs="0" name="GetVersionInfoForDocumentResult" nillable="true" type="q4:GetVersionInfoForResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocInfoForQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q5:GetDocInfoForQueryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocInfoForQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://dms/Integration" minOccurs="0" name="GetDocInfoForQueryResult" nillable="true" type="q6:GetDocInfoForQueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentForURL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://dms/Integration" minOccurs="0" name="request" nillable="true" type="q7:GetDocumentForURLRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentForURLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://dms/Integration" minOccurs="0" name="GetDocumentForURLResult" nillable="true" type="q8:GetDocumentForURLResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,14 @@
+ISSUE #: ADCM-175
+REQUEST BY: JACK BURKE
+DESCRIPTION: DB REQUEST-Add Rqmt-Create PKG_TRADE_RQMT$P_ADD_TRADE_RQMT_WITH_ID sp as attached script
+	     **Added new parameter called @p_id which passes identity value from code.
+	     **Passing @p_id value to identity column of ID instead of calling NEXT VALUE FOR ConfirmMgr.SEQ_TRADE_RQMT.
+
+
+SOLUTION: N/A
+
+OBJECTS CREATED: PKG_TRADE_RQMT$P_ADD_TRADE_RQMT_WITH_ID
+
+OBJECTS AFFECTED: N/A
+
+

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sempra.Confirm.InBound.ImageEdit", "Sempra.Confirm.InBound.ImageEdit\Sempra.Confirm.InBound.ImageEdit.csproj", "{D8C894AA-4C0E-4DFB-8475-9199ACB864A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sempra.Confirm.InBound.Comm", "..\Sempra.Confirm.InBound.Comm\Sempra.Confirm.InBound.Comm.csproj", "{2B0AA686-7627-4CC3-AE54-E5AD3DCFD3BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{1409E8B8-40A2-41E4-BE5E-2EE7C3D980A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8C894AA-4C0E-4DFB-8475-9199ACB864A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C894AA-4C0E-4DFB-8475-9199ACB864A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C894AA-4C0E-4DFB-8475-9199ACB864A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C894AA-4C0E-4DFB-8475-9199ACB864A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B0AA686-7627-4CC3-AE54-E5AD3DCFD3BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B0AA686-7627-4CC3-AE54-E5AD3DCFD3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B0AA686-7627-4CC3-AE54-E5AD3DCFD3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B0AA686-7627-4CC3-AE54-E5AD3DCFD3BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1409E8B8-40A2-41E4-BE5E-2EE7C3D980A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1409E8B8-40A2-41E4-BE5E-2EE7C3D980A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1409E8B8-40A2-41E4-BE5E-2EE7C3D980A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1409E8B8-40A2-41E4-BE5E-2EE7C3D980A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

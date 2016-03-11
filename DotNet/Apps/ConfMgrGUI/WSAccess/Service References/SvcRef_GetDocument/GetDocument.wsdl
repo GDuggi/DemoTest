@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://cnf/GetDocument" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GetDocument" targetNamespace="http://cnf/GetDocument" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://cnf/GetDocument" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://cnf/Integration" />
+      <xs:element name="getDealSheet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://cnf/Integration" minOccurs="0" name="getDealSheetRequest" nillable="true" type="q1:GetDealSheetRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDealSheetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://cnf/Integration" minOccurs="0" name="getDealSheetResult" nillable="true" type="q2:GetDealSheetResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getConfirmation">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://cnf/Integration" minOccurs="0" name="getConfirmationRequest" nillable="true" type="q3:GetConfirmationRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getConfirmationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://cnf/Integration" minOccurs="0" name="getConfirmationResult" nillable="true" type="q4:GetConfirmationResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://cnf/Integration" elementFormDefault="qualified" targetNamespace="http://cnf/Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="GetDealSheetRequest">
+        <xs:sequence>
+          <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemKey" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDealSheetRequest" nillable="true" type="tns:GetDealSheetRequest" />
+      <xs:complexType name="GetDealSheetResponse">
+        <xs:sequence>
+          <xs:element name="objectFormatInd" type="tns:ObjectFormatInd" />
+          <xs:element minOccurs="0" name="objectStream" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDealSheetResponse" nillable="true" type="tns:GetDealSheetResponse" />
+      <xs:simpleType name="ObjectFormatInd">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PDF" />
+          <xs:enumeration value="DOCX" />
+          <xs:enumeration value="HTML" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ObjectFormatInd" nillable="true" type="tns:ObjectFormatInd" />
+      <xs:complexType name="GetConfirmationRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="templateName" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemKey" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetConfirmationRequest" nillable="true" type="tns:GetConfirmationRequest" />
+      <xs:complexType name="GetConfirmationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="confirmCompleteFlag" type="xs:boolean" />
+          <xs:element name="objectFormatInd" type="tns:ObjectFormatInd" />
+          <xs:element minOccurs="0" name="objectStream" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetConfirmationResponse" nillable="true" type="tns:GetConfirmationResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDocument_getDealSheet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDealSheet" />
+  </wsdl:message>
+  <wsdl:message name="GetDocument_getDealSheet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDealSheetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocument_getConfirmation_InputMessage">
+    <wsdl:part name="parameters" element="tns:getConfirmation" />
+  </wsdl:message>
+  <wsdl:message name="GetDocument_getConfirmation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getConfirmationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GetDocument">
+    <wsdl:operation name="getDealSheet">
+      <wsdl:input wsaw:Action="http://cnf/GetDocument/GetDocument/getDealSheet" message="tns:GetDocument_getDealSheet_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/GetDocument/GetDocument/getDealSheetResponse" message="tns:GetDocument_getDealSheet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getConfirmation">
+      <wsdl:input wsaw:Action="http://cnf/GetDocument/GetDocument/getConfirmation" message="tns:GetDocument_getConfirmation_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/GetDocument/GetDocument/getConfirmationResponse" message="tns:GetDocument_getConfirmation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_GetDocument" type="tns:GetDocument">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDealSheet">
+      <soap:operation soapAction="http://cnf/GetDocument/GetDocument/getDealSheet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConfirmation">
+      <soap:operation soapAction="http://cnf/GetDocument/GetDocument/getConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetDocument">
+    <wsdl:port name="BasicHttpBinding_GetDocument" binding="tns:BasicHttpBinding_GetDocument">
+      <soap:address location="http://0.0.0.0:11111/GetDocument.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

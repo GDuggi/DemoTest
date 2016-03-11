@@ -1,0 +1,47 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ApacheNMS_Test.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dbms" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ORA</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=AFF01INFDBO01)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TRADE)));User Id=ops_tracking;Password=ops_tracking;</Value>
+    </Setting>
+    <Setting Name="MessageServerUri" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">stomp:tcp://aff01inf01:61613</Value>
+    </Setting>
+    <Setting Name="MessageServerUserId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sempra.ops.gs.service</Value>
+    </Setting>
+    <Setting Name="MessageServerPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sempra</Value>
+    </Setting>
+    <Setting Name="TopicList" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;sempra.ops.opsTracking.summary.update&lt;/string&gt;
+  &lt;string&gt;sempra.ops.opsTracking.rqmt.update&lt;/string&gt;
+  &lt;string&gt;sempra.ops.opsTracking.tradeRqmtConfirm.update&lt;/string&gt;
+  &lt;string&gt;sempra.ops.opsTracking.inboundDocs.update&lt;/string&gt;
+  &lt;string&gt;sempra.ops.opsTracking.associatedDocs.update"&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="QueueList" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;sempra.ops.opsTracking.activityAlert&lt;/string&gt;
+  &lt;string&gt;sempra.ops.tradeRqmtConfirm.activityAlert&lt;/string&gt;
+  &lt;string&gt;sempra.ops.inboundDocs.activityAlert&lt;/string&gt;
+  &lt;string&gt;sempra.ops.associatedDocs.activityAlert&lt;/string&gt;
+  &lt;string&gt;sempra.ops.extMarginNotify&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="DefaultDestination" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Topic</Value>
+    </Setting>
+    <Setting Name="DefaultSimpleMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">This is a sample text message being used to test this queue/topic.</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

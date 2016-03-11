@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<aq-adapter-config>
+
+    <auto-restart-failed-queue>true</auto-restart-failed-queue>
+    <timer-interval-millis>25000</timer-interval-millis>
+
+    <jms-config>
+        <jms-user-name>aff.sif.oracleAQ.publisher</jms-user-name>
+        <jms-password>Amphora-123</jms-password>
+    </jms-config>
+
+    <db-connection-config>
+        <db-connection>
+            <name>CNF</name>
+            <jndi-name>java:jboss/datasources/aff-sif-AqAdapterDs</jndi-name>
+            <db-type>SQLSERVER</db-type>
+            <db-retry-interval>10000</db-retry-interval>
+        </db-connection>
+    </db-connection-config>
+
+    <queue-config>
+        <queue-map>
+            <aq-name>AFFMSG.TABLE_CHANGE_QUEUE_RECEIVE</aq-name>
+            <db-connection-name>CNF</db-connection-name>
+            <group-strategy>NO_GROUP</group-strategy>
+            <dequeue-batch-size>1000</dequeue-batch-size>
+            <message-type>KEYTEXT</message-type>
+
+            <targets>
+                <target key="CONFIRMMGR.TRADE_SUMMARY" jms-name="queue/sempra.ops.opsTracking.activityAlert"/>
+                <target key="CONFIRMMGR.INBOUND_DOCS" jms-name="queue/sempra.ops.inboundDocs.activityAlert"/>
+                <target key="CONFIRMMGR.ASSOCIATED_DOCS" jms-name="queue/sempra.ops.associatedDocs.activityAlert"/>
+                <target key="CONFIRMMGR.TRADE_RQMT_CONFIRM" jms-name="queue/sempra.ops.tradeRqmtConfirm.activityAlert"/>
+				<target key="CONFIRMMGR.TRADE_APPR" jms-name="queue/confirmsMgr.tradeAppr.activityAlert" />
+                <target key="CONFIRMMGR.TRADE_RQMT_STATUS_CHANGE" jms-name="queue/confirmsMgr.tradeRqmt.statusChange" />
+            </targets>
+        </queue-map>
+    </queue-config>
+</aq-adapter-config>

@@ -1,0 +1,16 @@
+ISSUE #: ADCM-188
+REQUEST BY: JACK BURKE
+DESCRIPTION: Javier, please see attached notes.
+Create script to do these updates and insert in a single transaction.
+Do NOT run this on CNF01 - I have already done that.
+Please run on CNF02.
+I will verify before we deploy at Mercuria
+
+
+SOLUTION: I have wrapped the script query adding transaction control. 
+
+OBJECTS CREATED: N/A
+
+OBJECTS AFFECTED: N/A
+
+

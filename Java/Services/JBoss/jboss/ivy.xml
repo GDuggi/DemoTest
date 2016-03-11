@@ -1,0 +1,44 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="cnf" module="cnf-JBoss"/>
+
+    <configurations>
+        <conf name="default" extends="dist" description="We have a default conf to make the ivy-reports work"/>
+        <conf name="dist"/>
+        <conf name="jboss" visibility="private"/>
+        <conf name="deploy" visibility="private"/>
+        <conf name="com-microsoft-sqlserver-jdbc" visibility="private"/>
+    </configurations>
+
+    <publications>
+        <artifact type="dist" ext="zip" conf="dist"/>
+    </publications>
+
+    <dependencies defaultconf="default" defaultconfmapping="*->@(default)">
+        <dependency org="aff.sif" name="aff-sif-JBoss" rev="6.2.+" conf="jboss"/>
+        <dependency org="aff.sif" name="aff-sif-JBossAqJmsAdapter" rev="latest.integration" changing="true"/>
+        <dependency org="aff.sif" name="aff-sif-JBossHornetqWeb" rev="latest.integration"/>
+
+        <!--  Mercuria -->
+        <dependency name="cnf-MercuriaTradeAlertProcessorMDB" rev="latest.integration" changing="true"/>
+
+        <!-- Inbound -->
+        <dependency org="cnf" name="cnf-InboundDocsDAOLib" rev="latest.integration" changing="true"/>
+        <dependency org="cnf" name="cnf-OpsJMSSubPubManagerService" rev="latest.integration" changing="true"/>
+
+        <!-- OpsManager -->
+        <dependency org="cnf" name="cnf-TransmissionGatewayCallbacks" rev="latest.integration" changing="true"/>
+
+        <!-- TradeAlertLog -->
+        <dependency org="cnf" name="cnf-TradeAlertLogMDB" rev="latest.integration" changing="true"/>
+		
+		<!-- UpdateConfirmStatus -->
+		<dependency org="cnf" name="cnf-UpdateConfirmStatusMDB" rev="latest.integration" changing="true"/>
+		
+        <!-- Third party-->
+        <dependency org="com.microsoft" name="sqljdbc" conf="com-microsoft-sqlserver-jdbc" rev="4.0" />
+    </dependencies>
+
+</ivy-module>

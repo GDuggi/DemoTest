@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AntConfiguration">
+    <buildFile url="file://$PROJECT_DIR$/common-util/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/common-dao/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/mbeans-servicebean/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/jboss-mail/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/common-dao-inbound-doc/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/common-db-queue/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/common-filemaker/build.xml" />
+    <buildFile url="file://$PROJECT_DIR$/mercuriatradealertprocessormdb/build.xml" />
+  </component>
+</project>

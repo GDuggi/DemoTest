@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfirmMessage>
+  <NotifyType>NEW</NotifyType>
+  <NotifyTsGmt>2015-10-05T16:39:42.330</NotifyTsGmt>
+  <TradeData>
+    <TradingSystemCode>SYMPH</TradingSystemCode>
+    <TradingSystemTicket>2829543</TradingSystemTicket>
+    <CreationDt>2015-10-05T15:29:55.317</CreationDt>
+    <TradeDt>2015-10-05T00:00:00</TradeDt>
+    <Trader>Kurt Chapman</Trader>
+    <BookingCompany>MERCURIA GVA BC</BookingCompany>
+    <BookingCompanyId>511</BookingCompanyId>
+    <CptySn>STASCO</CptySn>
+    <CptyLegalName>SHELL INTERNATIONAL TRADING AND SHIPPING CO LTD</CptyLegalName>
+    <CptyId>393</CptyId>
+    <CdtySn>BFO</CdtySn>
+    <CdtyGroup>CRUDE</CdtyGroup>
+    <BuySellInd>Sell</BuySellInd>
+    <QtyDesc>-200 MB  </QtyDesc>
+    <QtyTot>-200</QtyTot>
+    <StartDt>12/01/2015</StartDt>
+    <EndDt>12/31/2015</EndDt>
+    <LocationSn>FOB/NORTH SEA</LocationSn>
+    <TransportDesc>TBN/TBN</TransportDesc>
+    <PriceDesc>50.12 USD/BBL </PriceDesc>
+    <TradeDesc>ToFillDetails</TradeDesc>
+    <TradeTypeCode>PhysOutright</TradeTypeCode>
+    <SttlType>PHYS</SttlType>
+    <BrokerSn>ICE UK</BrokerSn>
+    <BrokerLegalName>ICE UK</BrokerLegalName>
+    <BrokerId>2542</BrokerId>
+    <Book>CRUDE NORTH SEA</Book>
+    <ProfitCenter>CRUDE NORTH SEA</ProfitCenter>
+    <RefSn></RefSn>
+    <Xref></Xref>
+    <TradeStatCode>OPEN</TradeStatCode>
+    <OptnStrikePrice></OptnStrikePrice>
+    <OptnPremPrice></OptnPremPrice>
+    <OptnPutCallInd></OptnPutCallInd>
+    <PermissionKey>1438</PermissionKey>
+  </TradeData>
+  <Rqmts>
+    <Rqmt>
+      <Workflow>OURPAPER</Workflow>
+      <Template>BFOE 25 DAY PARTIALS FIXED PRICE</Template>
+    </Rqmt>
+    <Rqmt>
+      <Workflow>BROKERPAPER</Workflow>
+    </Rqmt>
+  </Rqmts>
+</ConfirmMessage>

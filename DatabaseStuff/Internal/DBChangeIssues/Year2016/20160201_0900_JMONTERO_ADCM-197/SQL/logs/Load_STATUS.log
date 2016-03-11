@@ -1,0 +1,9 @@
+
+Starting copy...
+SQLState = 23000, NativeError = 2627
+Error = [Microsoft][SQL Server Native Client 10.0][SQL Server]Violation of PRIMARY KEY constraint 'PK_STATUS'. Cannot insert duplicate key in object 'ConfirmMgr.STATUS'. The duplicate key value is (EXT_REVIEW).
+SQLState = 01000, NativeError = 3621
+Warning = [Microsoft][SQL Server Native Client 10.0][SQL Server]The statement has been terminated.
+
+BCP copy in failed
+Loading Reference Data STATUS Finished!!!

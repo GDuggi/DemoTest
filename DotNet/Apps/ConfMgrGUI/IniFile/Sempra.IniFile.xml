@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sempra.IniFile</name>
+    </assembly>
+    <members>
+        <member name="T:Sempra.IniFile">
+            <summary>
+            Create a New INI file to store or load data
+            based on a class at http://www.codeproject.com/csharp/cs_ini.asp
+            </summary>
+        </member>
+        <member name="M:Sempra.IniFile.#ctor(System.String)">
+            <summary>
+            Creates an object for accessing an INI file
+            </summary>
+            <param name="INIPath">Path to the INI file</param>
+        </member>
+        <member name="M:Sempra.IniFile.WriteValue(System.String,System.String,System.String)">
+            <summary>
+            Write a string to the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+            <param name="Key">Key to write, "Key="</param>
+            <param name="Value">Value to write, "=Value"</param>
+        </member>
+        <member name="M:Sempra.IniFile.WriteValue(System.String,System.String,System.Int32)">
+            <summary>
+            Write an integer to the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+            <param name="Key">Key to write, "Key="</param>
+            <param name="Value">Value to write, "=Value"</param>
+        </member>
+        <member name="M:Sempra.IniFile.WriteValue(System.String,System.String,System.Boolean)">
+            <summary>
+            Write a boolean value to the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+            <param name="Key">Key to write, "Key="</param>
+            <param name="Value">Value to write, "=Value"</param>
+        </member>
+        <member name="M:Sempra.IniFile.WriteValue(System.String,System.Collections.Specialized.StringCollection)">
+            <summary>
+            Write a list of values to the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+            <param name="Values">Values to write, "Value1= Value2=..."</param>
+        </member>
+        <member name="M:Sempra.IniFile.ReadValue(System.String,System.String,System.String)">
+            <summary>
+            Reads a string from the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+            <param name="Key">Name of key to read</param>
+            <param name="defaultVal">Value to return if Key not found</param>
+        </member>
+        <member name="M:Sempra.IniFile.ReadValue(System.String,System.String,System.Int32)">
+            <summary>
+            Reads an integer from the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+            <param name="Key">Name of key to read</param>
+            <param name="defaultVal">Value to return if Key not found</param>
+        </member>
+        <member name="M:Sempra.IniFile.ReadValue(System.String,System.String,System.Boolean)">
+            <summary>
+            Reads a boolean value from the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+            <param name="Key">Name of key to read</param>
+            <param name="defaultVal">Value to return if Key not found</param>
+        </member>
+        <member name="M:Sempra.IniFile.ReadValue(System.String)">
+            <summary>
+            Reads a list of values from a section in the INI file
+            </summary>
+            <param name="Section">Section of INI file, "[Section]"</param>
+        </member>
+        <member name="P:Sempra.IniFile.IniPath">
+            <summary>
+            Path to the INI file
+            </summary>
+        </member>
+    </members>
+</doc>

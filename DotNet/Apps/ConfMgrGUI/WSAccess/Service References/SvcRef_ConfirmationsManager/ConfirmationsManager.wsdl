@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://cnf/ConfirmationsManager" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConfirmationsManager" targetNamespace="http://cnf/ConfirmationsManager" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://cnf/ConfirmationsManager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://cnf/Integration" />
+      <xs:element name="getPermissionKeys">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getPermissionKeysRequest" nillable="true" type="tns:GetPermissionKeysRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetPermissionKeysRequest">
+        <xs:sequence>
+          <xs:element name="applicationName" nillable="true" type="xs:string" />
+          <xs:element name="userId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetPermissionKeysRequest" nillable="true" type="tns:GetPermissionKeysRequest" />
+      <xs:element name="getPermissionKeysResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://cnf/Integration" minOccurs="0" name="getPermissionKeysResult" nillable="true" type="q1:GetPermissionKeysResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getConfirmationTemplates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getConfirmationTemplatesRequest" nillable="true" type="tns:GetConfirmationTemplatesRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetConfirmationTemplatesRequest">
+        <xs:sequence>
+          <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetConfirmationTemplatesRequest" nillable="true" type="tns:GetConfirmationTemplatesRequest" />
+      <xs:element name="getConfirmationTemplatesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://cnf/Integration" minOccurs="0" name="getConfirmationTemplatesResult" nillable="true" type="q2:GetConfirmationTemplatesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="tradeConfirmationStatusChange">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="tradeConfirmationStatusChangeRequest" nillable="true" type="tns:TradeConfirmationStatusChangeRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="TradeConfirmationStatusChangeRequest">
+        <xs:sequence>
+          <xs:element name="confirmationStatusCode" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemKey" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TradeConfirmationStatusChangeRequest" nillable="true" type="tns:TradeConfirmationStatusChangeRequest" />
+      <xs:element name="tradeConfirmationStatusChangeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://cnf/Integration" minOccurs="0" name="tradeConfirmationStatusChangeResult" nillable="true" type="q3:TradeConfirmationStatusChangeResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://cnf/Integration" elementFormDefault="qualified" targetNamespace="http://cnf/Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="GetPermissionKeysResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="superUserFlag" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="permissionKeyCodes" nillable="true" type="q1:ArrayOfstring" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetPermissionKeysResponse" nillable="true" type="tns:GetPermissionKeysResponse" />
+      <xs:complexType name="GetConfirmationTemplatesResponse">
+        <xs:sequence>
+          <xs:element name="confirmationTemplates" nillable="true" type="tns:ArrayOfconfirmationTemplate" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetConfirmationTemplatesResponse" nillable="true" type="tns:GetConfirmationTemplatesResponse" />
+      <xs:complexType name="ArrayOfconfirmationTemplate">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="confirmationTemplate" nillable="true" type="tns:confirmationTemplate" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfconfirmationTemplate" nillable="true" type="tns:ArrayOfconfirmationTemplate" />
+      <xs:complexType name="confirmationTemplate">
+        <xs:sequence>
+          <xs:element name="templateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributes" nillable="true" type="tns:ArrayOfattribute" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="confirmationTemplate" nillable="true" type="tns:confirmationTemplate" />
+      <xs:complexType name="ArrayOfattribute">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="attribute" nillable="true" type="tns:attribute" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfattribute" nillable="true" type="tns:ArrayOfattribute" />
+      <xs:complexType name="attribute">
+        <xs:sequence>
+          <xs:element name="name" nillable="true" type="xs:string" />
+          <xs:element name="value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="attribute" nillable="true" type="tns:attribute" />
+      <xs:complexType name="TradeConfirmationStatusChangeResponse">
+        <xs:sequence>
+          <xs:element name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TradeConfirmationStatusChangeResponse" nillable="true" type="tns:TradeConfirmationStatusChangeResponse" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ConfirmationsManager_getPermissionKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPermissionKeys" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_getPermissionKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPermissionKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_getConfirmationTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:getConfirmationTemplates" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_getConfirmationTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getConfirmationTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_tradeConfirmationStatusChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:tradeConfirmationStatusChange" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmationsManager_tradeConfirmationStatusChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tradeConfirmationStatusChangeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConfirmationsManager">
+    <wsdl:operation name="getPermissionKeys">
+      <wsdl:input wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getPermissionKeys" message="tns:ConfirmationsManager_getPermissionKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getPermissionKeysResponse" message="tns:ConfirmationsManager_getPermissionKeys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getConfirmationTemplates">
+      <wsdl:input wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getConfirmationTemplates" message="tns:ConfirmationsManager_getConfirmationTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/getConfirmationTemplatesResponse" message="tns:ConfirmationsManager_getConfirmationTemplates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tradeConfirmationStatusChange">
+      <wsdl:input wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/tradeConfirmationStatusChange" message="tns:ConfirmationsManager_tradeConfirmationStatusChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/ConfirmationsManager/ConfirmationsManager/tradeConfirmationStatusChangeResponse" message="tns:ConfirmationsManager_tradeConfirmationStatusChange_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ConfirmationsManager" type="tns:ConfirmationsManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getPermissionKeys">
+      <soap:operation soapAction="http://cnf/ConfirmationsManager/ConfirmationsManager/getPermissionKeys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConfirmationTemplates">
+      <soap:operation soapAction="http://cnf/ConfirmationsManager/ConfirmationsManager/getConfirmationTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tradeConfirmationStatusChange">
+      <soap:operation soapAction="http://cnf/ConfirmationsManager/ConfirmationsManager/tradeConfirmationStatusChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConfirmationsManager">
+    <wsdl:port name="BasicHttpBinding_ConfirmationsManager" binding="tns:BasicHttpBinding_ConfirmationsManager">
+      <soap:address location="http://0.0.0.0:11111/ConfirmationsManager.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,10 @@
+﻿
+                // redirect -test 
+                /*
+                Console.WriteLine("Redirecting to " + url);
+                HttpListenerResponse response = context.Response;
+                request.Headers.Add(SOAP_ACTION, soapAction);
+                //request.Method = HttpMethod.Post;
+                response.Redirect(url);
+                response.Close();
+                */

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cnf/ConfirmationsManager" elementFormDefault="qualified" targetNamespace="http://cnf/ConfirmationsManager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63001/ConfirmationsManager.svc?xsd=xsd2" namespace="http://cnf/Integration" />
+  <xs:element name="getPermissionKeys">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPermissionKeysRequest" nillable="true" type="tns:GetPermissionKeysRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetPermissionKeysRequest">
+    <xs:sequence>
+      <xs:element name="applicationName" nillable="true" type="xs:string" />
+      <xs:element name="userId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPermissionKeysRequest" nillable="true" type="tns:GetPermissionKeysRequest" />
+  <xs:element name="getPermissionKeysResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://cnf/Integration" minOccurs="0" name="getPermissionKeysResult" nillable="true" type="q1:GetPermissionKeysResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConfirmationTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getConfirmationTemplatesRequest" nillable="true" type="tns:GetConfirmationTemplatesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetConfirmationTemplatesRequest">
+    <xs:sequence>
+      <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetConfirmationTemplatesRequest" nillable="true" type="tns:GetConfirmationTemplatesRequest" />
+  <xs:element name="getConfirmationTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://cnf/Integration" minOccurs="0" name="getConfirmationTemplatesResult" nillable="true" type="q2:GetConfirmationTemplatesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tradeConfirmationStatusChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tradeConfirmationStatusChangeRequest" nillable="true" type="tns:TradeConfirmationStatusChangeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TradeConfirmationStatusChangeRequest">
+    <xs:sequence>
+      <xs:element name="confirmationStatusCode" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradeConfirmationStatusChangeRequest" nillable="true" type="tns:TradeConfirmationStatusChangeRequest" />
+  <xs:element name="tradeConfirmationStatusChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://cnf/Integration" minOccurs="0" name="tradeConfirmationStatusChangeResult" nillable="true" type="q3:TradeConfirmationStatusChangeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

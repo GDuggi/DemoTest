@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sempra.Ops</name>
+    </assembly>
+    <members>
+        <member name="T:Sempra.VersionInfo">
+            <summary>
+            List of items obtained by GetVersionInfo()
+            </summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.CompanyName">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.FileDescription">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.FileVersion">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.InternalName">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.LegalCopyright">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.LegalTradeMarks">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.OriginalFileName">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.ProductName">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.ProductVersion">
+            <summary></summary>
+        </member>
+        <member name="F:Sempra.VersionInfo.Comments">
+            <summary></summary>
+        </member>
+        <member name="T:Sempra.Ops">
+            <summary>
+            Catch-all class containing types and static methods
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.GetParamValue(System.String,System.String[])">
+            <summary>
+            Retrieves a value from a string[] based on parameter syntax
+            </summary>
+            <param name="ParamName">Name of parameter after "-" ("-u" should be passed as "u")</param>
+            <param name="args">Arguments passed into constructor from Main()</param>
+        </member>
+        <member name="M:Sempra.Ops.GetVersionInfo(System.String)">
+            <summary>
+            Gets the version info for a given application
+            </summary>
+            <param name="AppName">Full path to the application to get version info</param>
+        </member>
+        <member name="M:Sempra.Ops.GetStringFromByteArray(System.Byte[])">
+            <summary>
+            Used internally to convert an Ascii-Z string to a string
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.GetComputerName">
+            <summary>
+            Gets the local machine's name
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.GetUserName">
+            <summary>
+            Gets the current user's login name
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.GetUserIniFileName(System.String)">
+            <summary>
+            Gets what the name of the application's INI file for user settings should be
+            </summary>
+            <param name="SettingsDir">Path to location for storing settings (usually retrieved from a config file)</param>
+        </member>
+        <member name="M:Sempra.Ops.OracleDate(System.DateTime)">
+            <summary>
+            Makes an Oracle date out of a DateTime object
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.ListFromString(System.String)">
+            <summary>
+            Returns a StringCollection from a list of comma separated values
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.ErrorMessage(System.String,System.String)">
+            <summary>
+            Formats the text of an error message
+            </summary>
+            <param name="Procedure">Name of the method calling this function (without any parentheses)</param>
+            <param name="Error">The Exception.Message that triggered the error</param>
+        </member>
+        <member name="M:Sempra.Ops.ShowErrorMessage(System.String)">
+            <summary>
+            Calls a standard error message box with the Message's text
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.GetConnectionStr(Sempra.Ops.DBMSType,System.String,System.String,System.String)">
+            <summary>
+            Gets a standard connection string from a list of Username, Password, and Server
+            </summary>
+            <param name="DBMS">Type of database to format the ConnectionStr for</param>
+            <param name="UserName">Username in connection string</param>
+            <param name="Password">Password in connection string</param>
+            <param name="Server">Server in connection string</param>
+        </member>
+        <member name="T:Sempra.Ops.DBMSType">
+            <summary>
+            The type of connection to the database
+            </summary>
+        </member>
+        <member name="F:Sempra.Ops.DBMSType.Oracle">
+            <summary>
+            Value for an Oracle table
+            </summary>
+        </member>
+        <member name="F:Sempra.Ops.DBMSType.SQLServer">
+            <summary>
+            Value for a SQL Server table
+            </summary>
+        </member>
+        <member name="T:Sempra.Ops.Win32Imports">
+            <summary>
+            Methods imported from the Win32 API
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.GetFileVersionInfo(System.String,System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            Gets version info for a file
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.GetFileVersionInfoSize(System.String,System.Int32@)">
+            <summary>
+            Gets the size of the version info for a file
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.VerQueryValue(System.Byte[],System.String,System.String@,System.UInt32@)">
+            <summary>
+            Used in getting version info
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.VerQueryValue(System.Byte[],System.String,System.Int16*@,System.UInt32@)">
+            <summary>
+            Used in getting version info
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.GetComputerName(System.Byte*,System.Int64*)">
+            <summary>
+            Gets the name of localhost on the computer it's run from
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.GetUserName(System.Byte[],System.Int32[])">
+            <summary>
+            Gets the login of the user whose machine calls the function
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.MessageBeep(System.Int32)">
+            <summary>
+            Provides a beep used for void input
+            </summary>
+        </member>
+        <member name="M:Sempra.Ops.Win32Imports.ShellExecute(System.IntPtr,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Runs a file from the shell
+            </summary>
+        </member>
+    </members>
+</doc>

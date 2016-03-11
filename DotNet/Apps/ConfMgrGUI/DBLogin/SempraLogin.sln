@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SempraLogin", "SempraLogin.csproj", "{49449EBB-FA53-4425-B93A-8944AB84730B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{9FC98B8F-44FA-444F-8EB3-D12470E893E9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{49449EBB-FA53-4425-B93A-8944AB84730B}.Debug.ActiveCfg = Debug|.NET
+		{49449EBB-FA53-4425-B93A-8944AB84730B}.Debug.Build.0 = Debug|.NET
+		{49449EBB-FA53-4425-B93A-8944AB84730B}.Release.ActiveCfg = Release|.NET
+		{49449EBB-FA53-4425-B93A-8944AB84730B}.Release.Build.0 = Release|.NET
+		{9FC98B8F-44FA-444F-8EB3-D12470E893E9}.Debug.ActiveCfg = Debug|.NET
+		{9FC98B8F-44FA-444F-8EB3-D12470E893E9}.Debug.Build.0 = Debug|.NET
+		{9FC98B8F-44FA-444F-8EB3-D12470E893E9}.Release.ActiveCfg = Release|.NET
+		{9FC98B8F-44FA-444F-8EB3-D12470E893E9}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

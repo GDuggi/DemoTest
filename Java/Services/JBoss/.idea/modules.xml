@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common-dao/common-dao.iml" filepath="$PROJECT_DIR$/common-dao/common-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-dao-inbound-doc/common-dao-inbound-doc.iml" filepath="$PROJECT_DIR$/common-dao-inbound-doc/common-dao-inbound-doc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-db-queue/common-db-queue.iml" filepath="$PROJECT_DIR$/common-db-queue/common-db-queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-econfirm/common-econfirm.iml" filepath="$PROJECT_DIR$/common-econfirm/common-econfirm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-efet/common-efet.iml" filepath="$PROJECT_DIR$/common-efet/common-efet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-filemaker/common-filemaker.iml" filepath="$PROJECT_DIR$/common-filemaker/common-filemaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-lucene/common-lucene.iml" filepath="$PROJECT_DIR$/common-lucene/common-lucene.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-otta/common-otta.iml" filepath="$PROJECT_DIR$/common-otta/common-otta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-service/common-service.iml" filepath="$PROJECT_DIR$/common-service/common-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-util/common-util.iml" filepath="$PROJECT_DIR$/common-util/common-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-vault/common-vault.iml" filepath="$PROJECT_DIR$/common-vault/common-vault.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jboss/jboss.iml" filepath="$PROJECT_DIR$/jboss/jboss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jboss-dbinfo/jboss-dbinfo.iml" filepath="$PROJECT_DIR$/jboss-dbinfo/jboss-dbinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jboss-jms-common/jboss-jms-common.iml" filepath="$PROJECT_DIR$/jboss-jms-common/jboss-jms-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jboss-mail/jboss-mail.iml" filepath="$PROJECT_DIR$/jboss-mail/jboss-mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jboss-queuemgr/jboss-queuemgr.iml" filepath="$PROJECT_DIR$/jboss-queuemgr/jboss-queuemgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jboss-queuemonitor/jboss-queuemonitor.iml" filepath="$PROJECT_DIR$/jboss-queuemonitor/jboss-queuemonitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jboss-util/jboss-util.iml" filepath="$PROJECT_DIR$/jboss-util/jboss-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mbeans-common/mbeans-common.iml" filepath="$PROJECT_DIR$/mbeans-common/mbeans-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mbeans-inbound-attributematching/mbeans-inbound-attributematching.iml" filepath="$PROJECT_DIR$/mbeans-inbound-attributematching/mbeans-inbound-attributematching.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mbeans-inbound-inboundreceiver/mbeans-inbound-inboundreceiver.iml" filepath="$PROJECT_DIR$/mbeans-inbound-inboundreceiver/mbeans-inbound-inboundreceiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mbeans-inbound-vaultprocessor/mbeans-inbound-vaultprocessor.iml" filepath="$PROJECT_DIR$/mbeans-inbound-vaultprocessor/mbeans-inbound-vaultprocessor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mercuriatradealertprocessormdb/mercuriatradealertprocessormdb.iml" filepath="$PROJECT_DIR$/mercuriatradealertprocessormdb/mercuriatradealertprocessormdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mercuriatradealertprocessormdbclient/mercuriatradealertprocessormdbclient.iml" filepath="$PROJECT_DIR$/mercuriatradealertprocessormdbclient/mercuriatradealertprocessormdbclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-common/opsmanager-common.iml" filepath="$PROJECT_DIR$/opsmanager-common/opsmanager-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-confirm/opsmanager-confirm.iml" filepath="$PROJECT_DIR$/opsmanager-confirm/opsmanager-confirm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-creditmargin/opsmanager-creditmargin.iml" filepath="$PROJECT_DIR$/opsmanager-creditmargin/opsmanager-creditmargin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-inbound/opsmanager-inbound.iml" filepath="$PROJECT_DIR$/opsmanager-inbound/opsmanager-inbound.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-opsmanagerweb/opsmanager-opsmanagerweb.iml" filepath="$PROJECT_DIR$/opsmanager-opsmanagerweb/opsmanager-opsmanagerweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-opssubpub/opsmanager-opssubpub.iml" filepath="$PROJECT_DIR$/opsmanager-opssubpub/opsmanager-opssubpub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-tc/opsmanager-tc.iml" filepath="$PROJECT_DIR$/opsmanager-tc/opsmanager-tc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opsmanager-transmissiongatewaycallbacks/opsmanager-transmissiongatewaycallbacks.iml" filepath="$PROJECT_DIR$/opsmanager-transmissiongatewaycallbacks/opsmanager-transmissiongatewaycallbacks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-econfirmmonitor2/services-econfirmmonitor2.iml" filepath="$PROJECT_DIR$/services-econfirmmonitor2/services-econfirmmonitor2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-econfirmstatuspolling/services-econfirmstatuspolling.iml" filepath="$PROJECT_DIR$/services-econfirmstatuspolling/services-econfirmstatuspolling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-econfirmtradealert/services-econfirmtradealert.iml" filepath="$PROJECT_DIR$/services-econfirmtradealert/services-econfirmtradealert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-econfirmtradesubmitter/services-econfirmtradesubmitter.iml" filepath="$PROJECT_DIR$/services-econfirmtradesubmitter/services-econfirmtradesubmitter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-efetmonitor/services-efetmonitor.iml" filepath="$PROJECT_DIR$/services-efetmonitor/services-efetmonitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-efetstatuspolling/services-efetstatuspolling.iml" filepath="$PROJECT_DIR$/services-efetstatuspolling/services-efetstatuspolling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-efettradealert/services-efettradealert.iml" filepath="$PROJECT_DIR$/services-efettradealert/services-efettradealert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-efettradesubmitter/services-efettradesubmitter.iml" filepath="$PROJECT_DIR$/services-efettradesubmitter/services-efettradesubmitter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-inboundpreprocessor/services-inboundpreprocessor.iml" filepath="$PROJECT_DIR$/services-inboundpreprocessor/services-inboundpreprocessor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-integritycheck/services-integritycheck.iml" filepath="$PROJECT_DIR$/services-integritycheck/services-integritycheck.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-opstrackingprioritycalc/services-opstrackingprioritycalc.iml" filepath="$PROJECT_DIR$/services-opstrackingprioritycalc/services-opstrackingprioritycalc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-opstrackingtradealert/services-opstrackingtradealert.iml" filepath="$PROJECT_DIR$/services-opstrackingtradealert/services-opstrackingtradealert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-orapasswordreminder/services-orapasswordreminder.iml" filepath="$PROJECT_DIR$/services-orapasswordreminder/services-orapasswordreminder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-staprocessor/services-staprocessor.iml" filepath="$PROJECT_DIR$/services-staprocessor/services-staprocessor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-statusmonitor/services-statusmonitor.iml" filepath="$PROJECT_DIR$/services-statusmonitor/services-statusmonitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-symphonyprocessor/services-symphonyprocessor.iml" filepath="$PROJECT_DIR$/services-symphonyprocessor/services-symphonyprocessor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-talogger/services-talogger.iml" filepath="$PROJECT_DIR$/services-talogger/services-talogger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services-tapublisher/services-tapublisher.iml" filepath="$PROJECT_DIR$/services-tapublisher/services-tapublisher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tradealertlog-mdb/tradealertlog-mdb.iml" filepath="$PROJECT_DIR$/tradealertlog-mdb/tradealertlog-mdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/updateconfirmstatus-mdb/updateconfirmstatus-mdb.iml" filepath="$PROJECT_DIR$/updateconfirmstatus-mdb/updateconfirmstatus-mdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-sempradocs-common/webservices-sempradocs-common.iml" filepath="$PROJECT_DIR$/webservices-sempradocs-common/webservices-sempradocs-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-sempradocs-stub/webservices-sempradocs-stub.iml" filepath="$PROJECT_DIR$/webservices-sempradocs-stub/webservices-sempradocs-stub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservices-tradegateway/webservices-tradegateway.iml" filepath="$PROJECT_DIR$/webservices-tradegateway/webservices-tradegateway.iml" />
+    </modules>
+  </component>
+</project>
+

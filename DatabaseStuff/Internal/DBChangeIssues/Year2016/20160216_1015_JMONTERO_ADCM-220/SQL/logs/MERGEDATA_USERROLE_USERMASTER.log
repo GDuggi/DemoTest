@@ -1,0 +1,62 @@
+$action    USER_ID                        EMAIL_ADDRESS                                                                                        CONFIRMS_GROUP_EMAIL_ADDRESS                                                                         ACTIVE
+_FLAG USER_ID                        EMAIL_ADDRESS                                                                                        CONFIRMS_GROUP_EMAIL_ADDRESS                                                                         ACTIVE_FLAG
+
+---------- ------------------------------ ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ------
+----- ------------------------------ ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- -----------
+
+INSERT     ASH\DPRASAD                    ASH\DPRASAD                                                                                          ASH\DPRASAD                                                                                          Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     ASH\HBLUMENF                   ASH\HBLUMENF                                                                                         ASH\HBLUMENF                                                                                         Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     ASH\IFRANKEL                   ASH\IFRANKEL                                                                                         ASH\IFRANKEL                                                                                         Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     ASH\JBURKE                     ASH\JBURKE                                                                                           ASH\JBURKE                                                                                           Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     ASH\JVEGA                      ASH\JVEGA                                                                                            ASH\JVEGA                                                                                            Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     ASH\KBARKMAN                   ASH\KBARKMAN                                                                                         ASH\KBARKMAN                                                                                         Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     ASH\NGOTTAM                    ASH\NGOTTAM                                                                                          ASH\NGOTTAM                                                                                          Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     ASH\PSKYWARK                   ASH\PSKYWARK                                                                                         ASH\PSKYWARK                                                                                         Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     KBBARKMAN                      KBBARKMAN                                                                                            KBBARKMAN                                                                                            Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TESTING                        TESTING                                                                                              TESTING                                                                                              Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\BSARASWAT         TRADECAPTURE\BSARASWAT                                                                               TRADECAPTURE\BSARASWAT                                                                               Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\CNFMGRSVC         TRADECAPTURE\CNFMGRSVC                                                                               TRADECAPTURE\CNFMGRSVC                                                                               Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\DEPLOY            TRADECAPTURE\DEPLOY                                                                                  TRADECAPTURE\DEPLOY                                                                                  Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\DMARAGANI         TRADECAPTURE\DMARAGANI                                                                               TRADECAPTURE\DMARAGANI                                                                               Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\DPRASAD           TRADECAPTURE\DPRASAD                                                                                 TRADECAPTURE\DPRASAD                                                                                 Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\NGOTTAM           TRADECAPTURE\NGOTTAM                                                                                 TRADECAPTURE\NGOTTAM                                                                                 Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\RKOLUPURI         TRADECAPTURE\RKOLUPURI                                                                               TRADECAPTURE\RKOLUPURI                                                                               Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+INSERT     TRADECAPTURE\VVALLAPUREDDY     TRADECAPTURE\VVALLAPUREDDY                                                                           TRADECAPTURE\VVALLAPUREDDY                                                                           Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+
+(18 rows affected)

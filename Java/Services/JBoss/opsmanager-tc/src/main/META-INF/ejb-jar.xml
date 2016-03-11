@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+version="3.0">
+
+ <enterprise-beans>
+ 		<session>
+ 			<ejb-name>OpsTrade</ejb-name>
+ 			<env-entry>
+ 				<env-entry-name>maxGetTrades</env-entry-name>
+ 				<env-entry-type>java.lang.Integer</env-entry-type>
+ 				<env-entry-value>5000</env-entry-value>
+ 			</env-entry>
+ 			<env-entry>
+ 				<env-entry-name>affinityURL</env-entry-name>
+ 				<env-entry-type>java.lang.String</env-entry-type>
+ 				<env-entry-value>http://aff01trd01:8080/tradeblotter/dealsheet</env-entry-value>
+ 			</env-entry>
+ 			<env-entry>
+ 				<env-entry-name>jmsURL</env-entry-name>
+ 				<env-entry-type>java.lang.String</env-entry-type>
+ 				<env-entry-value>http://occ/DisplayDealSheet.aspx</env-entry-value>
+ 			</env-entry>
+ 			<env-entry>
+ 				<env-entry-name>jmsReplyWorkDir</env-entry-name>
+ 				<env-entry-type>java.lang.String</env-entry-type>
+ 				<env-entry-value>\\stdev2\dev\srajaman\jmswork</env-entry-value>
+ 			</env-entry>
+ 			<env-entry>
+ 				<env-entry-name>jmsReplyDropDir</env-entry-name>
+ 				<env-entry-type>java.lang.String</env-entry-type>
+ 				<env-entry-value>\\stdev2\dev\srajaman\FeedsIn</env-entry-value>
+ 			</env-entry>
+ 		</session>
+ </enterprise-beans>
+ 
+ </ejb-jar>

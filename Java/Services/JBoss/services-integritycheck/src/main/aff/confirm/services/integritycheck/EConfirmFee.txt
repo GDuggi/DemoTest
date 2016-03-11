@@ -1,0 +1,2 @@
+select id from infinity_mgr.trade_fee_input
+where id in (select trade_fee_input_id from infinity_mgr.trade_fee_input_error_log)

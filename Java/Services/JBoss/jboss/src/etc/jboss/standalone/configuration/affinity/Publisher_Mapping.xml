@@ -1,0 +1,176 @@
+<xml-element-mappings>
+	<xml-element-mapping>
+		<xml-element-name>tradingSystem</xml-element-name>
+		<jms-property-name>TRADING_SYSTEM</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>tradeId</xml-element-name>
+		<jms-property-name>PRMNT_TRADE_ID</jms-property-name>
+		<jms-property-data-type>F</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>version</xml-element-name>
+		<jms-property-name>VERSION</jms-property-name>
+		<jms-property-data-type>F</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>auditTypeCode</xml-element-name>
+		<jms-property-name>AUDIT_TYPE_CODE</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>tradeAuditId</xml-element-name>
+		<jms-property-name>TRADE_AUDIT_ID</jms-property-name>
+		<jms-property-data-type>F</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>updateTimeStampGMT</xml-element-name>
+		<jms-property-name>UPDATE_DATETIME</jms-property-name>
+		<jms-property-data-type>D</jms-property-data-type>
+		<data-format>yyyy-MM-dd'T'HH:mm:ss</data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>updateUserId</xml-element-name>
+		<jms-property-name>UPDATE_USER_ID</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>updateBusnDt</xml-element-name>
+		<jms-property-name>UPDATE_BUSN_DT</jms-property-name>
+		<jms-property-data-type>D</jms-property-data-type>
+		<data-format>yyyy-MM-dd</data-format>
+	</xml-element-mapping>
+	
+	<xml-element-mapping>
+		<xml-element-name>tradeStatCode</xml-element-name>
+		<jms-property-name>TRADE_STAT_CODE</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>tradeTypeCode</xml-element-name>
+		<jms-property-name>TRADE_TYPE_CODE</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>tradeSttlTypeCode</xml-element-name>
+		<jms-property-name>TRADE_STTL_TYPE_CODE</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>cdtyCode</xml-element-name>
+		<jms-property-name>CDTY_CODE</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	
+	<xml-element-mapping>
+		<xml-element-name>tradeDt</xml-element-name>
+		<jms-property-name>TRADE_DT</jms-property-name>
+		<jms-property-data-type>D</jms-property-data-type>
+		<data-format>yyyy-MM-dd</data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>cmpnyShortName</xml-element-name>
+		<jms-property-name>CMPNY_SHORT_NAME</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>bkShortName</xml-element-name>
+		<jms-property-name>BK_SHORT_NAME</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	
+	<xml-element-mapping>
+		<xml-element-name>cptyShortName</xml-element-name>
+		<jms-property-name>CPTY_SHORT_NAME</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>brokerShortName</xml-element-name>
+		<jms-property-name>BROKERSN</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	
+	<xml-element-mapping>
+		<xml-element-name>rfrnceShortName</xml-element-name>
+		<jms-property-name>RFRNCE_SHORT_NAME</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+
+	<xml-element-mapping>
+		<xml-element-name>notifyContract</xml-element-name>
+		<jms-property-name>NOTIFY_CONTRACTS_FLAG</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+	<xml-element-mapping>
+		<xml-element-name>notifyPL</xml-element-name>
+		<jms-property-name>NOTIFY_PL</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	
+	<!-- Computed fields -->
+	
+	<xml-element-mapping>
+		<xml-element-name>empId</xml-element-name>
+		<jms-property-name>EMP_ID</jms-property-name>
+		<jms-property-data-type>F</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>tradingSystem</xml-element-name>
+		<jms-property-name>TRADING_SYSTEM</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>instCode</xml-element-name>
+		<jms-property-name>INST_CODE</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>database</xml-element-name>
+		<jms-property-name>DATABASE_NAME</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+	<xml-element-mapping>
+		<xml-element-name>type</xml-element-name>
+		<jms-property-name>TYPE</jms-property-name>
+		<jms-property-data-type>S</jms-property-data-type>
+		<data-format></data-format>
+	</xml-element-mapping>
+
+
+	
+</xml-element-mappings>
+
+

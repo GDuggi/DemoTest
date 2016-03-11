@@ -1,0 +1,5 @@
+Confirmations Manager Status Change MDB Setup
+It requires an property entity in standalone.xml called "confirmationsManagerWebServiceURL".
+Update the tag value of "confirmationsManagerWebServiceURL” in standalone.xml file in the <system-properties> section to point where the Confirmations Manager Web Service is running.
+
+Ex: <property name="confirmationsManagerWebServiceURL" value="http://cnf01inf01:11111/ConfirmationsManager"/>

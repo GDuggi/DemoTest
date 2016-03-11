@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sempra.Login</name>
+    </assembly>
+    <members>
+        <member name="T:Sempra.frmLogin">
+            <summary>
+            Facilitates logging into an Oracle database, prompting the user for logon information
+            </summary>
+        </member>
+        <member name="M:Sempra.frmLogin.#ctor(System.Boolean,System.Int32,System.String,System.String,System.Collections.Specialized.StringCollection)">
+            <param name="ShowLoginHistory">Allow user to select from list of previous usernames and databases</param>
+            <param name="HistoryLength">Number of items to store in the history</param>
+            <param name="SettingsDir">Settings directory (location to store list of logins)</param>
+            <param name="SchemaPath">Full path to directory where XML Schemas are stored</param>
+            <param name="Servers">List of databases to allow the user to choose from</param>
+        </member>
+        <member name="M:Sempra.frmLogin.Execute(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Executes the login form, returning whether the login was successful
+            </summary>
+        </member>
+        <member name="M:Sempra.frmLogin.HistoryItemClick(System.Object,System.EventArgs)">
+            <summary>
+            Fills the username and database text boxes, and focuses the password box
+            </summary>
+        </member>
+        <member name="F:Sempra.frmLogin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Sempra.frmLogin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Sempra.frmLogin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.Connection">
+            <summary>
+            Gets or Sets the database connection of the form
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.UserName">
+            <summary>
+            Sets the username displayed in the dialog
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.Password">
+            <summary>
+            Sets the password displayed in the dialog
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.Server">
+            <summary>
+            Sets the database displayed in the dialog
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.Database">
+            <summary>
+            Sets the database displayed in the dialog
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.DBList">
+            <summary>
+            Gets or sets list of items in the Database combo box's dropdown
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.UserListXMLFile">
+            <summary>
+            Gets or sets the location and file name where the login history is stored
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.HistoryLength">
+            <summary>
+            Gets or sets the number of logins stored in the history
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.MaxLoginAttempts">
+            <summary>
+            Gets or sets the number of times a user can fail logging in before quitting
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.FailedLoginAttempts">
+            <summary>
+            Gets the number of failed login attempts
+            </summary>
+        </member>
+        <member name="P:Sempra.frmLogin.DBMS">
+            <summary>
+            The type of database connecting to
+            </summary>
+        </member>
+        <member name="T:Sempra.LoginHistory">
+            <summary>
+            Builds/Maintains an XML list of login history information
+            </summary>
+        </member>
+        <member name="M:Sempra.LoginHistory.#ctor(System.String,System.String)">
+            <param name="XmlSchema">Full path to directory where XML schemas are stored</param>
+            <param name="XmlFile">Full path and file name of XML that contains or will contain
+            the history of login information</param>
+        </member>
+        <member name="M:Sempra.LoginHistory.AddLogin(System.String,System.String,System.String)">
+            <summary>Adds a user's login information to the history XML</summary>
+            <param name="Username">Username to add</param>
+            <param name="Server">Database to add</param>
+        </member>
+        <member name="M:Sempra.LoginHistory.GetLogins">
+            <summary>
+            Gets a list of the login usernames and databases, each separated by a ", "
+            </summary>
+        </member>
+        <member name="P:Sempra.LoginHistory.XmlFileLocation">
+            <summary>
+            Gets or sets path and file name of the XML file
+            </summary>
+        </member>
+        <member name="P:Sempra.LoginHistory.HistoryLength">
+            <summary>
+            Gets or sets the number of items to store in the history dropdown
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OpsTrackingModel.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SummaryData" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT * FROM OPS_TRACKING.V_PC_TRADE_SUMMARY WHERE FINAL_APPROVAL_FLAG = 'N'</Value>
+    </Setting>
+    <Setting Name="RqmtData" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT * FROM OPS_TRACKING.V_PC_TRADE_RQMT WHERE FINAL_APPROVAL_FLAG = 'N' ORDER BY TRANSACTION_SEQ ASC</Value>
+    </Setting>
+    <Setting Name="TradeRqmtConfirm" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_TRADE_RQMT_CONFIRM WHERE FINAL_APPROVAL_FLAG = 'N'</Value>
+    </Setting>
+    <Setting Name="RqmtStatusColor" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_RQMT_STATUS_COLORS</Value>
+    </Setting>
+    <Setting Name="ColorTranslate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.COLOR_TRANSLATE</Value>
+    </Setting>
+    <Setting Name="RqmtView" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_RQMT</Value>
+    </Setting>
+    <Setting Name="RqmtStatusView" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_RQMT_STATUS</Value>
+    </Setting>
+    <Setting Name="BdtaCdtyLkup" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_TRADE_DATA_CDTY_CODE_LKUP ORDER BY CDTY_CODE ASC</Value>
+    </Setting>
+    <Setting Name="BdtaCptyLkup" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_TRADE_DATA_CPTY_LKUP ORDER BY SHORT_NAME ASC</Value>
+    </Setting>
+    <Setting Name="InboundDocsView" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_INBOUND_DOCS where doc_status_code = 'OPEN'</Value>
+    </Setting>
+    <Setting Name="AssociatedDocs" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from OPS_TRACKING.V_ACTIVE_ASSOCIATED_DOCS</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

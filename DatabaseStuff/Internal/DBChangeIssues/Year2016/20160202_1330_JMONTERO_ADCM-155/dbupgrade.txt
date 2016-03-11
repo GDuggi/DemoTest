@@ -1,0 +1,17 @@
+ISSUE #: ADCM-155
+REQUEST BY: JACK BURKE
+DESCRIPTION: 
+Upon Final Approval, any docs not already vaulted need to be sent to the vault, (insert rows into the the vaulted_docs table). Possibly introduce a new stored proc to do this work
+
+
+SOLUTION: 
+
+OBJECTS CREATED: N/A
+
+OBJECTS AFFECTED: 
+P_VAULT_ORIGINAL_ASSOCIATED_DOCS
+TG_TRADE_APPR_AER_I
+P_INSERT_VAULT_REQUEST
+
+
+

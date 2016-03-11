@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConfirmMessage>
+  <NotifyType>NEW</NotifyType>
+  <NotifyTsGmt>15-APR-2015T09:15:39</NotifyTsGmt>
+  <TradeData>
+    <TradingSystemCode>AFF</TradingSystemCode>
+    <TradingSystemTicket>A1496103</TradingSystemTicket>
+    <InceptionDt>15-APR-2015</InceptionDt>
+    <CdtyCode>NGAS</CdtyCode>
+    <TradeDt>15-APR-2015</TradeDt>
+    <Xref></Xref>
+    <CptySn>TESTOTC</CptySn>
+    <QtyTot>1230000</QtyTot>
+    <Qty>10000</Qty>
+    <UomDurCode>MMBTU/DAY</UomDurCode>
+    <LocationSn>AGT-CG</LocationSn>
+    <PriceDesc></PriceDesc>
+    <StartDt>01-JUL-2015</StartDt>
+    <EndDt>31-OCT-2015</EndDt>
+    <Book>EPOWSTRAT</Book>
+    <TradeTypeCode>ENRGY</TradeTypeCode>
+    <SttlType>PHYS</SttlType>
+    <BrokerSn>AMEREX</BrokerSn>
+    <Comm>0.00025</Comm>
+    <BuySellInd>B</BuySellInd>
+    <RefSn></RefSn>
+    <PayPrice>NYMEX:NGAS L1D -0.005 USD/MMBTU</PayPrice>
+    <RecPrice></RecPrice>
+    <BookingCompany>AMPH US</BookingCompany>
+    <TradeStatCode>OPEN</TradeStatCode>
+    <CdtyGrpCode>NGAS</CdtyGrpCode>
+    <BrokerPrice>0.00025 USD/MMBTU</BrokerPrice>
+    <OptnStrikePrice></OptnStrikePrice>
+    <OptnPremPrice></OptnPremPrice>
+    <OptnPutCallInd></OptnPutCallInd>
+    <EfsFlag>N</EfsFlag>
+    <EfsCptySn></EfsCptySn>
+  </TradeData>
+  <Rqmts>
+    <Rqmt>
+      <RqmtType>XQCSP</RqmtType>
+      <Reference></Reference>
+    </Rqmt>
+    <Rqmt>
+      <RqmtType>XQCCP</RqmtType>
+      <Reference></Reference>
+    </Rqmt>
+  </Rqmts>
+</ConfirmMessage>

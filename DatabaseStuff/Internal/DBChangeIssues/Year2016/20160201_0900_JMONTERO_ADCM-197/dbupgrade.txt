@@ -1,0 +1,25 @@
+ISSUE #: ADCM-197
+REQUEST BY: JACK BURKE
+DESCRIPTION: 
+The following tables contain reference data needed for new instances of the ConfMgr db.
+Please create scripts to populate these tables.
+The data in CNF01 is complete and valid.
+COLOR_TRANSLATE
+CONTROL
+DOC_TYPE
+GUI_COLOR
+INB_ATTRIB
+ROLE
+RQMT
+RQMT_DOC_TYPE
+RQMT_STATUS
+STATUS
+
+SOLUTION: Load Reference Data described above
+
+OBJECTS CREATED: N/A
+
+OBJECTS AFFECTED: N/A
+
+
+

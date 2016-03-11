@@ -1,0 +1,86 @@
+<ivysettings>
+
+    <property name="ivy.repo.local" value="${ivy.default.ivy.user.dir}/local" override="false"/>
+    <property name="ivy.repo.shared" value="//stdev2/apps/repository" override="false"/>
+
+    <property name="ivy.ivy.pattern" value="[organisation]/[module]/ivy-[revision].xml"/>
+    <property name="ivy.artifact.pattern" value="[organisation]/[module]/[type]s/[artifact]-[revision].[ext]"/>
+    <property name="ivy.checksums" value="sha1"/>
+
+    <settings  defaultResolver="${ivy.defaultResolver}"/>
+
+    <resolvers>
+        <filesystem name="local" checkmodified="true" changingPattern="local" checksums="sha1">
+            <ivy pattern="${ivy.repo.local}/local/${ivy.ivy.pattern}"/>
+            <artifact pattern="${ivy.repo.local}/local/${ivy.artifact.pattern}"/>
+        </filesystem>
+
+        <filesystem name="trunk" checkmodified="true" changingPattern="trunk" checksums="sha1">
+            <ivy pattern="${ivy.repo.shared}/trunk/${ivy.ivy.pattern}"/>
+            <artifact pattern="${ivy.repo.shared}/trunk/${ivy.artifact.pattern}"/>
+        </filesystem>
+
+        <filesystem name="release" checksums="sha1">
+            <ivy pattern="${ivy.repo.shared}/release/${ivy.ivy.pattern}"/>
+            <artifact pattern="${ivy.repo.shared}/release/${ivy.artifact.pattern}"/>
+        </filesystem>
+
+        <filesystem name="mirror">
+            <ivy pattern="${ivy.repo.shared}/mirror/${ivy.ivy.pattern}"/>
+            <artifact pattern="${ivy.repo.shared}/mirror/${ivy.artifact.pattern}"/>
+        </filesystem>
+
+        <filesystem name="3rdparty">
+            <ivy pattern="${ivy.repo.shared}/3rdparty/${ivy.ivy.pattern}"/>
+            <artifact pattern="${ivy.repo.shared}/3rdparty/${ivy.artifact.pattern}"/>
+        </filesystem>
+
+        <chain name="java">
+            <filesystem name="java-jars">
+                <ivy pattern="${ivy.repo.shared}/java/[organisation]/ivy-[revision].xml"/>
+                <artifact pattern="${ivy.repo.shared}/java/[organisation]/[artifact]-[revision].[ext]"/>
+            </filesystem>
+            <filesystem name="java-modules">
+                <ivy pattern="${ivy.repo.shared}/java/[organisation]/[module]/ivy-[revision].xml"/>
+                <artifact pattern="${ivy.repo.shared}/java/[organisation]/[module]/[artifact]-[revision].[ext]"/>
+            </filesystem>
+            <filesystem name="java-double">
+                <artifact pattern="${ivy.repo.shared}/java/[organisation]/[module]-[revision]/[artifact]-[revision].[ext]"/>
+            </filesystem>
+            <filesystem name="java-modrev">
+                <artifact pattern="${ivy.repo.shared}/java/[organisation]/[module]-[revision]/[artifact].[ext]"/>
+            </filesystem>
+            <filesystem name="java-no-rev">
+                <artifact pattern="${ivy.repo.shared}/java/[organisation]/[module]/[artifact].[ext]"/>
+            </filesystem>
+            <filesystem name="java-no-modrev">
+                <artifact pattern="${ivy.repo.shared}/java/[organisation]/[artifact].[ext]"/>
+            </filesystem>
+        </chain>
+
+        <chain name="local.chain" returnFirst="true">
+            <resolver ref="local"/>
+            <resolver ref="trunk"/>
+            <resolver ref="release"/>
+            <resolver ref="mirror"/>
+            <resolver ref="3rdparty"/>
+            <resolver ref="java"/>
+        </chain>
+
+        <chain name="trunk.chain" returnFirst="true">
+            <resolver ref="trunk"/>
+            <resolver ref="release"/>
+            <resolver ref="mirror"/>
+            <resolver ref="3rdparty"/>
+            <resolver ref="java"/>
+        </chain>
+
+        <chain name="release.chain" returnFirst="true">
+            <resolver ref="release"/>
+            <resolver ref="mirror"/>
+            <resolver ref="3rdparty"/>
+            <resolver ref="java"/>
+        </chain>
+
+    </resolvers>
+</ivysettings>

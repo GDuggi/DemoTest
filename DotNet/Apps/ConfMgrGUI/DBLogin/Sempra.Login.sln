@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sempra.Login", "Sempra.Login.csproj", "{9B1A6D35-9D3B-4CBC-BE21-F62E1B42F8F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SempraLoginTestForm", "TestForm\SempraLoginTestForm.csproj", "{C1C270D6-7983-47EE-9524-0B6EB966A61B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - No Documentation|Any CPU = Debug - No Documentation|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B1A6D35-9D3B-4CBC-BE21-F62E1B42F8F1}.Debug - No Documentation|Any CPU.ActiveCfg = Debug - No Documentation|Any CPU
+		{9B1A6D35-9D3B-4CBC-BE21-F62E1B42F8F1}.Debug - No Documentation|Any CPU.Build.0 = Debug - No Documentation|Any CPU
+		{9B1A6D35-9D3B-4CBC-BE21-F62E1B42F8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1A6D35-9D3B-4CBC-BE21-F62E1B42F8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1A6D35-9D3B-4CBC-BE21-F62E1B42F8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1A6D35-9D3B-4CBC-BE21-F62E1B42F8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C270D6-7983-47EE-9524-0B6EB966A61B}.Debug - No Documentation|Any CPU.ActiveCfg = Debug - No Documentation|Any CPU
+		{C1C270D6-7983-47EE-9524-0B6EB966A61B}.Debug - No Documentation|Any CPU.Build.0 = Debug - No Documentation|Any CPU
+		{C1C270D6-7983-47EE-9524-0B6EB966A61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C270D6-7983-47EE-9524-0B6EB966A61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C270D6-7983-47EE-9524-0B6EB966A61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C270D6-7983-47EE-9524-0B6EB966A61B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

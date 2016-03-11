@@ -1,0 +1,55 @@
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="cnf" module="cnf-SempraDocWSStub"/>
+
+    <configurations>
+         <include file="${project.basedir}/ivy-configurations.xml"/>
+     </configurations>
+
+    <publications>
+        <artifact type="jar" conf="master"/>
+    </publications>
+
+    <dependencies defaultconf="default">
+        <dependency org="org.apache.ws.commons.axiom" name="axiom-api" rev="1.2.8">
+            <artifact name="axiom-api" type="jar"/>
+        </dependency>
+        <dependency org="org.apache.ws.commons.axiom" name="axiom-impl" rev="1.2.8">
+            <artifact name="axiom-impl" type="jar"/>
+        </dependency>
+        <dependency org="org.apache.axis2" name="axis2-adb" rev="1.5">
+            <artifact name="axis2-adb" type="jar"/>
+        </dependency>
+        <dependency org="org.apache.axis2" name="axis2-kernel" rev="1.5">
+            <artifact name="axis2-kernel" type="jar"/>
+        </dependency>
+        <dependency org="apache" name="axis-wsdl4j" rev="1.5.1">
+            <artifact name="wsdl4j" type="jar"/>
+        </dependency>
+
+        <dependency org="org.apache.axis2" name="axis2-transport-http" rev="1.5">
+            <artifact name="axis2-transport-http" type="jar"/>
+        </dependency>
+        <dependency org="org.apache.neethi" name="neethi" transitive="false" rev="2.0.4">
+            <artifact name="neethi" type="jar"/>
+        </dependency>
+        <dependency org="org.apache.axis2" name="axis2-transport-local" rev="1.5">
+            <artifact name="axis2-transport-local" type="jar"/>
+        </dependency>
+        <dependency org="commons-httpclient" name="commons-httpclient" rev="3.1"/>
+        <dependency org="commons-logging" name="commons-logging" rev="1.1"/>
+
+        <dependency org="org.apache.httpcomponents" name="httpcore" rev="4.0.1">
+            <artifact name="httpcore" type="jar"/>
+        </dependency>
+        <dependency org="org.apache.ws.commons.schema" name="XmlSchema" transitive="false" rev="1.4.2">
+            <artifact name="XmlSchema" type="jar"/>
+        </dependency>
+
+        <!--Added to be inserted into jar lib folder-->
+        <dependency org="com.jboss" name="wsdl4j" rev="1.6.2"/>
+    </dependencies>
+
+</ivy-module>

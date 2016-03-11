@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://dms/VaultService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dms/VaultService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://dms/VaultService/Imports">
+      <xsd:import schemaLocation="http://localhost:11111/VaultService?xsd=xsd0" namespace="http://dms/VaultService" />
+      <xsd:import schemaLocation="http://localhost:11111/VaultService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11111/VaultService?xsd=xsd2" namespace="http://dms/Integration" />
+      <xsd:import schemaLocation="http://localhost:11111/VaultService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="VaultSvc_UploadDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocument" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_UploadDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetVersionInfoForDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInfoForDocument" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetVersionInfoForDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionInfoForDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocInfoForQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocInfoForQuery" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocInfoForQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocInfoForQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocumentForURL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentForURL" />
+  </wsdl:message>
+  <wsdl:message name="VaultSvc_GetDocumentForURL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentForURLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VaultSvc">
+    <wsdl:operation name="UploadDocument">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/UploadDocument" message="tns:VaultSvc_UploadDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/UploadDocumentResponse" message="tns:VaultSvc_UploadDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionInfoForDocument">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/GetVersionInfoForDocument" message="tns:VaultSvc_GetVersionInfoForDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/GetVersionInfoForDocumentResponse" message="tns:VaultSvc_GetVersionInfoForDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoForQuery">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/GetDocInfoForQuery" message="tns:VaultSvc_GetDocInfoForQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/GetDocInfoForQueryResponse" message="tns:VaultSvc_GetDocInfoForQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentForURL">
+      <wsdl:input wsaw:Action="http://dms/VaultService/VaultSvc/GetDocumentForURL" message="tns:VaultSvc_GetDocumentForURL_InputMessage" />
+      <wsdl:output wsaw:Action="http://dms/VaultService/VaultSvc/GetDocumentForURLResponse" message="tns:VaultSvc_GetDocumentForURL_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

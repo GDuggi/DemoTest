@@ -1,0 +1,255 @@
+<?xml-stylesheet type="text/xsl" href="http://www.ivyrep.org/ivy-doc.xsl"?>
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="cnf" module="cnf-InboundFileProcessor" />        
+  
+    <configurations>
+      <conf name="default" />
+      <conf name="build" visibility="private" />
+      <conf name="test" visibility="private" extends="default" />
+    </configurations>    
+    <publications>
+      <artifact name="InboundFileProcessor"  type="zip" ext="zip" />    
+    </publications> 
+	
+    <dependencies >
+	
+      <!--<dependency org="apache" name="log4net" rev="1.2.10.0" />-->
+	  <dependency org="leadtools" name="win32" rev="17.5.4.0">
+	      <artifact  name="Leadtools.Annotations.Core"  type="dll"/>
+	      <artifact  name="Leadtools.Annotations.Rendering"  type="dll"/>
+	      <artifact  name="Leadtools.Annotations"  type="dll"/>
+	      <artifact  name="Leadtools.AuthenticateAction.Agent"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode.DatamatrixRead"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode.DatamatrixWrite"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode.OneD"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode.PdfRead"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode.PdfWrite"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode.QrRead"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode.QrWrite"  type="dll"/>
+	      <artifact  name="Leadtools.Barcode"  type="dll"/>
+	      <artifact  name="Leadtools.Ccow"  type="dll"/>
+	      <artifact  name="Leadtools.Cloud.DataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Cloud.Job"  type="dll"/>
+	      <artifact  name="Leadtools.Cloud.Worker"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Abc"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Abi"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Afp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Ani"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Anz"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Awd"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Bmp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Cal"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Cgm"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Cin"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Clp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Cmp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Cmw"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Cmx"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Crw"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Cut"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dcf"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dcr"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dcs"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dgn"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Doc"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dox"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Drw"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dwf"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dwg"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Dxf"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.E00"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Ecw"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Eps"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Fax"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Fit"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Flc"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Fpx"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Gbr"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Gif"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Hdp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Htm"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Ica"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Iff"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Img"  type="dll"/>
+	      <artifact  name="Leadtools.codecs.ing"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Itg"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.J2k"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Jb2"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Jbg"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Jls"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Jpm"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Jxr"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Kdc"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Lma"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Lmb"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Mac"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Mif"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Mng"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Mob"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Msp"  type="dll"/>
+	      <artifact  name="Leadtools.codecs.nap"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Pcd"  type="dll"/>
+	      <artifact  name="Leadtools.codecs.pcl"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Pct"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Pcx"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Png"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Pnm"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Ppt"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Ppx"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Psd"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Ptk"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Pub"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Ras"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Raw"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Rtf"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Sct"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Sff"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Sgi"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Shp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Smp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Snp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Svg"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Tdb"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Tfx"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Tga"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Tif"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Txt"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Vff"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Wfx"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Wmf"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Wmp"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Wmz"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Wpg"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Xbm"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Xls"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Xlx"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Xpm"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Xps"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs.Xwd"  type="dll"/>
+	      <artifact  name="Leadtools.Codecs"  type="dll"/>
+	      <artifact  name="Leadtools.ColorConversion"  type="dll"/>
+	      <artifact  name="Leadtools.Compatibility"  type="dll"/>
+	      <!--<artifact  name="Leadtools.Dicom.AddIn"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom.Annotations.Core"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom.Annotations"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom.Common"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom.Scp"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom.Scu"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom.Server.Admin"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom.Tables"  type="dll"/>
+	      <artifact  name="Leadtools.Dicom"  type="dll"/>-->
+	      <artifact  name="Leadtools.Drawing"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Auto"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.DocumentReaders.Pdf"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.DocumentReaders.Raster"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.DocumentReaders.Xps"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.DocumentReaders"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.DocumentWriters"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Ocr.Advantage"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Ocr.Arabic"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Ocr.Plus"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Ocr.Professional"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Ocr"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Processing"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Recognition.Barcode"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Recognition.Ocr"  type="dll"/>
+	      <artifact  name="Leadtools.Forms.Recognition"  type="dll"/>
+	      <artifact  name="Leadtools.Forms"  type="dll"/>
+	      <artifact  name="Leadtools.ImageOptimization"  type="dll"/>
+	      <artifact  name="Leadtools.ImageProcessing.Color"  type="dll"/>
+	      <artifact  name="Leadtools.ImageProcessing.Core"  type="dll"/>
+	      <artifact  name="Leadtools.ImageProcessing.Effects"  type="dll"/>
+	      <artifact  name="Leadtools.ImageProcessing.SpecialEffects"  type="dll"/>
+	      <artifact  name="Leadtools.ImageProcessing.Utilities"  type="dll"/>
+	      <artifact  name="Leadtools.Jpeg2000"  type="dll"/>
+	      <artifact  name="Leadtools.Jpip.Client.Decoder"  type="dll"/>
+	      <artifact  name="Leadtools.Jpip.Client.WinForms"  type="dll"/>
+	      <artifact  name="Leadtools.Jpip.Client"  type="dll"/>
+	      <artifact  name="Leadtools.Jpip.Server.Parser"  type="dll"/>
+	      <artifact  name="Leadtools.Jpip.Server"  type="dll"/>
+	      <artifact  name="Leadtools.Jpip"  type="dll"/>
+	      <artifact  name="Leadtools.Kernel.Annotations"  type="dll"/>
+	      <artifact  name="Leadtools.Logging.Medical"  type="dll"/>
+	      <artifact  name="Leadtools.Logging"  type="dll"/>
+	      <artifact  name="Leadtools.MediaWriter"  type="dll"/>
+	      <!--<artifact  name="Leadtools.Medical.DataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Logging.DataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Media.AddIns"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Media.DataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Storage.AddIns"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Storage.DataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.UserManagementDataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.WebViewer.Addins"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Winforms"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Worklist.AddIns"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Worklist.DataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Worklist.Wcf"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Workstation.Client"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Workstation.DataAccessLayer"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Workstation.Loader"  type="dll"/>
+	      <artifact  name="Leadtools.Medical.Workstation"  type="dll"/>
+	      <artifact  name="Leadtools.Medical3D"  type="dll"/>
+	      <artifact  name="Leadtools.MedicalViewer"  type="dll"/>-->
+	      <artifact  name="Leadtools.Mrc"  type="dll"/>
+	      <!--<artifact  name="Leadtools.PatientAnnotation.Agent"  type="dll"/>
+	      <artifact  name="Leadtools.PatientMapping.Agent"  type="dll"/>-->
+	      <artifact  name="Leadtools.Pdf"  type="dll"/>
+	      <artifact  name="Leadtools.PdfCompressor"  type="dll"/>
+	      <artifact  name="Leadtools.PdfEngine"  type="dll"/>
+	      <!--<artifact  name="Leadtools.Printer.Client.Installer"  type="dll"/>
+	      <artifact  name="Leadtools.Printer.Client"  type="dll"/>
+	      <artifact  name="Leadtools.Printer"  type="dll"/>-->
+	      <artifact  name="Leadtools.ScreenCapture"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Barcode.DataContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Barcode.ServiceContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Barcode.ServiceImplementations"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Cloud.DataContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Cloud.FaultContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Cloud.ServiceContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Cloud.ServiceImplementations"  type="dll"/>
+	      <artifact  name="Leadtools.Services.DataContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Forms.DataContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Forms.ServiceContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Forms.ServiceImplementations"  type="dll"/>
+	      <artifact  name="Leadtools.Services.ImageProcessing.DataContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.ImageProcessing.ServiceContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.ImageProcessing.ServiceImplementations"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Raster.DataContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Raster.FaultContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Raster.ServiceContracts"  type="dll"/>
+	      <artifact  name="Leadtools.Services.Raster.ServiceImplementations"  type="dll"/>
+	      <artifact  name="Leadtools.Services"  type="dll"/>
+	      <artifact  name="Leadtools.SharePoint.Client"  type="dll"/>
+	      <artifact  name="Leadtools.SpecialEffects"  type="dll"/>
+	      <artifact  name="Leadtools.Twain"  type="dll"/>
+	      <artifact  name="Leadtools.UserAnnotation.Agent"  type="dll"/>
+	      <artifact  name="Leadtools.UserMapping.Agent"  type="dll"/>
+	      <artifact  name="Leadtools.Vector"  type="dll"/>
+	      <artifact  name="Leadtools.Web"  type="dll"/>
+	      <artifact  name="Leadtools.Wia"  type="dll"/>
+	      <artifact  name="Leadtools.Windows.Annotations"  type="dll"/>
+	      <artifact  name="Leadtools.Windows.Controls"  type="dll"/>
+	      <artifact  name="Leadtools.Windows.Media.Effects"  type="dll"/>
+	      <artifact  name="Leadtools.Windows.Media.TransitionBase"  type="dll"/>
+	      <artifact  name="Leadtools.Windows.Media.Transitions"  type="dll"/>
+	      <artifact  name="Leadtools.Windows.Media"  type="dll"/>
+	      <artifact  name="Leadtools.WinForms.CommonDialogs.Color"  type="dll"/>
+	      <artifact  name="Leadtools.WinForms.CommonDialogs.File"  type="dll"/>
+	      <artifact  name="Leadtools.WinForms.Design"  type="dll"/>
+	      <artifact  name="Leadtools.WinForms"  type="dll"/>
+	      <artifact  name="Leadtools.Workflow.Barcode"  type="dll"/>
+	      <artifact  name="Leadtools.Workflow.ImageProcessing"  type="dll"/>
+	      <artifact  name="Leadtools.Workflow.Ocr"  type="dll"/>
+	      <artifact  name="Leadtools.Workflow.Raster"  type="dll"/>
+	      <artifact  name="Leadtools.Workflow.Scan"  type="dll"/>
+	      <artifact  name="Leadtools"  type="dll"/>
+	  </dependency>
+	  <dependency org="microsoft" name="openxml" rev="2.0.5022.0">
+		  <artifact  name="DocumentFormat.OpenXml" type="dll"  />
+	  </dependency>
+
+      <!--<dependency org="microsoft" name="MSBuild.ExtensionPack" rev="1.6.0" conf="build->default"/>-->
+    </dependencies>
+</ivy-module>

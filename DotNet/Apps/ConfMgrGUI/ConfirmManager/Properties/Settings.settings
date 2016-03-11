@@ -1,0 +1,102 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConfirmManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MessageUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sempra.ops.gs.service</Value>
+    </Setting>
+    <Setting Name="MessagePassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sempra</Value>
+    </Setting>
+    <Setting Name="AddRqmtNoConfReason" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;CPTY&lt;/string&gt;
+  &lt;string&gt;INTCO&lt;/string&gt;
+  &lt;string&gt;REF&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="DisputedReasons" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Wrong Cpty&lt;/string&gt;
+  &lt;string&gt;Wrong Location&lt;/string&gt;
+  &lt;string&gt;Wrong Volume&lt;/string&gt;
+  &lt;string&gt;Wrong Timing&lt;/string&gt;
+  &lt;string&gt;Wrong Price&lt;/string&gt;
+  &lt;string&gt;Other&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="EmailHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">st-mailhost</Value>
+    </Setting>
+    <Setting Name="EmailPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="UpdateFromCacheTimerIntervalSecs" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="MessageServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cnf01inf01:61613</Value>
+    </Setting>
+    <Setting Name="TransmissionGatewayEmailToAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">faxgateway-CNF01@amphorainc.com</Value>
+    </Setting>
+    <Setting Name="LeadtoolsLicenseFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Amphora Inc.-DOCIMG_RASPDFR175.lic</Value>
+    </Setting>
+    <Setting Name="LeadtoolsDeveloperKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">5cxfXs1TnpaXbVXDIdFzk9iRWcBBLjcIoN2W3sVpvDPvoNzYNmOr1zmYg3qhCnFE</Value>
+    </Setting>
+    <Setting Name="TransmissionGatewayWebAppUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://cnf01inf01/faxgateway</Value>
+    </Setting>
+    <Setting Name="EmailDomainsDevAllowSendTo" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;amphorainc.com&lt;/string&gt;
+  &lt;string&gt;mercuria.com&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="IsProductionSystem" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MSSQLServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CNF01INFDBS01\SQLSVR11</Value>
+    </Setting>
+    <Setting Name="MSSQLDatabase" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cnf_mgr</Value>
+    </Setting>
+    <Setting Name="ExtSvcAPIBaseUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://cnf01inf01:11111</Value>
+    </Setting>
+    <Setting Name="ExtSvcAPIUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">affsvcprd</Value>
+    </Setting>
+    <Setting Name="ExtSvcAPIPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">78ui&amp;*UI</Value>
+    </Setting>
+    <Setting Name="InboundSignatureLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\cnf01file01\cnf01\Apps\Tools\TestDocs\Signatures</Value>
+    </Setting>
+    <Setting Name="FaxNumbersDevAllowSendTo" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;203-525-1100&lt;/string&gt;
+  &lt;string&gt;203-525-1500&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="TransmissionGatewayCallbackUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://cnf01inf01:8080/CnfMgr/RecordXmitResult.do</Value>
+    </Setting>
+    <Setting Name="TransmissionGatewayEmailFromAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">harley.blumenfeld@amphorainc.com</Value>
+    </Setting>
+    <Setting Name="InboundTextFilesLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">[Deprecated]</Value>
+    </Setting>
+    <Setting Name="UserSettingsRootDir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

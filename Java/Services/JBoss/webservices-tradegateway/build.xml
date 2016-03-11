@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="cnf-TradeGateway" default="build">
+    <echo message="In build file: ${ant.file}"/>
+    <import file="../build-confirm-util.xml"/>
+
+    <target name="archive.do" depends="ivy-version, compile, manifest">
+        <jar jarfile="${build.dir}/${ant.project.name}.war" update="false" manifest="${manifest.file}">
+            <fileset dir="${main.classes.dir}"/>
+        </jar>
+    </target>
+</project>

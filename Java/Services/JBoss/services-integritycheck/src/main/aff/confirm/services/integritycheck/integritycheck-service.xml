@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: user-service.xml,v 1.2.2.1 2002/07/18 18:16:46 starksm Exp $ -->
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  User Service Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<server>
+  <classpath codebase="deploy" archives="IntegrityCheckService.jar"/>
+  <mbean code="aff.confirm.services.integritycheck.IntegrityCheckService"
+         name="sempra.utils:service=IntegrityCheckService">
+    <depends>jboss.jca:service=RARDeployer</depends>
+    <depends>sempra.utils:service=MailNotifier</depends>
+    <attribute name="TimerPeriod" type="java.lang.Integer" read="true" write="true">360000</attribute>
+    <attribute name="DbInfoName" type="java.lang.String" read="true" write="true">DBInfo</attribute>
+    <attribute name="MonitorQueries">
+        <queries>
+              <query name="TradeLoqQuery.txt" treshhold = "3"></query>
+              <query name="OpsTrackingQuery.txt" treshhold = "3"></query>
+              <query name="JmsDealsheetQuery.txt" treshhold = "3"></query>
+        </queries>
+	 </attribute>
+  </mbean>
+</server>
+

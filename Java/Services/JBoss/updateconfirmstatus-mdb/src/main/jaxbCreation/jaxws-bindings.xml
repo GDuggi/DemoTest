@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<bindings
+        wsdlLocation="ConfirmationsManager.wsdl"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns="http://java.sun.com/xml/ns/jaxws"
+        xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+
+    <bindings node="wsdl:definitions">
+        <package name="aff.confirm.updateconfirmstatus.mdb.jaxb"/>
+    </bindings>
+
+    <bindings >
+        <jxb:globalBindings>
+            <jxb:serializable uid="-6026937020915831340"/>
+        </jxb:globalBindings>
+
+        <jxb:schemaBindings>
+            <jxb:package name="aff.confirm.updateconfirmstatus.mdb.jaxb"/>
+        </jxb:schemaBindings>
+    </bindings>
+
+</bindings>

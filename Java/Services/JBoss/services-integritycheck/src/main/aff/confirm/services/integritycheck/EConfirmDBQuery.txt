@@ -1,0 +1,1 @@
+select id from jbossdbq.q_econfirm_alert where processed_flag = 'N'

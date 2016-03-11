@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DataManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=AFF01INFDBO01)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TRADE)));User Id=ops_tracking;Password=ops_tracking;</Value>
+    </Setting>
+    <Setting Name="dbms" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ORA</Value>
+    </Setting>
+    <Setting Name="gigaspaceURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">jini://*/*/opsTrackingSpace?locators=stopsprodgs1:8383</Value>
+    </Setting>
+    <Setting Name="usGigaSpace" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

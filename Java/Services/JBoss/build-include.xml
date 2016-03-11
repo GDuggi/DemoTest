@@ -1,0 +1,283 @@
+<project name="build-include"
+         xmlns:ivy="antlib:org.apache.ivy.ant"
+         xmlns:ac="antlib:net.sf.antcontrib">
+
+    <import file="${basedir}/../build-properties.xml" optional="false"/>
+
+    <!-- Create an empty path -->
+    <property name="empty.dir" location="${java.io.tmpdir}/empty"/>
+    <delete dir="${empty.dir}"/>
+    <mkdir dir="${empty.dir}"/>
+
+    <!--
+        If the 'file' attribute points to an existing folder
+          then set dir.prop=file
+          else set dir.prop=empty path and set skip to true
+
+        e.g. Skip the test step if there is no test folder
+    -->
+    <macrodef name="set-path-or-skip">
+        <attribute name="dir.prop"/>  <!-- test.src.dir -->
+        <attribute name="file"/>    <!-- ${basedir}/src/test -->
+        <attribute name="skip.prop" default="skip.skip"/>  <!-- test.skip -->
+        <sequential>
+            <ac:if>
+                <available file="@{file}"/>
+                <ac:then>
+                    <property name="@{dir.prop}" value="@{file}"/>
+                </ac:then>
+                <ac:else>
+                    <property name="@{dir.prop}" value="${empty.dir}"/>
+                    <property name="@{skip.prop}" value="true"/>
+                </ac:else>
+            </ac:if>
+        </sequential>
+    </macrodef>
+
+    <!--
+        These settings can be overridden by:
+          Setting on cmd line e.g. -Divy.mode=local|trunk|release
+          or an entry in the build.properties file
+    -->
+
+    <!--
+        Libraries are copied by Ivy to one of two places based on whether for IDE or Ant build
+    -->
+    <property name="build.dir" value="${project.basedir}/build/${ant.project.name}"/>
+    <echo message="build.dir=${build.dir}"/>
+    <property name="lib.dir" value="${build.dir}/lib"/>
+    <property name="lib.ide.dir" value="${basedir}/lib"/>
+
+    <property name="src.dir" value="${module.basedir}/src"/>
+    <property name="main.classes.dir" value="${build.dir}/classes/main"/>
+    <set-path-or-skip dir.prop="main.src.dir" file="${src.dir}/main" skip.prop="compile.skip"/>
+    <property name="gen.src.dir" value="${src.dir}/gen"/>
+
+    <property name="test.classes.dir" value="${build.dir}/classes/test"/>
+    <property name="test.etc.dir" value="${module.basedir}/src/test-etc"/>
+    <property name="test.reports.dir" value="${basedir}/junitreport"/>
+    <property name="test.runtime.dir" value="${project.basedir}"/>
+    <set-path-or-skip dir.prop="test.src.dir" file="${src.dir}/test" skip.prop="test.skip"/>
+
+    <set-path-or-skip dir.prop="etc.dir" file="${src.dir}/etc" skip.prop="etc.skip"/>
+
+    <property name="main.runtime.dir" value="${basedir}"/>
+
+    <property name="manifest.file" value="${main.classes.dir}/META-INF/MANIFEST.MF"/>
+
+    <property name="archive.ext" value="jar"/>
+    <property name="archive.base" value="${build.dir}/${ant.project.name}"/>
+    <property name="archive.file" value="${archive.base}.${archive.ext}"/>
+    <property name="version.prefix" value="1.0.0"/>
+
+    <property name="ivy.mode" value="local"/>
+    <property name="ivy.file" value="${basedir}/ivy.xml"/>
+    <property name="ivy.resolve.conf" value="default"/>
+    <property name="ivy.resolve.mask" value="[conf]-[type]s/[artifact]-[revision].[ext]"/>
+    <property name="ivy.resolve.pattern" value="${lib.dir}/${ivy.resolve.mask}"/>
+    <property name="ivy.publish.dir" value="${build.dir}"/>
+    <property name="ivy.publish.pattern" value="${ivy.publish.dir}/[artifact].[ext]"/>
+    <property name="ivy.ide.types" value="jar,javadoc,sources"/>
+
+
+    <import file="${project.basedir}/build-ivy.xml" optional="false"/>
+
+    <path id="compile.path.id">
+        <fileset id="compile.lib.id" dir="${lib.dir}/default-jars" erroronmissingdir="false"/>
+    </path>
+
+    <path id="runtime.path.id">
+        <fileset dir="${lib.dir}/build-jars" erroronmissingdir="false"/>
+        <fileset id="runtime.lib.id" dir="${lib.dir}/default-jars" erroronmissingdir="false"/>
+        <path location="${main.classes.dir}"/>
+    </path>
+
+    <path id="test.path.id">
+        <path location="${main.classes.dir}"/>
+        <fileset dir="${lib.dir}/build-jars" erroronmissingdir="false"/>
+        <fileset dir="${lib.dir}/default-jars" erroronmissingdir="false"/>
+    </path>
+
+    <!-- ================================= -->
+    <target name="compile" depends="compile.pre,compile.do, compile.post" unless="compile.skip" description="compile the project"/>
+    <target name="compile.pre" unless="compile.skip"/>
+    <target name="compile.post" unless="compile.skip"/>
+    <target name="compile.do" unless="compile.skip">
+        <mkdir dir="${main.classes.dir}"/>
+
+        <condition property="fixed.gen.src.dir" value="${gen.src.dir}" else="${empty.dir}">
+            <available file="${gen.src.dir}"/>
+        </condition>
+        <ac:var name="gen.src.dir" value="${fixed.gen.src.dir}"/>
+
+        <echo message="Classpath for compile: ${toString:compile.path.id}"/>
+        <javac srcdir="${main.src.dir};${gen.src.dir}"
+               sourcepath=""
+               destdir="${main.classes.dir}"
+               classpathref="compile.path.id"
+               debug="true"
+               includeAntRuntime="false"/>
+
+        <echo message="Coping non-java files from ${main.src.dir};${gen.src.dir} to ${main.classes.dir}"/>
+        <copy todir="${main.classes.dir}">
+             <fileset dir="${main.src.dir}" excludes="**/*.java"/>
+             <fileset dir="${gen.src.dir}" excludes="**/*.java"/>
+            <filterchain>
+                <expandproperties/>
+            </filterchain>
+        </copy>
+
+    </target>
+
+    <target name="test" depends="test.pre,test.compile,test.do,test.post" unless="test.skip"/>
+    <target name="test.pre" unless="test.skip"/>
+    <target name="test.post" unless="test.skip"/>
+    <target name="test.compile" unless="test.skip">
+        <mkdir dir="${test.classes.dir}"/>
+        <echo message="Classpath for test compile: ${toString:test.path.id}"/>
+        <javac srcdir="${test.src.dir}"
+               destdir="${test.classes.dir}"
+               classpathref="test.path.id"
+               debug="true"
+               includeAntRuntime="false"/>
+
+        <copy todir="${test.classes.dir}">
+            <fileset dir="${test.src.dir}" excludes="**/*.java"/>
+            <filterchain>
+                <expandproperties/>
+            </filterchain>
+        </copy>
+    </target>
+
+    <target name="test.do" unless="test.skip">
+        <echo message="Testing classpath: ${toString:test.path.id}"/>
+        <junit printsummary="yes" haltonfailure="yes" showoutput="true" fork="true" dir="${test.runtime.dir}">
+            <classpath refid="test.path.id"/>
+            <classpath path="${test.classes.dir}"/>
+            <formatter type="plain" usefile="false"/>
+            <batchtest fork="yes" todir="${test.reports.dir}">
+                <fileset dir="${test.classes.dir}">
+                    <include name="**/*Test.class"/>
+                    <include name="**/*Tester.class"/>
+                    <exclude name="**/AllTests.class"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="manifest" depends="ivy-resolve,manifest.pre,manifest.do, manifest.post" unless="manifest.skip"/>
+    <target name="manifest.pre" unless="manifest.skip"/>
+    <target name="manifest.post" unless="manifest.skip"/>
+    <target name="manifest.do">
+        <mkdir dir="${main.classes.dir}/META-INF"/>
+
+        <manifest file="${manifest.file}" mode="update" flattenAttributes="true">
+            <attribute name="Implementation-Vendor" value="Amphora Inc."/>
+            <attribute name="Implementation-Title" value="${ant.project.name}"/>
+            <attribute name="Implementation-Version" value="${version}"/>
+            <attribute name="Project-Name" value="${ant.project.name}"/>
+            <attribute name="Build-Time" value="${now}"/>
+            <attribute name="Build-Version" value="${version}"/>
+            <attribute name="Build-Number" value="${build.number}"/>
+            <attribute name="Build-Java-Version" value="${java.runtime.version}"/>
+            <attribute name="Build-Host" value="${hostname}"/>
+            <attribute name="Build-By" value="${user.name}"/>
+            <attribute name="Ivy-Mode" value="${ivy.mode}"/>
+            <attribute name="Ivy-Status" value="${ivy.publishStatus}"/>
+            <attribute name="Ivy-Organization" value="${ivy.organisation}"/>
+            <attribute name="Ivy-Module" value="${ivy.module}"/>
+        </manifest>
+    </target>
+
+    <target name="archive" depends="archive.pre,archive.do,archive.post" unless="archive.skip" description="make an archive file for this project"/>
+    <target name="archive.pre" unless="archive.skip"/>
+    <target name="archive.post" unless="archive.skip"/>
+    <target name="archive.do" depends="ivy-version, compile, manifest" unless="archive.skip">
+        <zip destfile="${archive.file}">
+            <fileset dir="${main.classes.dir}"/>
+        </zip>
+    </target>
+
+    <target name="dist" depends="dist.pre,dist.do,dist.post" unless="dist.skip"/>
+    <target name="dist.pre" unless="dist.skip"/>
+    <target name="dist.post" unless="dist.skip"/>
+    <target name="dist.do" unless="dist.skip"/>
+
+    <target name="publish" depends="publish.pre,ivy-publish,publish.post" unless="publish.skip"/>
+    <target name="publish.pre" unless="publish.skip"/>
+    <target name="publish.post" unless="publish.skip"/>
+
+
+    <!--Override this in your module build file for deployment -->
+    <target name="deploy" unless="deploy.skip"/>
+
+    <target name="run" depends="quick" description="compile and run the project">
+        <fail unless="env.JAVA_HOME" message="JAVA_HOME must be set"/>
+        <property name="jdk.home" location="${env.JAVA_HOME}"/>
+
+        <echo message="Classpath for run: ${toString:runtime.path.id}"/>
+        <!--<java classpathref="runtime.path.id" classname="${main.class.name}" dir="${main.runtime.dir}"/>-->
+
+        <exec executable="${jdk.home}/bin/java.exe" dir="${main.runtime.dir}">
+            <arg line="-cp ${toString:runtime.path.id} ${main.class.name}"/>
+        </exec>
+    </target>
+
+    <target name="properties" description="show the defined properties">
+        <echoproperties/>
+    </target>
+
+    <!-- Override -->
+    <target name="clean.pre"/>
+    <target name="clean.post"/>
+
+    <!-- Clean the project built files -->
+    <target name="clean-build" unless="clean-build.skip">
+        <delete includeemptydirs="true" dir="${build.dir}"/>
+    </target>
+
+    <target name="clean-gen" unless="clean-gen.skip">
+        <ac:if>
+            <not><equals arg1="${gen.src.dir}" arg2="${empty.dir}" /></not>
+            <ac:then>
+                <echo message="**** ${gen.src.dir} = ${empty.dir}"/>
+
+                <delete includeemptydirs="true" dir="${gen.src.dir}"/>
+            </ac:then>
+        </ac:if>
+    </target>
+
+    <target name="clean-lib" unless="clean-lib.skip">
+        <delete includeemptydirs="true" dir="${lib.dir}"/>
+    </target>
+
+    <target name="clean-ide" unless="clean-lib.skip">
+        <delete includeemptydirs="true" dir="${lib.ide.dir}"/>
+    </target>
+
+    <target name="clean-ant" depends="clean.pre, clean-build, clean-gen, clean-lib, clean.post" description="clean for ant build"/>
+
+    <target name="clean" depends="clean.pre, clean-build, clean-gen, clean-lib, clean-ide, clean.post"
+            description="clean the project"/>
+
+    <target name="_ide">
+        <ac:var name="lib.dir" value="${lib.ide.dir}"/>
+        <ac:var name="ivy.resolve.conf" value="ide"/>
+        <ac:var name="ivy.resolve.mask" value="[type]s/[artifact]-[revision].[ext]"/>
+        <ac:var name="ivy.resolve.pattern" value="${lib.dir}/${ivy.resolve.mask}"/>
+        <ac:var name="ivy.retrieve.type" value="${ivy.ide.types}"/>
+    </target>
+
+    <target name="ide" depends="_ide, ivy-retrieve" description="get libraries for IDE"/>
+
+    <target name="_quick">
+        <property name="quick.skip" value="true"/>
+    </target>
+
+    <target name="quick" depends="_quick,ivy-retrieve,compile,archive,deploy,publish" description="compile,archive,deploy"/>
+
+    <target name="build" depends="ivy-retrieve,compile,archive,deploy,dist,publish" description="clean-build, retrieve to publish"/>
+
+    <target name="all" depends="clean-ant,ivy-retrieve,ivy-report,build" description="complete clean + default"/>
+
+</project>

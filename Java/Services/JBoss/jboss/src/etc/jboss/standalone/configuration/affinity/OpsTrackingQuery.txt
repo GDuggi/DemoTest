@@ -1,0 +1,18 @@
+select /*+ LEADING(XX) USE_NL(TA) INDEX(TA UNQ_TRDAUDIT_1)*/ * from
+(select prmnt_trade_id, version from infinity_mgr.trade_audit
+where update_datetime>sysdate-5
+and update_datetime<sysdate-1/144
+minus
+(
+select trade_id, trade_version
+from ops_tracking.trade_notify
+where notify_time_gmt>sysdate-5
+union
+select prmnt_trade_id, version
+from ops_tracking.ignored_notifications
+where notify_time_gmt>sysdate-5
+)) xx,
+infinity_mgr.trade_audit ta
+where ta.prmnt_trade_id=xx.prmnt_trade_id
+and ta.version=xx.version
+

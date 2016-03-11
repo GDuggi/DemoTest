@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project name="cnf-TransmissionGatewayCallbacks" default="build">
+    <echo message="In build file: ${ant.file}"/>
+    <import file="../build-confirm-util.xml"/>
+
+
+    <target name="archive.post">
+
+        <delete dir="${build.dir}\tmp"/>
+        <mkdir dir="${build.dir}\tmp"/>
+        <mkdir dir="${build.dir}\tmp\dist"/>
+        <mkdir dir="${build.dir}\tmp\dist\war"/>
+        <mkdir dir="${build.dir}\tmp\dist\war\WEB-INF"/>
+        <mkdir dir="${build.dir}\tmp\dist\war\WEB-INF\classes"/>
+
+
+        <copy todir="${build.dir}\tmp\dist\war\WEB-INF\classes" verbose="true">
+            <fileset dir="${build.dir}\classes\main">
+                <include name="*/**"/>
+                <exclude name="META-INF/**"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${build.dir}\tmp\dist\war\WEB-INF" verbose="true">
+            <fileset dir="${src.dir}/WEB-INF">
+                <include name="web.xml"/>
+            </fileset>
+        </copy>
+
+        <zip file="${build.dir}\cnf-TransmissionGatewayCallbacks.war" basedir="${build.dir}\tmp\dist\war">
+            <include name="*/**"/>
+        </zip>
+
+        <jar destfile="${build.dir}\cnf-TransmissionGatewayCallbacks.ear">
+            <fileset dir="${build.dir}">
+                <include name="cnf-TransmissionGatewayCallbacks.war"/>
+            </fileset>
+            <zipfileset dir="${src.dir}/META-INF" prefix="META-INF"/>
+        </jar>
+
+    </target>
+
+</project>

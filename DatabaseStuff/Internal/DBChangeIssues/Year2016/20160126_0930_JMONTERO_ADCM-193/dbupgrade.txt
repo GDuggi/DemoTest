@@ -1,0 +1,16 @@
+ISSUE #: ADCM-193
+REQUEST BY: JACK BURKE
+DESCRIPTION: Peter, Javier
+I need a function to calculate the number of workdays between two dates.
+This can be simple, with Monday through Friday considered workdays, and Saturday and Sunday  are not workdays.
+No need  to  consider Holidays.
+This will be called very frequently, so  performance is key.
+
+
+SOLUTION: NEW FUNCTION CREATED
+
+OBJECTS CREATED: ConfirmMgr.UDF_WEEKDAYS_BETWEEN_2_DAYS
+
+OBJECTS AFFECTED: N/A
+
+

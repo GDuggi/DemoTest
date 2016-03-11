@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ConfirmationsManager.ConfirmationsManager" CodeBehind="ConfirmationsManager.svc.cs" %>

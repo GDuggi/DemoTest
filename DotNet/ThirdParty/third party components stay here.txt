@@ -1,0 +1,1 @@
+all projects under dot net will refernce to these third party dlls where ever it required.

@@ -1,0 +1,18 @@
+declare
+@error_msg		nvarchar(4000)
+
+
+BEGIN TRY
+	IF EXISTS (SELECT 1 FROM sys.tables tbl WHERE tbl.name = 'TRADE_RQMT_CONFIRM')
+		BEGIN
+			ALTER TABLE ConfirmMgr.TRADE_RQMT_CONFIRM
+			ADD PREPARER_CAN_SEND_FLAG	varchar(1) NOT NULL DEFAULT 'N'
+		END	
+PRINT 'ALTER PERFORMED WITH SUCCESS!!';	
+END TRY
+BEGIN CATCH 
+	
+	SELECT @error_msg = ERROR_MESSAGE() + ' On Line: ' + cast(ERROR_LINE() as nvarchar);
+	THROW 60000, @error_msg, 1
+
+END CATCH

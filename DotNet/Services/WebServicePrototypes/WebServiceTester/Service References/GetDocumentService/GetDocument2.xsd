@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cnf/Integration" elementFormDefault="qualified" targetNamespace="http://cnf/Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GetDealSheetRequest">
+    <xs:sequence>
+      <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDealSheetRequest" nillable="true" type="tns:GetDealSheetRequest" />
+  <xs:complexType name="GetDealSheetResponse">
+    <xs:sequence>
+      <xs:element name="objectFormatInd" type="tns:ObjectFormatInd" />
+      <xs:element minOccurs="0" name="objectStream" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDealSheetResponse" nillable="true" type="tns:GetDealSheetResponse" />
+  <xs:simpleType name="ObjectFormatInd">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PDF" />
+      <xs:enumeration value="DOCX" />
+      <xs:enumeration value="HTML" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ObjectFormatInd" nillable="true" type="tns:ObjectFormatInd" />
+  <xs:complexType name="GetConfirmationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="templateName" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetConfirmationRequest" nillable="true" type="tns:GetConfirmationRequest" />
+  <xs:complexType name="GetConfirmationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="confirmCompleteFlag" type="xs:boolean" />
+      <xs:element name="objectFormatInd" type="tns:ObjectFormatInd" />
+      <xs:element minOccurs="0" name="objectStream" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetConfirmationResponse" nillable="true" type="tns:GetConfirmationResponse" />
+</xs:schema>

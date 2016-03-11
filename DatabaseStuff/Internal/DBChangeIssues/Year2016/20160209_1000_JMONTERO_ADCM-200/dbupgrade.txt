@@ -1,0 +1,14 @@
+ISSUE #: ADCM-200
+REQUEST BY: JACK BURKE
+DESCRIPTION: Some trades have been entered into TCM with incorrect start and end dates.
+		     The attached spreadsheet lists trades with the correct start and end date.
+
+
+SOLUTION: UPDATE THE CORRECT TRADES DATES IN TRADE_DATA TABLE
+
+OBJECTS CREATED: N/A
+
+OBJECTS AFFECTED: N/A
+
+
+

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<project name="opstrackingmodel" default="usage" basedir=".">
+
+ <property name="project.src" value="d:/hudson/data/jobs/OpsManager Java GS Data Model/workspace/src" />
+ 
+
+    <property name="ivy.lib.dir" value="${build}/ivy"/>
+    <property name="project.version" value="0.1.0"/>
+    <property name='sempra.sif.build.version' value="latest"/>
+    <property name='sempra.sif.build.path'
+              value="//STDEV2/APPS/repository/sempra/build/${sempra.sif.build.version}"/>
+    
+    <property name="ops.build.path" value="//stdev2/dev/build/Confirmations/Java" />
+    <property name="ops.build.lib" value="//stdev2/dev/build/Confirmations/Java/opsmanager/Lib" />
+    <property name="ops.build.extlib" value="//stdev2/dev/build/Confirmations/Java/opsmanager/ExtLib" />
+    
+    
+    <import file="${sempra.sif.build.path}/build_common.xml"/>
+    <import file="${sempra.sif.build.path}/build_ivy.xml"/>
+
+
+<path id="classpath">
+   <pathelement path="${java.class.path}"></pathelement>
+   <fileset dir="${ops.build.lib}">
+           	<include name="*.jar" />
+           </fileset>
+           <fileset dir="${ops.build.extlib}">
+   	        	<include name="*.jar" />
+   </fileset>    
+        
+</path>
+
+<path id="client.classpath">
+
+   <path refid="classpath"/>
+
+</path>
+
+<target name="compile" depends="clean" description="Compile the source">
+
+   <mkdir dir="build"/>
+
+   <javac destdir="build"
+          debug="on"
+          deprecation="on"
+          optimize="on"
+          classpathref="classpath">
+      <src path="${project.src}">
+      </src>
+   </javac>
+
+</target>
+
+<target name="dist" depends="compile" description="Package the application">
+
+    
+
+   <mkdir dir="dist"/>
+
+   <jar jarfile="dist/opstrackingmodel.jar" basedir="build"/>
+
+   <copy todir="${ops.build.lib}">
+        <fileset dir="dist" includes="opstrackingmodel.jar"/>
+    </copy>
+</target>
+
+    
+</project>

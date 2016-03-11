@@ -1,0 +1,16 @@
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+
+    <ear-subdeployments-isolated>false</ear-subdeployments-isolated>
+
+    <sub-deployment name="OpsManagerTrader.war">
+
+        <dependencies>
+
+            <module name="javax.servlet.api"></module>
+            <!--<module name="com.oracle.ojdbc5"></module>-->
+
+        </dependencies>
+        <local-last value="true"></local-last>
+    </sub-deployment>
+
+ </jboss-deployment-structure>

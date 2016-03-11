@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://cnf/Counterparty" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Counterparty" targetNamespace="http://cnf/Counterparty" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://cnf/Counterparty" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://cnf/GetDocument" />
+      <xs:element name="getAgreementList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="request" nillable="true" type="tns:GetAgreementListRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetAgreementListRequest">
+        <xs:sequence>
+          <xs:element name="bookingCompanyShortName" nillable="true" type="xs:string" />
+          <xs:element name="cptyShortName" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetAgreementListRequest" nillable="true" type="tns:GetAgreementListRequest" />
+      <xs:element name="getAgreementListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getAgreementListResult" nillable="true" type="tns:GetAgreementListResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetAgreementListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agreements" nillable="true" type="tns:ArrayOfAgreement" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetAgreementListResponse" nillable="true" type="tns:GetAgreementListResponse" />
+      <xs:complexType name="ArrayOfAgreement">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Agreement" nillable="true" type="tns:Agreement" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAgreement" nillable="true" type="tns:ArrayOfAgreement" />
+      <xs:complexType name="Agreement">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agreementTypeCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Agreement" nillable="true" type="tns:Agreement" />
+      <xs:element name="getDocumentSendTo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="request" nillable="true" type="tns:GetDocumentSendToRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetDocumentSendToRequest">
+        <xs:sequence>
+          <xs:element name="cdtyCode" nillable="true" type="xs:string" />
+          <xs:element name="cptyShortName" nillable="true" type="xs:string" />
+          <xs:element name="documentTypeCode" nillable="true" type="xs:string" />
+          <xs:element name="settlementTypeCode" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDocumentSendToRequest" nillable="true" type="tns:GetDocumentSendToRequest" />
+      <xs:element name="getDocumentSendToResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getDocumentSendToResult" nillable="true" type="tns:GetDocumentSendToResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="GetDocumentSendToResponse">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://cnf/GetDocument" minOccurs="0" name="sendTos" nillable="true" type="q1:ArrayOfSendTo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetDocumentSendToResponse" nillable="true" type="tns:GetDocumentSendToResponse" />
+      <xs:element name="storeDocumentSendTo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="request" nillable="true" type="tns:StoreDocumentSendToRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="StoreDocumentSendToRequest">
+        <xs:sequence>
+          <xs:element name="cdtyCode" nillable="true" type="xs:string" />
+          <xs:element name="cptyShortName" nillable="true" type="xs:string" />
+          <xs:element name="documentTypeCode" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://cnf/GetDocument" name="sendTos" nillable="true" type="q2:ArrayOfSendTo" />
+          <xs:element name="settlementTypeCode" nillable="true" type="xs:string" />
+          <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StoreDocumentSendToRequest" nillable="true" type="tns:StoreDocumentSendToRequest" />
+      <xs:element name="storeDocumentSendToResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="storeDocumentSendToResult" nillable="true" type="tns:StoreDocumentSendToResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="StoreDocumentSendToResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="success" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StoreDocumentSendToResponse" nillable="true" type="tns:StoreDocumentSendToResponse" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://cnf/GetDocument" elementFormDefault="qualified" targetNamespace="http://cnf/GetDocument" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfSendTo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SendTo" nillable="true" type="tns:SendTo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSendTo" nillable="true" type="tns:ArrayOfSendTo" />
+      <xs:complexType name="SendTo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="faxAreaCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="faxCountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="faxLocalNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="transmitMethodInd" type="tns:TransmitMethodInd" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SendTo" nillable="true" type="tns:SendTo" />
+      <xs:simpleType name="TransmitMethodInd">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FAX" />
+          <xs:enumeration value="EMAIL" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TransmitMethodInd" nillable="true" type="tns:TransmitMethodInd" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Counterparty_getAgreementList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAgreementList" />
+  </wsdl:message>
+  <wsdl:message name="Counterparty_getAgreementList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAgreementListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Counterparty_getDocumentSendTo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDocumentSendTo" />
+  </wsdl:message>
+  <wsdl:message name="Counterparty_getDocumentSendTo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDocumentSendToResponse" />
+  </wsdl:message>
+  <wsdl:message name="Counterparty_storeDocumentSendTo_InputMessage">
+    <wsdl:part name="parameters" element="tns:storeDocumentSendTo" />
+  </wsdl:message>
+  <wsdl:message name="Counterparty_storeDocumentSendTo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:storeDocumentSendToResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Counterparty">
+    <wsdl:operation name="getAgreementList">
+      <wsdl:input wsaw:Action="http://cnf/Counterparty/Counterparty/getAgreementList" message="tns:Counterparty_getAgreementList_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/Counterparty/Counterparty/getAgreementListResponse" message="tns:Counterparty_getAgreementList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentSendTo">
+      <wsdl:input wsaw:Action="http://cnf/Counterparty/Counterparty/getDocumentSendTo" message="tns:Counterparty_getDocumentSendTo_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/Counterparty/Counterparty/getDocumentSendToResponse" message="tns:Counterparty_getDocumentSendTo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="storeDocumentSendTo">
+      <wsdl:input wsaw:Action="http://cnf/Counterparty/Counterparty/storeDocumentSendTo" message="tns:Counterparty_storeDocumentSendTo_InputMessage" />
+      <wsdl:output wsaw:Action="http://cnf/Counterparty/Counterparty/storeDocumentSendToResponse" message="tns:Counterparty_storeDocumentSendTo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Counterparty" type="tns:Counterparty">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAgreementList">
+      <soap:operation soapAction="http://cnf/Counterparty/Counterparty/getAgreementList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentSendTo">
+      <soap:operation soapAction="http://cnf/Counterparty/Counterparty/getDocumentSendTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeDocumentSendTo">
+      <soap:operation soapAction="http://cnf/Counterparty/Counterparty/storeDocumentSendTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Counterparty">
+    <wsdl:port name="BasicHttpBinding_Counterparty" binding="tns:BasicHttpBinding_Counterparty">
+      <soap:address location="http://localhost:63943/Counterparty.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

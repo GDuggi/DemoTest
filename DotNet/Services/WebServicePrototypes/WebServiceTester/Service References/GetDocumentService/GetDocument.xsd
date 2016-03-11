@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cnf/GetDocument" elementFormDefault="qualified" targetNamespace="http://cnf/GetDocument" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63003/GetDocument.svc?xsd=xsd2" namespace="http://cnf/Integration" />
+  <xs:element name="getDealSheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://cnf/Integration" minOccurs="0" name="getDealSheetRequest" nillable="true" type="q1:GetDealSheetRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDealSheetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://cnf/Integration" minOccurs="0" name="getDealSheetResult" nillable="true" type="q2:GetDealSheetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConfirmation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://cnf/Integration" minOccurs="0" name="getConfirmationRequest" nillable="true" type="q3:GetConfirmationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getConfirmationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://cnf/Integration" minOccurs="0" name="getConfirmationResult" nillable="true" type="q4:GetConfirmationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

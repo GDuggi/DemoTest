@@ -1,0 +1,23 @@
+$action    USER_ID                        EMAIL_ADDRESS                                                                                        CONFIRMS_GROUP_EMAIL_ADDRESS                                                                         ACTIVE
+_FLAG USER_ID                        EMAIL_ADDRESS                                                                                        CONFIRMS_GROUP_EMAIL_ADDRESS                                                                         ACTIVE_FLAG
+
+---------- ------------------------------ ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- ------
+----- ------------------------------ ---------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------- -----------
+
+UPDATE     ASH\jburke                     ASH\JBURKE                                                                                           ASH\JBURKE                                                                                           Y     
+      ASH\JBURKE                     ASH\JBURKE                                                                                           ASH\JBURKE                                                                                           Y          
+
+UPDATE     ASH\kbarkman                   ASH\KBARKMAN                                                                                         ASH\KBARKMAN                                                                                         Y     
+      ASH\KBARKMAN                   ASH\KBARKMAN                                                                                         ASH\KBARKMAN                                                                                         Y          
+
+INSERT     IFRANKEL                       IFRANKEL                                                                                             IFRANKEL                                                                                             Y     
+      NULL                           NULL                                                                                                 NULL                                                                                                 NULL       
+
+UPDATE     TRADECAPTURE\bsaraswat         TRADECAPTURE\BSARASWAT                                                                               TRADECAPTURE\BSARASWAT                                                                               Y     
+      TRADECAPTURE\BSARASWAT         TRADECAPTURE\BSARASWAT                                                                               TRADECAPTURE\BSARASWAT                                                                               Y          
+
+UPDATE     TRADECAPTURE\dprasad           TRADECAPTURE\DPRASAD                                                                                 TRADECAPTURE\DPRASAD                                                                                 Y     
+      TRADECAPTURE\DPRASAD           TRADECAPTURE\DPRASAD                                                                                 TRADECAPTURE\DPRASAD                                                                                 Y          
+
+
+(5 rows affected)

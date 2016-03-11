@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="cnf.confirm-external">
+    <resources>
+    </resources>
+
+    <dependencies>
+        <system export="true">
+            <paths>
+                <path name="com/sun/rowset"/>
+                <path name="com/sun/rowset/internal" />
+                <path name="com/sun/rowset/providers" />
+            </paths>
+        </system>
+
+        <module name="aff.com-oracle-jdbc" export="true"/>
+        <module name="aff.com-microsoft-sqlserver-jdbc" export="true"/>
+
+        <module name="org.jboss.remote-naming" export="true"/>
+        <module name="org.jboss.as.system-jmx" export="true"/>
+        <module name="org.jboss.ironjacamar.api" export="true"/>
+        <module name="org.jboss.logging" export="true"/>
+        <module name="javaee.api" export="true"/>
+        <module name="org.hornetq" export="true"/>
+        <module name="org.apache.xalan" export="true"/>
+        <module name="org.dom4j" export="true"/>
+        <module name="org.jdom" export="true"/>
+
+        <module name="sun.jdk"/>
+        <module name="javax.api" export="true"/>
+        <module name="javax.ejb.api" export="true"/>
+        <module name="javax.jms.api" export="true"/>
+        <module name="javax.rmi.api" export="true"/>
+        <module name="javax.mail.api" export="true"/>
+        <module name="javax.servlet.api" export="true"/>
+        <module name="javax.activation.api" export="true"/>
+        <module name="javax.interceptor.api" export="true"/>
+        <module name="javax.xml.rpc.api" export="true"/>
+        <module name="javax.wsdl4j.api" export="true"/>
+    </dependencies>
+</module>

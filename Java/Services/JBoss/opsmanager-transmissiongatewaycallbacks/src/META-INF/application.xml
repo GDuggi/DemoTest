@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <application>
+  <display-name>TransmissionGatewayCallbacks Web</display-name>
+  <description>TransmissionGatewayCallbacks Web</description>
+
+  <module>
+  	<web>
+  		<web-uri>cnf-TransmissionGatewayCallbacks.war</web-uri>
+  		<context-root>CnfMgr</context-root>
+  	</web>
+  </module>
+</application>
+

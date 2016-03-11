@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="sempratrading.com/OpsDev/LoginHistory"
+		xmlns:tns="sempratrading.com/OpsDev/LoginHistory"
+		xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified">
+    <complexType name="LoginEntry">
+        <sequence>
+            <element name="Username" type="xs:string" />
+            <element name="Server" type="xs:string" />
+            <element name="Database" type="xs:string" />
+        </sequence>
+    </complexType>
+    <element name="LoginList">
+        <complexType>
+            <sequence>
+                <element name="LoginEntry" type="tns:LoginEntry" maxOccurs="unbounded" minOccurs="0" />
+            </sequence>
+        </complexType>
+    </element>
+</schema>

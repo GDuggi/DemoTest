@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="617bd6e3-07fa-4627-8304-efe2f7f8de29" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11111/VaultService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VaultService.xsd" MetadataType="Schema" ID="6d70626f-f9d7-4ca4-9025-f19baeabf640" SourceId="1" SourceUrl="http://localhost:11111/VaultService?xsd=xsd2" />
+    <MetadataFile FileName="VaultService.disco" MetadataType="Disco" ID="d0738aaa-bb2d-49ee-aaac-35c977031b4a" SourceId="1" SourceUrl="http://localhost:11111/VaultService?disco" />
+    <MetadataFile FileName="VaultService.wsdl" MetadataType="Wsdl" ID="1eba6b71-22f8-47bc-9fa0-347971a52b16" SourceId="1" SourceUrl="http://localhost:11111/VaultService?wsdl" />
+    <MetadataFile FileName="VaultService1.xsd" MetadataType="Schema" ID="abbfab8d-b720-401f-bacd-8cb1a41aa251" SourceId="1" SourceUrl="http://localhost:11111/VaultService?xsd=xsd3" />
+    <MetadataFile FileName="VaultService1.wsdl" MetadataType="Wsdl" ID="9e4a1176-c699-405f-9b5a-06e37914bdfa" SourceId="1" SourceUrl="http://localhost:11111/VaultService?wsdl=wsdl0" />
+    <MetadataFile FileName="VaultService2.xsd" MetadataType="Schema" ID="5193c938-22b2-443d-b1e7-37eefabd80ae" SourceId="1" SourceUrl="http://localhost:11111/VaultService?xsd=xsd1" />
+    <MetadataFile FileName="VaultService3.xsd" MetadataType="Schema" ID="be2de6d3-8569-4d70-95b9-dac7edbf4e71" SourceId="1" SourceUrl="http://localhost:11111/VaultService?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

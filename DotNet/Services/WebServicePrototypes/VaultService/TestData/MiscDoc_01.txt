@@ -1,0 +1,79 @@
+[SEMPRA LOGO]
+
+[DATE]
+
+To:    [CPTY]
+Attn:  Natural Gas Confirmation Dept.
+Re:     [DISP RBS OR SEMPRA] Contract Number [CONTRACTNUM]
+
+We are pleased to confirm the agreement of  [TRADE DATE] between [AGENT OR SEMPRA CO W]  ("[DISP RBS OR SEMPRA]") and [CPTY] ("Counterpart") under the following terms and conditions.
+
+Part One
+
+1. Buyer: [BUYER-SETC-CPTY]
+
+2. Seller: [SELLER-SETC-CPTY]
+
+3. Type Of Transaction: [SERVICE] 
+
+4. Contract Quantity: [QTY PER] [QTY UOM] [QTY PER DURA NGAS]
+
+5. Delivery Period: [DELIVERY TERM] 
+
+6. Delivery Point:  [DELIVERY LOCATION] 
+
+7. Contract Price: [TPRICE PHYS] [NGAS DRY]
+
+8. Payment Date Of Purchase Price: [PAYMENT CLAUSES NAT]
+
+9. Non- Performance:
+
+[NON PERFORMANCE NGAS] 
+
+10. Notices:  All notices are effective on receipt.
+
+If to [DISP RBS OR SEMPRA]:
+58 Commerce Road,
+Stamford, CT  06902
+Att: Cristian Robotti
+Telex No.: 6737767 SEMPRA TD
+Fax No.: [NGAS FAX]
+Telephone No.: 203-355-5618
+
+If to Counterpart:
+[CPTY-STREET] 
+[CPTY-CITY], [CPTY-STATE] [CPTY-ZIP] 
+Fax No.: [CPTY-FAX]
+Telephone No.:[CPTY-PHONE]
+
+11. Governing Law and Jurisdiction:
+
+[GOV LAW NGAS NY]
+
+12. Other:
+
+[PAYMENT INSTR 48 HRS]
+
+[LETTER OF CREDITNGAS]
+
+[NGAS EFP CLAUSE]
+
+[MARGINAGMT]
+
+[MARGIN TOKEN]
+
+[MICH CONS SPECIAL]
+
+[BROKER CLAUSE]
+
+Part Two
+
+This transaction together with all other transactions between us forms a single agreement between the parties.
+
+[DISP RBS OR SEMPRA]'s General Terms and Conditions for the Puchase and Sale of Natural Gas (1/98), a copy of which has previously been forwarded to Counterpart, are incorporated herein by reference as Part Two of this agreement and are an integral part of this agreement and (unless the parties agree otherwise) of any other agreement between the parties for the Purchase and Sale of Natural Gas. Terms defined therein have the same meanings in Part One.
+
+[RETURN FAX CLOSING]
+
+[SIGNATURE LINE]
+
+

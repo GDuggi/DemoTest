@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://cnf/Integration" elementFormDefault="qualified" targetNamespace="http://cnf/Integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getAgreementList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAgreementListRequest" nillable="true" type="tns:GetAgreementListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetAgreementListRequest">
+    <xs:sequence>
+      <xs:element name="bookingCompanyShortName" nillable="true" type="xs:string" />
+      <xs:element name="cptyShortName" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAgreementListRequest" nillable="true" type="tns:GetAgreementListRequest" />
+  <xs:element name="getAgreementListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAgreementListResult" nillable="true" type="tns:GetAgreementListResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetAgreementListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agreements" nillable="true" type="tns:ArrayOfagreement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAgreementListResponse" nillable="true" type="tns:GetAgreementListResponse" />
+  <xs:complexType name="ArrayOfagreement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="agreement" nillable="true" type="tns:agreement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfagreement" nillable="true" type="tns:ArrayOfagreement" />
+  <xs:complexType name="agreement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agreementTypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="agreement" nillable="true" type="tns:agreement" />
+  <xs:element name="getDocumentSendTo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getDocumentSendToRequest" nillable="true" type="tns:GetDocumentSendToRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetDocumentSendToRequest">
+    <xs:sequence>
+      <xs:element name="cdtyCode" nillable="true" type="xs:string" />
+      <xs:element name="cptyShortName" nillable="true" type="xs:string" />
+      <xs:element name="documentTypeCode" nillable="true" type="xs:string" />
+      <xs:element name="settlementTypeCode" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocumentSendToRequest" nillable="true" type="tns:GetDocumentSendToRequest" />
+  <xs:element name="getDocumentSendToResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getDocumentSendToResult" nillable="true" type="tns:GetDocumentSendToResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetDocumentSendToResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sendTos" nillable="true" type="tns:ArrayOfsendTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocumentSendToResponse" nillable="true" type="tns:GetDocumentSendToResponse" />
+  <xs:complexType name="ArrayOfsendTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="sendTo" nillable="true" type="tns:sendTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfsendTo" nillable="true" type="tns:ArrayOfsendTo" />
+  <xs:complexType name="sendTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="faxAreaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="faxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="faxLocalNumber" nillable="true" type="xs:string" />
+      <xs:element name="transmitMethodInd" type="tns:TransmitMethodInd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="sendTo" nillable="true" type="tns:sendTo" />
+  <xs:simpleType name="TransmitMethodInd">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FAX" />
+      <xs:enumeration value="EMAIL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransmitMethodInd" nillable="true" type="tns:TransmitMethodInd" />
+  <xs:element name="storeDocumentSendTo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="storeDocumentSendToRequest" nillable="true" type="tns:StoreDocumentSendToRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StoreDocumentSendToRequest">
+    <xs:sequence>
+      <xs:element name="cdtyCode" nillable="true" type="xs:string" />
+      <xs:element name="cptyShortName" nillable="true" type="xs:string" />
+      <xs:element name="documentTypeCode" nillable="true" type="xs:string" />
+      <xs:element name="sendTos" nillable="true" type="tns:ArrayOfsendTo" />
+      <xs:element name="settlementTypeCode" nillable="true" type="xs:string" />
+      <xs:element name="tradingSystemCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoreDocumentSendToRequest" nillable="true" type="tns:StoreDocumentSendToRequest" />
+  <xs:element name="storeDocumentSendToResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="storeDocumentSendToResult" nillable="true" type="tns:StoreDocumentSendToResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StoreDocumentSendToResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoreDocumentSendToResponse" nillable="true" type="tns:StoreDocumentSendToResponse" />
+</xs:schema>

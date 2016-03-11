@@ -1,0 +1,16 @@
+<jboss-deployment-structure>
+    <ear-subdeployments-isolated>false</ear-subdeployments-isolated>
+    <deployment>
+        <dependencies>
+            <module name="cnf.confirm"/>
+        </dependencies>
+    </deployment>
+
+    <sub-deployment name="cnf-TransmissionGatewayCallbacks.war">
+        <dependencies>
+            <module name="cnf.confirm"/>
+        </dependencies>
+    </sub-deployment>
+
+
+</jboss-deployment-structure>

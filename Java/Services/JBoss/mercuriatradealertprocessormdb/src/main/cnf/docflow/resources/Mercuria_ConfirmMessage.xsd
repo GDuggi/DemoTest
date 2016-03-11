@@ -1,0 +1,266 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ConfirmMessage" type="ConfirmMessageType"/>
+  <xs:complexType name="ConfirmMessageType">
+    <xs:sequence>
+      <xs:element name="NotifyType" type="NotifyTypeType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="NotifyTsGmt" type="NotifyTsGmtType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TradeData" type="TradeDataType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Rqmts" type="RqmtsType" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotifyType" type="NotifyTypeType"/>
+  <xs:simpleType name="NotifyTypeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="NotifyTsGmt" type="NotifyTsGmtType"/>
+  <xs:simpleType name="NotifyTsGmtType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TradeData" type="TradeDataType"/>
+  <xs:complexType name="TradeDataType">
+    <xs:sequence>
+      <xs:element name="TradingSystemCode" type="TradingSystemCodeType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TradingSystemTicket" type="TradingSystemTicketType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CreationDt" type="CreationDtType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TradeDt" type="TradeDtType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Trader" type="TraderType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BookingCompany" type="BookingCompanyType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BookingCompanyId" type="BookingCompanyIdType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CptySn" type="CptySnType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CptyLegalName" type="CptyLegalNameType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CptyId" type="CptyIdType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CdtySn" type="CdtySnType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CdtyGroup" type="CdtyGroupType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BuySellInd" type="BuySellIndType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="QtyDesc" type="QtyDescType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="QtyTot" type="QtyTotType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StartDt" type="StartDtType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDt" type="EndDtType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LocationSn" type="LocationSnType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TransportDesc" type="TransportDescType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PriceDesc" type="PriceDescType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TradeDesc" type="TradeDescType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TradeTypeCode" type="TradeTypeCodeType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SttlType" type="SttlTypeType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BrokerSn" type="BrokerSnType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BrokerLegalName" type="BrokerLegalNameType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BrokerId" type="BrokerIdType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BrokerPriceDesc" type="BrokerPriceDescType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Book" type="BookType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ProfitCenter" type="ProfitCenterType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RefSn" type="RefSnType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Xref" type="XrefType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TradeStatCode" type="TradeStatCodeType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OptnStrikePrice" type="OptnStrikePriceType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OptnPremPrice" type="OptnPremPriceType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OptnPutCallInd" type="OptnPutCallIndType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PermissionKey" type="PermissionKeyType"  minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TradingSystemCode" type="TradingSystemCodeType"/>
+  <xs:simpleType name="TradingSystemCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TradingSystemTicket" type="TradingSystemTicketType"/>
+  <xs:simpleType name="TradingSystemTicketType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CreationDt" type="CreationDtType"/>
+  <xs:simpleType name="CreationDtType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TradeDt" type="TradeDtType"/>
+  <xs:simpleType name="TradeDtType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Trader" type="TraderType"/>
+  <xs:simpleType name="TraderType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BookingCompany" type="BookingCompanyType"/>
+  <xs:simpleType name="BookingCompanyType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BookingCompanyId" type="BookingCompanyIdType"/>
+  <xs:simpleType name="BookingCompanyIdType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CptySn" type="CptySnType"/>
+  <xs:simpleType name="CptySnType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CptyLegalName" type="CptyLegalNameType"/>
+  <xs:simpleType name="CptyLegalNameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CptyId" type="CptyIdType"/>
+  <xs:simpleType name="CptyIdType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CdtySn" type="CdtySnType"/>
+  <xs:simpleType name="CdtySnType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="CdtyGroup" type="CdtyGroupType"/>
+  <xs:simpleType name="CdtyGroupType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BuySellInd" type="BuySellIndType"/>
+  <xs:simpleType name="BuySellIndType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="QtyDesc" type="QtyDescType"/>
+  <xs:simpleType name="QtyDescType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="QtyTot" type="QtyTotType"/>
+  <xs:simpleType name="QtyTotType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="StartDt" type="StartDtType"/>
+  <xs:simpleType name="StartDtType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="EndDt" type="EndDtType"/>
+  <xs:simpleType name="EndDtType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="LocationSn" type="LocationSnType"/>
+  <xs:simpleType name="LocationSnType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TransportDesc" type="TransportDescType"/>
+  <xs:simpleType name="TransportDescType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PriceDesc" type="PriceDescType"/>
+  <xs:simpleType name="PriceDescType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TradeDesc" type="TradeDescType"/>
+  <xs:simpleType name="TradeDescType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TradeTypeCode" type="TradeTypeCodeType"/>
+  <xs:simpleType name="TradeTypeCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SttlType" type="SttlTypeType"/>
+  <xs:simpleType name="SttlTypeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BrokerSn" type="BrokerSnType"/>
+  <xs:simpleType name="BrokerSnType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BrokerLegalName" type="BrokerLegalNameType"/>
+  <xs:simpleType name="BrokerLegalNameType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BrokerId" type="BrokerIdType"/>
+  <xs:simpleType name="BrokerIdType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="BrokerPriceDesc" type="BrokerPriceDescType"/>
+  <xs:simpleType name="BrokerPriceDescType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Book" type="BookType"/>
+  <xs:simpleType name="BookType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="ProfitCenter" type="ProfitCenterType"/>
+  <xs:simpleType name="ProfitCenterType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="RefSn" type="RefSnType"/>
+  <xs:simpleType name="RefSnType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Xref" type="XrefType"/>
+  <xs:simpleType name="XrefType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="TradeStatCode" type="TradeStatCodeType"/>
+  <xs:simpleType name="TradeStatCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="OptnStrikePrice" type="OptnStrikePriceType"/>
+  <xs:simpleType name="OptnStrikePriceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="OptnPremPrice" type="OptnPremPriceType"/>
+  <xs:simpleType name="OptnPremPriceType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="OptnPutCallInd" type="OptnPutCallIndType"/>
+  <xs:simpleType name="OptnPutCallIndType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="PermissionKey" type="PermissionKeyType"/>
+  <xs:simpleType name="PermissionKeyType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Rqmts" type="RqmtsType"/>
+  <xs:complexType name="RqmtsType">
+    <xs:sequence>
+      <xs:element name="Rqmt" type="RqmtType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rqmt" type="RqmtType"/>
+  <xs:complexType name="RqmtType">
+    <xs:sequence>
+      <xs:element name="Workflow" type="WorkflowType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Template" type="TemplateType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PreparerCanSend" type="PreparerCanSendType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SendTos" type="SendTosType" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Workflow" type="WorkflowType"/>
+  <xs:simpleType name="WorkflowType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="Template" type="TemplateType"/>
+  <xs:simpleType name="TemplateType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="PreparerCanSendType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="SendTos" type="SendTosType"/>
+  <xs:complexType name="SendTosType">
+    <xs:sequence>
+      <xs:element name="SendTo" type="SendToType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendTo" type="SendToType"/>
+  <xs:complexType name="SendToType">
+    <xs:sequence>
+      <xs:element name="transmitMethodInd" type="transmitMethodIndType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="emailAddress" type="emailAddressType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="faxCountryCode" type="faxCountryCodeType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="faxAreaCode" type="faxAreaCodeType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="faxLocalNumber" type="faxLocalNumberType" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="transmitMethodInd" type="transmitMethodIndType"/>
+  <xs:simpleType name="transmitMethodIndType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="emailAddress" type="emailAddressType"/>
+  <xs:simpleType name="emailAddressType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="faxCountryCode" type="faxCountryCodeType"/>
+  <xs:simpleType name="faxCountryCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="faxAreaCode" type="faxAreaCodeType"/>
+  <xs:simpleType name="faxAreaCodeType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="faxLocalNumber" type="faxLocalNumberType"/>
+  <xs:simpleType name="faxLocalNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+</xs:schema>

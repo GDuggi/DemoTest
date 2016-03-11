@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SempraIniFile", "SempraIniFile.csproj", "{53392007-ABFB-4B07-B413-5351D958F630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{B3885013-710A-414C-9070-EE378BA91722}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53392007-ABFB-4B07-B413-5351D958F630}.Debug|Default.ActiveCfg = Debug|Any CPU
+		{53392007-ABFB-4B07-B413-5351D958F630}.Debug|Default.Build.0 = Debug|Any CPU
+		{53392007-ABFB-4B07-B413-5351D958F630}.Release|Default.ActiveCfg = Release|Any CPU
+		{53392007-ABFB-4B07-B413-5351D958F630}.Release|Default.Build.0 = Release|Any CPU
+		{B3885013-710A-414C-9070-EE378BA91722}.Debug|Default.ActiveCfg = Debug|Any CPU
+		{B3885013-710A-414C-9070-EE378BA91722}.Debug|Default.Build.0 = Debug|Any CPU
+		{B3885013-710A-414C-9070-EE378BA91722}.Release|Default.ActiveCfg = Release|Any CPU
+		{B3885013-710A-414C-9070-EE378BA91722}.Release|Default.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
