@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="RiskManger" default="all" basedir=".">
+
+    <tstamp/>    
+
+    <property environment="env"/>
+   
+    <property name="dot.net.target" value="net-4.0"/>
+    
+   <property name="msbuild.path" value="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\msbuild.exe" />
+    <property name="msbuild.proj.path" value="${basedir}/msbuild.proj" />
+    <property name="build.env" value="Debug" />
+    <property name="build.dir" value="${basedir}/Build" />
+
+  <property name="major.version" value="1" />
+  <property name="minor.version" value="0" />
+  <property name="version.prefix" value="${major.version}.${minor.version}.${env.BUILD_NUMBER}" />
+  
+
+    <target name="all" depends="clean,copy,compile, create-artifacts"/>
+	<target name="condition">
+	<condition property="dir.exist">
+	<available file="packages" type="dir"/>
+	</condition>
+	</target>
+	<target name="Delete" if="dir.exist">
+	<delete includeEmptyDirs="true">
+  <fileset dir="packages"/>
+</delete>
+	</target>
+ 
+    <target name="clean">
+        <echo message="Cleaning up bin directory"/>
+        <mkdir dir="${build.dir}" />	
+        <mkdir dir="packages" />	
+        <delete>
+            <fileset dir="${build.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </delete>
+      
+    </target>
+
+	<target name="copy">
+        <echo message="Copying cayenne-data-model-1.0.dll file "/>
+<get src="http://172.16.137.62/job/rsm-server-symphony/lastSuccessfulBuild/artifact/Java/CayenneDataModel/cayenne-data/cayenne-data-model/dll/release/cayenne-data-model-1.0.dll" dest="packages/cayenne-data-model-1.0.dll">
+</get> 
+    </target>
+	
+    <target name="compile">
+      <exec failonerror="true" 
+            executable="${msbuild.path}">
+        <arg file="${msbuild.proj.path}" />
+        <arg value="/target:Build" />                
+        <arg value="/p:WarningLevel=2" />
+        <arg value="/p:MajorVersion=${major.version}" />
+        <arg value="/p:MinorVersion=${minor.version}" />
+        <arg value="/p:Revision=${env.BUILD_NUMBER}" />
+      </exec>            
+    </target>
+
+
+  <!--<macrodef name="create-artifact-zip">
+    <attribute name="project-name" />
+    <attribute name="prefix-dir" />
+    <sequential>
+      <zip destfile="${build.dir}/WebRouter.zip">
+        <fileset dir="${basedir}/WebServiceRouter/bin/${build.env}">
+          <include name="**/*" />
+          <exclude name="**/*.config" />          
+        </fileset>                        
+      </zip>
+    </sequential>
+  </macrodef>-->
+
+  <target name="create-artifacts" ><!--depends="create-artifact-zip">-->
+    <!-- Windows services artifacts -->   
+	<sequential>
+      <zip destfile="${build.dir}/${version.prefix}.zip">
+        <fileset dir="${basedir}/Application/build/${build.env}">
+          <include name="**/*" />
+          <exclude name="**/*.pdb" />
+		<!--<exclude name="**/*.config" /> -->		  
+        </fileset>                        
+      </zip>
+    </sequential>
+  </target>
+    
+	<target name="publish">      
+      <echo message="${version.prefix}" />
+      <property name="patch.name" value="${version.prefix}" />	
+	  <property name="ftp_server" value="172.16.144.98"/>
+        <property name="ftp_user" value="build"/>
+        <property name="ftp_password" value="RandomF2015"/>
+        <property name="ftp_dir" value="/ReleaseTesting/RiskManger/Riskmanger_Dev_1.2"/>
+		<ftp action="put"
+		     server="${ftp_server}"
+             remotedir="${ftp_dir}"
+             userid="${ftp_user}"
+             password="${ftp_password}"
+             verbose="yes" binary="yes" passive="yes">
+            <fileset dir="${build.dir}">
+		<include name="${patch.name}.zip"/>
+            </fileset>
+        </ftp>
+	  </target>    
+
+</project>
