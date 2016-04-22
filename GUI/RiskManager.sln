@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stuff", "stuff", "{978F34EF-1E0A-4A0D-A716-86525737DC25}"
+	ProjectSection(SolutionItems) = preProject
+		local.props = local.props
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskManager", "Application\initial\RiskManager.csproj", "{5EFFDF0D-255B-48CD-A316-4BE249435A8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskManagerControls", "SupportingAssemblies\fake_assembly\RiskManagerControls.csproj", "{0808390F-D30A-47EA-B582-307FB21DC9E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMCommon", "SupportingAssemblies\RMCommon\RMCommon.csproj", "{013258F3-E16A-4B3C-BCB1-C35B604823A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMLogging", "SupportingAssemblies\RMLogging\RMLogging.csproj", "{EC5C23C2-0414-4414-AC82-970120F08AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csgenerator", "SupportingAssemblies\csgenerator\csgenerator.csproj", "{E640A501-841F-4029-9528-B3CFF895887F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D9BB509B-CC12-4596-AB46-13CBB7B3F9F6}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Debug|x86.ActiveCfg = Debug|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Debug|x86.Build.0 = Debug|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Release|Any CPU.ActiveCfg = Release|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Release|x86.ActiveCfg = Release|x86
+		{5EFFDF0D-255B-48CD-A316-4BE249435A8F}.Release|x86.Build.0 = Release|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Debug|x86.ActiveCfg = Debug|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Debug|x86.Build.0 = Debug|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Release|Any CPU.ActiveCfg = Release|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Release|Mixed Platforms.Build.0 = Release|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Release|x86.ActiveCfg = Release|x86
+		{0808390F-D30A-47EA-B582-307FB21DC9E6}.Release|x86.Build.0 = Release|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Debug|x86.ActiveCfg = Debug|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Debug|x86.Build.0 = Debug|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Release|Any CPU.ActiveCfg = Release|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Release|Mixed Platforms.Build.0 = Release|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Release|x86.ActiveCfg = Release|x86
+		{013258F3-E16A-4B3C-BCB1-C35B604823A4}.Release|x86.Build.0 = Release|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Debug|x86.ActiveCfg = Debug|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Debug|x86.Build.0 = Debug|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Release|Any CPU.ActiveCfg = Release|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Release|Mixed Platforms.Build.0 = Release|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Release|x86.ActiveCfg = Release|x86
+		{EC5C23C2-0414-4414-AC82-970120F08AD7}.Release|x86.Build.0 = Release|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Debug|x86.ActiveCfg = Debug|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Debug|x86.Build.0 = Debug|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Release|Any CPU.ActiveCfg = Release|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Release|x86.ActiveCfg = Release|x86
+		{E640A501-841F-4029-9528-B3CFF895887F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

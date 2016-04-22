@@ -1,0 +1,32 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <UsingTask AssemblyFile="Lib\MSBuild.ExtensionPack.dll"
+             TaskName="MSBuild.ExtensionPack.Framework.AssemblyInfo" />
+
+  <Target Name="UpdateVersion">
+    <ItemGroup>
+      <AssemblyInfoFiles Include="**\AssemblyInfo.cs" />
+    </ItemGroup>
+
+    <MSBuild.ExtensionPack.Framework.AssemblyInfo
+      AssemblyInfoFiles="@(AssemblyInfoFiles)"
+      AssemblyMajorVersion="$(MajorVersion)"
+      AssemblyMinorVersion="$(MinorVersion)"
+      AssemblyBuildNumber="0"
+      AssemblyRevision="$(Revision)"		  
+      AssemblyFileMajorVersion="$(MajorVersion)"
+      AssemblyFileMinorVersion="$(MinorVersion)"
+      AssemblyFileBuildNumber="0"	    
+      AssemblyFileRevision="$(Revision)"		        
+    />
+	</Target>
+<ItemGroup>
+    <ProjectToBuild Include="RiskManager.sln" >
+        <Properties>Configuration=Release;Platform=x86</Properties>
+    </ProjectToBuild>
+</ItemGroup>
+  <Target Name="Build" >    
+    <!-- <MSBuild Projects="@(ProjectToBuild)" Targets="Rebuild" /> -->
+	<MSBuild Projects="RiskManager.sln" Targets="Rebuild" />
+  </Target>
+</Project>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmphoraFieldSelector", "AmphoraFieldSelector.csproj", "{134E3189-B197-4BD5-A4BE-CF1B6D265DB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "driver", "driver\driver.csproj", "{392EA20D-722C-4330-BF98-8270D5C0A9C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{134E3189-B197-4BD5-A4BE-CF1B6D265DB4}.Debug|x86.ActiveCfg = Debug|x86
+		{134E3189-B197-4BD5-A4BE-CF1B6D265DB4}.Debug|x86.Build.0 = Debug|x86
+		{134E3189-B197-4BD5-A4BE-CF1B6D265DB4}.Release|x86.ActiveCfg = Release|x86
+		{134E3189-B197-4BD5-A4BE-CF1B6D265DB4}.Release|x86.Build.0 = Release|x86
+		{392EA20D-722C-4330-BF98-8270D5C0A9C4}.Debug|x86.ActiveCfg = Debug|x86
+		{392EA20D-722C-4330-BF98-8270D5C0A9C4}.Debug|x86.Build.0 = Debug|x86
+		{392EA20D-722C-4330-BF98-8270D5C0A9C4}.Release|x86.ActiveCfg = Release|x86
+		{392EA20D-722C-4330-BF98-8270D5C0A9C4}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
