@@ -13,7 +13,7 @@
     <property name="build.env" value="Debug" />
     <property name="build.dir" value="${basedir}/Build" />
 
-  <property name="major.version" value="1" />
+  <!--<property name="major.version" value="1" />-->
   <property name="minor.version" value="0" />
   <property name="version.prefix" value="${major.version}.${minor.version}.${env.BUILD_NUMBER}" />
   
