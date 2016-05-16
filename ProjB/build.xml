@@ -2,6 +2,7 @@
    
    <target name="all">
       <echo message="Project ${ant.project.name}"/>
+      <echo message="Added one line"/>
    </target> 
    <target name="mallesh">
       <echo message="Project ${ant.project.name}"/>
